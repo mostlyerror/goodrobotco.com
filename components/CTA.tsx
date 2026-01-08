@@ -45,7 +45,7 @@ export default function CTA({
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold mb-5">{headline}</h2>
         <p className="text-lg text-charcoal-light max-w-xl mx-auto mb-10">{subheadline}</p>
         <a 
-          href="https://calendly.com" 
+          href="https://calendly.com/benjamintpoon/20min" 
           target="_blank" 
           rel="noopener noreferrer"
           className="inline-block px-10 py-5 bg-coral text-white font-semibold text-lg rounded-full hover:bg-coral-hover hover:-translate-y-1 hover:shadow-xl hover:shadow-coral/30 transition-all duration-300 mb-8"

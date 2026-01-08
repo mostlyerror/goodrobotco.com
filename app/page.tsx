@@ -111,11 +111,11 @@ export default function Home() {
               <img 
                 src={HEADSHOT_SRC} 
                 alt="Ben Poon" 
-                className="w-12 h-12 rounded-full object-cover ring-2 ring-cream"
+                className="w-16 h-16 rounded-full object-cover ring-2 ring-cream"
               />
               <div>
                 <span className="font-semibold">Ben Poon</span>
-                <span className="text-charcoal-light text-sm ml-1">· Founder</span>
+                <span className="text-charcoal-light text-sm ml-1">· Founder, Good Robot Co.</span>
               </div>
             </div>
           </div>

@@ -31,6 +31,11 @@ This is a static marketing site for Good Robot Co., a technology consulting busi
 - Fonts: Fraunces (display/headings) + DM Sans (body)
 - Custom float animations
 
+## Git Workflow
+
+- Never rebase commits that have been pushed to remote — only rebase local, unpushed commits
+- When reconciling divergent branches, prefer rebase for unpushed local work, merge otherwise
+
 ## Key Details
 
 - Static export: `next.config.js` sets `output: 'export'`
