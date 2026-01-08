@@ -103,9 +103,9 @@ export default function Home() {
               &quot;The best solution is usually simpler than you think.&quot;
             </p>
             <div className="space-y-4 text-charcoal-light mb-8">
-              <p>Most tech consultants want to build you something complex. That&apos;s how they make money. I take a different approach.</p>
-              <p>Before writing a single line of code, I ask: can we solve this with an off-the-shelf tool? A simple automation? A $20/month subscription? If yes, that&apos;s what I&apos;ll recommend, even if it means less work for me.</p>
-              <p>When custom work is the right answer, I build it. But I&apos;ll never sell you a spaceship when a bicycle will do.</p>
+              <p>Most tech consultants default to building something complex. I take a different approach: I find the solution that fits your problem, your budget, and your team.</p>
+              <p>Sometimes that&apos;s a simple automation or an off-the-shelf tool. Sometimes it&apos;s custom software built exactly for your needs. The difference is I&apos;ll always tell you which one makes sense and why.</p>
+              <p>No unnecessary complexity. No overselling. Just the right solution for where you are now.</p>
             </div>
             <div className="flex items-center gap-3">
               <img 
@@ -209,7 +209,7 @@ export default function Home() {
             <div className="p-4">
               <div className="w-16 h-16 bg-sage-light rounded-2xl flex items-center justify-center text-2xl mb-5">🎯</div>
               <h3 className="text-xl font-semibold mb-2.5">Right-Sized Solutions</h3>
-              <p className="text-charcoal-light text-[15px]">I&apos;ll recommend the simplest thing that solves your problem, even if it&apos;s a $20/month tool instead of a $20K project.</p>
+              <p className="text-charcoal-light text-[15px]">I match the solution to your actual problem, whether that&apos;s a quick fix or a larger build. No overselling, no overengineering.</p>
             </div>
             <div className="p-4">
               <div className="w-16 h-16 bg-mustard-light rounded-2xl flex items-center justify-center text-2xl mb-5">💬</div>

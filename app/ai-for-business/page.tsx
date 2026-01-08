@@ -98,33 +98,33 @@ export default function AIForBusiness() {
       {/* When NOT to use AI */}
       <section className="py-20 bg-cream">
         <div className="max-w-3xl mx-auto px-6">
-          <h2 className="text-3xl font-semibold mb-6">When AI is NOT the answer</h2>
-          <p className="text-lg text-charcoal-light mb-6">AI isn&apos;t right for everything. Here&apos;s when I&apos;d steer you away from it:</p>
+          <h2 className="text-3xl font-semibold mb-6">Where to be thoughtful</h2>
+          <p className="text-lg text-charcoal-light mb-6">AI works best when you understand its limitations. Here&apos;s what to keep in mind:</p>
           
           <div className="space-y-4">
             <div className="bg-white rounded-2xl p-6">
               <h3 className="font-semibold text-lg mb-2 flex items-center gap-2">
-                <span className="text-coral">✗</span> When accuracy is critical and errors are costly
+                <span className="text-mustard">→</span> High-stakes decisions need human oversight
               </h3>
-              <p className="text-charcoal-light">AI makes mistakes. If you&apos;re in healthcare, legal, or finance where a wrong answer could cause real harm, AI should assist humans, not replace them.</p>
+              <p className="text-charcoal-light">In healthcare, legal, or finance, AI works best as an assistant, not a replacement. We build in the right guardrails and review processes.</p>
             </div>
             <div className="bg-white rounded-2xl p-6">
               <h3 className="font-semibold text-lg mb-2 flex items-center gap-2">
-                <span className="text-coral">✗</span> When you don&apos;t have clear processes yet
+                <span className="text-mustard">→</span> Clear processes come first
               </h3>
-              <p className="text-charcoal-light">AI automates what exists. If your processes are chaotic or undefined, fix that first. AI won&apos;t magically create order from chaos.</p>
+              <p className="text-charcoal-light">AI amplifies what you already do well. If processes need work, we can tackle that together before layering in automation.</p>
             </div>
             <div className="bg-white rounded-2xl p-6">
               <h3 className="font-semibold text-lg mb-2 flex items-center gap-2">
-                <span className="text-coral">✗</span> When the human touch is the whole point
+                <span className="text-mustard">→</span> Some moments need a human
               </h3>
-              <p className="text-charcoal-light">Some customer interactions need empathy and judgment that AI can&apos;t provide. Know where to draw the line.</p>
+              <p className="text-charcoal-light">AI handles the routine so your team can focus on the interactions that matter most. We&apos;ll design the handoff points together.</p>
             </div>
             <div className="bg-white rounded-2xl p-6">
               <h3 className="font-semibold text-lg mb-2 flex items-center gap-2">
-                <span className="text-coral">✗</span> When a simpler solution exists
+                <span className="text-mustard">→</span> Right tool for the job
               </h3>
-              <p className="text-charcoal-light">Sometimes a spreadsheet, a Zapier automation, or just a better process is all you need. I&apos;ll tell you if that&apos;s the case.</p>
+              <p className="text-charcoal-light">Sometimes AI is the answer, sometimes it&apos;s a simpler automation. Part of my job is helping you figure out which.</p>
             </div>
           </div>
         </div>
@@ -143,7 +143,7 @@ export default function AIForBusiness() {
             </div>
             <div className="flex gap-4 items-start">
               <span className="w-8 h-8 bg-coral text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">2</span>
-              <p className="text-lg text-charcoal-light">I&apos;ll tell you honestly if AI could help. If it can&apos;t, I&apos;ll say so. If a simpler solution exists, I&apos;ll point you there.</p>
+              <p className="text-lg text-charcoal-light">I&apos;ll give you an honest assessment of whether AI fits your situation and what approach makes the most sense.</p>
             </div>
             <div className="flex gap-4 items-start">
               <span className="w-8 h-8 bg-coral text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">3</span>
