@@ -88,7 +88,7 @@ export default function AIForBusiness() {
               </div>
               <div className="bg-sky-light rounded-2xl p-8">
                 <p className="text-sm uppercase tracking-wider text-charcoal-light font-semibold mb-2">Typical Savings</p>
-                <p className="text-2xl font-semibold text-charcoal">Hours of manual analysis per week</p>
+                <p className="text-2xl font-semibold text-charcoal">50-70% reduction in analysis time</p>
               </div>
             </div>
           </div>

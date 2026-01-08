@@ -66,7 +66,7 @@ export default function Home() {
                 Book a Free 20-Min Call →
               </Link>
               <Link href="#services" className="inline-block px-6 py-3 bg-white/80 backdrop-blur-sm text-charcoal font-semibold text-base rounded-full border-2 border-charcoal/20 hover:bg-charcoal hover:text-white hover:border-charcoal transition-all duration-300 text-center">
-                See How I Help
+                See How We Help
               </Link>
             </div>
           </div>
@@ -105,7 +105,7 @@ export default function Home() {
             <div className="space-y-4 text-charcoal-light mb-8">
               <p>Most tech consultants default to building something complex. I take a different approach: I find the solution that fits your problem, your budget, and your team.</p>
               <p>Sometimes that&apos;s a simple automation or an off-the-shelf tool. Sometimes it&apos;s custom software built exactly for your needs. The difference is I&apos;ll always tell you which one makes sense and why.</p>
-              <p>No unnecessary complexity. No overselling. Just the right solution for where you are now.</p>
+              <p>No unnecessary complexity. No overselling. Just the right solution for where you are and where your business is going.</p>
             </div>
             <div className="flex items-center gap-3">
               <img 
@@ -174,7 +174,7 @@ export default function Home() {
       <section id="services" className="py-20 bg-charcoal text-white">
         <div className="max-w-6xl mx-auto px-6">
           <div className="max-w-[550px] mb-12">
-            <h2 className="text-3xl md:text-4xl font-semibold mb-3.5">How I can help</h2>
+            <h2 className="text-3xl md:text-4xl font-semibold mb-3.5">How we can help</h2>
             <p className="text-lg text-white/70">Every business is different. Here are the most common ways I help my clients.</p>
           </div>
           
@@ -202,7 +202,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-6">
           <div className="max-w-[550px] mb-12">
             <h2 className="text-3xl md:text-4xl font-semibold mb-3.5">Why work with me?</h2>
-            <p className="text-lg text-charcoal-light">I&apos;m not a huge agency. I&apos;m one person who actually does the work and picks up the phone.</p>
+            <p className="text-lg text-charcoal-light">I&apos;m not a huge agency. You&apos;ll work directly with a senior technologist who understands your business—no account managers, no junior staff, no runaround.</p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
