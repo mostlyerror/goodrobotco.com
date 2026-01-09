@@ -39,6 +39,12 @@ export default function CTA({
             <div key={i} className="w-2 h-2 bg-charcoal rounded-full"></div>
           ))}
         </div>
+
+        {/* Floating shapes (animated) */}
+        <div className="absolute top-[15%] left-[8%] w-14 h-14 bg-coral/80 rounded-2xl animate-float max-md:hidden shadow-lg"></div>
+        <div className="absolute bottom-[20%] left-[15%] w-10 h-10 bg-sage/80 rounded-full animate-float-delayed max-md:hidden shadow-lg"></div>
+        <div className="absolute top-[40%] right-[12%] w-12 h-12 bg-mustard/80 rounded-2xl animate-float-fast max-md:hidden shadow-lg"></div>
+        <div className="absolute bottom-[30%] right-[8%] w-8 h-8 bg-lavender/80 rounded-xl animate-float max-md:hidden shadow-md"></div>
       </div>
       
       <div className="max-w-3xl mx-auto px-6 relative z-10">
