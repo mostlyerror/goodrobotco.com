@@ -31,6 +31,17 @@ This is a static marketing site for Good Robot Co., a technology consulting busi
 - Fonts: Fraunces (display/headings) + DM Sans (body)
 - Custom float animations
 
+## Testing
+
+**Smoke Tests** (`/tests`):
+- `smoke-tests.js` - Lightweight HTTP tests for critical pages (zero dependencies)
+- `config.js` - **IMPORTANT: When adding new pages to `/app`, update the `routes` array here**
+- `utils.js` - HTTP client and test utilities
+- Run locally: `npm run test:smoke` (requires dev server running)
+- Automated via GitHub Actions on push/PR to main
+
+**Route Maintenance Rule**: Every new `page.tsx` added to `/app` must be added to `tests/config.js` routes array for smoke testing.
+
 ## Git Workflow
 
 - Never rebase commits that have been pushed to remote — only rebase local, unpushed commits
