@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OG Image Preview</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      background: #f0f0f0;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    h1 {
+      color: #333;
+      margin-bottom: 10px;
+    }
+    .instructions {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+    .preview {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      border: 1px solid #ddd;
+    }
+    code {
+      background: #f5f5f5;
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-family: 'Monaco', 'Courier New', monospace;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Open Graph Image Preview</h1>
+
+    <div class="instructions">
+      <h2>How to convert SVG to PNG:</h2>
+      <ol>
+        <li><strong>Option 1 (Easiest):</strong> Right-click the image below → "Save Image As" → Save as PNG</li>
+        <li><strong>Option 2:</strong> Use an online converter like <a href="https://cloudconvert.com/svg-to-png" target="_blank">cloudconvert.com</a></li>
+        <li><strong>Option 3:</strong> Install ImageMagick and run:<br>
+          <code>brew install imagemagick</code><br>
+          <code>magick public/og-image.svg public/og-image.png</code>
+        </li>
+      </ol>
+      <p><strong>Save the PNG as:</strong> <code>public/og-image.png</code></p>
+    </div>
+
+    <div class="preview">
+      <h2>Preview (1200 x 630 pixels):</h2>
+      <img src="og-image.svg" alt="Open Graph Image Preview" width="1200" height="630">
+    </div>
+  </div>
+</body>
+</html>
