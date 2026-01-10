@@ -23,11 +23,11 @@ const fraunces = Fraunces({
 
 export const metadata: Metadata = {
   title: 'Good Robot Co. | Technology That Works For Your Business',
-  description: 'Technology consulting for small and mid-size businesses. Honest guidance, practical solutions.',
+  description: 'Technology consulting for small and mid-size businesses. Honest guidance, practical solutions, and the right tech approach for your needs.',
   metadataBase: new URL('https://goodrobotco.com'),
   openGraph: {
     title: 'Good Robot Co. | Technology That Works For Your Business',
-    description: 'Technology consulting for small and mid-size businesses. Honest guidance, practical solutions.',
+    description: 'Technology consulting for small and mid-size businesses. Honest guidance, practical solutions, and the right tech approach for your needs.',
     url: 'https://goodrobotco.com',
     siteName: 'Good Robot Co.',
     locale: 'en_US',
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Good Robot Co. | Technology That Works For Your Business',
-    description: 'Technology consulting for small and mid-size businesses. Honest guidance, practical solutions.',
+    description: 'Technology consulting for small and mid-size businesses. Honest guidance, practical solutions, and the right tech approach for your needs.',
     images: ['/og-image.png'],
   },
 }
