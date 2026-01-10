@@ -5,10 +5,10 @@ import CTA from '@/components/CTA'
 
 export const metadata: Metadata = {
   title: 'Blog | Good Robot Co.',
-  description: 'Practical insights on technology, AI, and building smarter systems for small and mid-size businesses.',
+  description: 'Practical insights on technology, AI, and building smarter systems for small and mid-size businesses. No jargon, just actionable advice.',
   openGraph: {
     title: 'Blog | Good Robot Co.',
-    description: 'Practical insights on technology, AI, and building smarter systems for small and mid-size businesses.',
+    description: 'Practical insights on technology, AI, and building smarter systems for small and mid-size businesses. No jargon, just actionable advice.',
     url: 'https://goodrobotco.com/blog',
     type: 'website',
     images: [
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Blog | Good Robot Co.',
-    description: 'Practical insights on technology, AI, and building smarter systems for small and mid-size businesses.',
+    description: 'Practical insights on technology, AI, and building smarter systems for small and mid-size businesses. No jargon, just actionable advice.',
     images: ['/og-image.png'],
   },
 }

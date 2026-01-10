@@ -28,6 +28,9 @@
     Technology That Works For Your Business
   </text>
 
-  <!-- Bottom accent line -->
-  <rect x="100" y="500" width="200" height="6" fill="#E8654A" rx="3"/>
+  <!-- Call-to-action button -->
+  <rect x="100" y="480" width="280" height="60" fill="#E8654A" rx="30"/>
+  <text x="240" y="518" font-size="28" font-weight="600" fill="#FFFFFF" font-family="sans-serif" text-anchor="middle">
+    Book a Free Call →
+  </text>
 </svg>
