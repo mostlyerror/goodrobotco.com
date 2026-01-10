@@ -1,0 +1,33 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background gradient from cream to sage -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FDF6E9;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E8F0E8;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGradient)"/>
+
+  <!-- Decorative circles -->
+  <circle cx="100" cy="100" r="80" fill="#E8654A" opacity="0.15"/>
+  <circle cx="1100" cy="530" r="100" fill="#7BA37B" opacity="0.15"/>
+  <circle cx="950" cy="120" r="60" fill="#E5B94E" opacity="0.2"/>
+
+  <!-- Robot emoji as icon -->
+  <text x="100" y="280" font-size="120" font-family="Arial, sans-serif">🤖</text>
+
+  <!-- Company name -->
+  <text x="100" y="380" font-size="64" font-weight="700" fill="#2A2A2A" font-family="serif">
+    Good Robot Co.
+  </text>
+
+  <!-- Tagline -->
+  <text x="100" y="440" font-size="36" fill="#4A4A4A" font-family="sans-serif">
+    Technology That Works For Your Business
+  </text>
+
+  <!-- Bottom accent line -->
+  <rect x="100" y="500" width="200" height="6" fill="#E8654A" rx="3"/>
+</svg>

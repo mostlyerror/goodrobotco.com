@@ -5,6 +5,26 @@ import CTA from '@/components/CTA'
 export const metadata: Metadata = {
   title: 'Can AI Actually Help My Business? | Good Robot Co.',
   description: 'A practical guide to understanding if and how AI can help your small or mid-size business save time, reduce costs, and serve customers better.',
+  openGraph: {
+    title: 'Can AI Actually Help My Business? | Good Robot Co.',
+    description: 'A practical guide to understanding if and how AI can help your small or mid-size business save time, reduce costs, and serve customers better.',
+    url: 'https://goodrobotco.com/ai-for-business',
+    type: 'article',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Can AI Actually Help My Business? - Good Robot Co.',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Can AI Actually Help My Business? | Good Robot Co.',
+    description: 'A practical guide to understanding if and how AI can help your small or mid-size business save time, reduce costs, and serve customers better.',
+    images: ['/og-image.png'],
+  },
 }
 
 export default function AIForBusiness() {
@@ -27,8 +47,58 @@ export default function AIForBusiness() {
         </div>
       </section>
 
-      {/* Use Cases */}
+      {/* RAG Chatbots */}
       <section className="py-20 bg-white">
+        <div className="max-w-3xl mx-auto px-6">
+          <h2 className="text-3xl font-semibold mb-6">RAG Chatbots: AI That Knows Your Business</h2>
+          <p className="text-lg text-charcoal-light mb-5">One of the most practical AI implementations for businesses is called RAG (Retrieval-Augmented Generation). Don&apos;t worry about the technical term—here&apos;s what it actually means:</p>
+
+          <div className="bg-sage-light rounded-2xl p-8 mb-6">
+            <p className="text-lg text-charcoal mb-4"><strong>Think of it like this:</strong> A regular AI chatbot is like an intern who&apos;s really good at conversation but doesn&apos;t know anything about your company. A RAG chatbot is like that same intern, but now they have access to all your manuals, FAQs, policies, and documentation—and they can look up the exact answer before responding.</p>
+          </div>
+
+          <h3 className="text-2xl font-semibold mb-4">Why RAG matters for your business</h3>
+          <p className="text-lg text-charcoal-light mb-4">Standard AI chatbots can make things up or give generic answers. RAG chatbots:</p>
+
+          <div className="space-y-3 mb-6">
+            <div className="flex gap-3 items-start">
+              <span className="text-coral text-xl">✓</span>
+              <p className="text-charcoal-light"><strong>Pull from your actual documents</strong> – Product specs, return policies, troubleshooting guides, internal wikis</p>
+            </div>
+            <div className="flex gap-3 items-start">
+              <span className="text-coral text-xl">✓</span>
+              <p className="text-charcoal-light"><strong>Cite their sources</strong> – &quot;According to your shipping policy document, page 3...&quot;</p>
+            </div>
+            <div className="flex gap-3 items-start">
+              <span className="text-coral text-xl">✓</span>
+              <p className="text-charcoal-light"><strong>Stay up to date</strong> – Update your docs, the chatbot instantly knows the new information</p>
+            </div>
+            <div className="flex gap-3 items-start">
+              <span className="text-coral text-xl">✓</span>
+              <p className="text-charcoal-light"><strong>Reduce hallucinations</strong> – They stick to what&apos;s in your knowledge base instead of making things up</p>
+            </div>
+          </div>
+
+          <h3 className="text-2xl font-semibold mb-4">Common use cases</h3>
+          <div className="space-y-4">
+            <div className="border-l-4 border-coral pl-6">
+              <p className="font-semibold text-lg mb-2">Customer Support</p>
+              <p className="text-charcoal-light">Answer questions about your products, services, policies, and procedures 24/7 with accurate information from your support docs.</p>
+            </div>
+            <div className="border-l-4 border-sage pl-6">
+              <p className="font-semibold text-lg mb-2">Internal Knowledge Base</p>
+              <p className="text-charcoal-light">Help your team find answers in company wikis, process documentation, or technical manuals without digging through folders.</p>
+            </div>
+            <div className="border-l-4 border-mustard pl-6">
+              <p className="font-semibold text-lg mb-2">Onboarding Assistant</p>
+              <p className="text-charcoal-light">New employees can ask questions about benefits, processes, and policies and get instant, accurate answers from your employee handbook.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Use Cases */}
+      <section className="py-20 bg-cream">
         <div className="max-w-6xl mx-auto px-6">
           <div className="max-w-3xl mb-12">
             <h2 className="text-3xl font-semibold mb-4">Where AI actually makes sense</h2>
