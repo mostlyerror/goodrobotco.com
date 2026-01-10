@@ -1,0 +1,56 @@
+name: Smoke Tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  smoke-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Start dev server
+        run: npm run dev &
+        env:
+          CI: true
+
+      - name: Wait for server to be ready
+        run: |
+          echo "Waiting for dev server to start..."
+          max_attempts=30
+          attempt=0
+          while [ $attempt -lt $max_attempts ]; do
+            if curl -s http://localhost:3000 > /dev/null; then
+              echo "Server is ready!"
+              break
+            fi
+            attempt=$((attempt + 1))
+            echo "Attempt $attempt/$max_attempts - Server not ready yet..."
+            sleep 1
+          done
+
+          if [ $attempt -eq $max_attempts ]; then
+            echo "Server failed to start within 30 seconds"
+            exit 1
+          fi
+
+      - name: Run smoke tests
+        run: npm run test:smoke
+
+      - name: Upload test results
+        if: always()
+        run: echo "Tests completed"
