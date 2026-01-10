@@ -16,6 +16,19 @@ npm run dev
 
 3. Open [http://localhost:3000](http://localhost:3000)
 
+## Testing
+
+This project includes smoke tests to verify critical pages are accessible.
+
+**Run smoke tests locally:**
+```bash
+npm run test:smoke
+```
+
+**Important:** The dev server must be running (`npm run dev`) before running smoke tests.
+
+**Adding new pages:** When you add a new `page.tsx` to `/app`, remember to add the route to `tests/config.js` to include it in smoke tests.
+
 ## Deploy to Vercel
 
 1. Push this repo to GitHub
