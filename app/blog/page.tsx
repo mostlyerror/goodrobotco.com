@@ -11,11 +11,20 @@ export const metadata: Metadata = {
     description: 'Practical insights on technology, AI, and building smarter systems for small and mid-size businesses.',
     url: 'https://goodrobotco.com/blog',
     type: 'website',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Good Robot Co. Blog - Practical Tech Insights',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Blog | Good Robot Co.',
     description: 'Practical insights on technology, AI, and building smarter systems for small and mid-size businesses.',
+    images: ['/og-image.png'],
   },
 }
 

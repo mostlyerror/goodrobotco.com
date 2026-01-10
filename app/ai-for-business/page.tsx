@@ -10,11 +10,20 @@ export const metadata: Metadata = {
     description: 'A practical guide to understanding if and how AI can help your small or mid-size business save time, reduce costs, and serve customers better.',
     url: 'https://goodrobotco.com/ai-for-business',
     type: 'article',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Can AI Actually Help My Business? - Good Robot Co.',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Can AI Actually Help My Business? | Good Robot Co.',
     description: 'A practical guide to understanding if and how AI can help your small or mid-size business save time, reduce costs, and serve customers better.',
+    images: ['/og-image.png'],
   },
 }
 
