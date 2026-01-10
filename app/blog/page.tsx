@@ -6,6 +6,17 @@ import CTA from '@/components/CTA'
 export const metadata: Metadata = {
   title: 'Blog | Good Robot Co.',
   description: 'Practical insights on technology, AI, and building smarter systems for small and mid-size businesses.',
+  openGraph: {
+    title: 'Blog | Good Robot Co.',
+    description: 'Practical insights on technology, AI, and building smarter systems for small and mid-size businesses.',
+    url: 'https://goodrobotco.com/blog',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Blog | Good Robot Co.',
+    description: 'Practical insights on technology, AI, and building smarter systems for small and mid-size businesses.',
+  },
 }
 
 export default function Blog() {
@@ -35,61 +46,6 @@ export default function Blog() {
               </div>
             </div>
           </Link>
-
-          {/* More Posts */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            <Link 
-              href="#" 
-              className="block bg-white rounded-2xl overflow-hidden hover:shadow-xl hover:-translate-y-2 transition-all duration-300 no-underline text-charcoal"
-            >
-              <div className="h-48 bg-sage-light flex items-center justify-center text-5xl">💸</div>
-              <div className="p-6">
-                <span className="inline-block px-3 py-1 bg-cream text-sm font-medium rounded-full mb-4">Buy vs Build</span>
-                <h3 className="text-lg font-semibold mb-2 leading-snug">When to Buy Software vs Build It Custom</h3>
-                <p className="text-charcoal-light text-sm mb-4">A framework for making the right call and avoiding expensive mistakes.</p>
-                <span className="text-sm text-charcoal-light">Coming soon</span>
-              </div>
-            </Link>
-            
-            <Link 
-              href="#" 
-              className="block bg-white rounded-2xl overflow-hidden hover:shadow-xl hover:-translate-y-2 transition-all duration-300 no-underline text-charcoal"
-            >
-              <div className="h-48 bg-mustard-light flex items-center justify-center text-5xl">🔧</div>
-              <div className="p-6">
-                <span className="inline-block px-3 py-1 bg-cream text-sm font-medium rounded-full mb-4">Operations</span>
-                <h3 className="text-lg font-semibold mb-2 leading-snug">5 Signs Your Business Needs Better Systems</h3>
-                <p className="text-charcoal-light text-sm mb-4">How to know when spreadsheets and manual processes are costing you more than they should.</p>
-                <span className="text-sm text-charcoal-light">Coming soon</span>
-              </div>
-            </Link>
-            
-            <Link 
-              href="#" 
-              className="block bg-white rounded-2xl overflow-hidden hover:shadow-xl hover:-translate-y-2 transition-all duration-300 no-underline text-charcoal"
-            >
-              <div className="h-48 bg-lavender-light flex items-center justify-center text-5xl">🤝</div>
-              <div className="p-6">
-                <span className="inline-block px-3 py-1 bg-cream text-sm font-medium rounded-full mb-4">Working with Developers</span>
-                <h3 className="text-lg font-semibold mb-2 leading-snug">How to Not Get Burned by a Tech Contractor</h3>
-                <p className="text-charcoal-light text-sm mb-4">Red flags, green flags, and questions to ask before signing anything.</p>
-                <span className="text-sm text-charcoal-light">Coming soon</span>
-              </div>
-            </Link>
-            
-            <Link 
-              href="#" 
-              className="block bg-white rounded-2xl overflow-hidden hover:shadow-xl hover:-translate-y-2 transition-all duration-300 no-underline text-charcoal"
-            >
-              <div className="h-48 bg-cream-dark flex items-center justify-center text-5xl">⚡</div>
-              <div className="p-6">
-                <span className="inline-block px-3 py-1 bg-cream text-sm font-medium rounded-full mb-4">Automation</span>
-                <h3 className="text-lg font-semibold mb-2 leading-snug">Zapier vs Make vs Custom Code: Which Do You Need?</h3>
-                <p className="text-charcoal-light text-sm mb-4">A plain-English comparison of your automation options.</p>
-                <span className="text-sm text-charcoal-light">Coming soon</span>
-              </div>
-            </Link>
-          </div>
         </div>
       </section>
 

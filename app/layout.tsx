@@ -24,6 +24,20 @@ const fraunces = Fraunces({
 export const metadata: Metadata = {
   title: 'Good Robot Co. | Technology That Works For Your Business',
   description: 'Technology consulting for small and mid-size businesses. Honest guidance, practical solutions.',
+  metadataBase: new URL('https://goodrobotco.com'),
+  openGraph: {
+    title: 'Good Robot Co. | Technology That Works For Your Business',
+    description: 'Technology consulting for small and mid-size businesses. Honest guidance, practical solutions.',
+    url: 'https://goodrobotco.com',
+    siteName: 'Good Robot Co.',
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Good Robot Co. | Technology That Works For Your Business',
+    description: 'Technology consulting for small and mid-size businesses. Honest guidance, practical solutions.',
+  },
 }
 
 export default function RootLayout({
@@ -37,6 +51,7 @@ export default function RootLayout({
         <Nav />
         <main>{children}</main>
         <Footer />
+        <Analytics />
       </body>
     </html>
   )
