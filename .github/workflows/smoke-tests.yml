@@ -1,4 +1,4 @@
-name: Smoke Tests
+name: Tests
 
 on:
   push:
@@ -8,6 +8,7 @@ on:
 
 jobs:
   smoke-tests:
+    name: Smoke Tests & Sanity Integration
     runs-on: ubuntu-latest
 
     steps:
@@ -27,6 +28,8 @@ jobs:
         run: npm run dev &
         env:
           CI: true
+          NEXT_PUBLIC_SANITY_PROJECT_ID: ${{ secrets.SANITY_PROJECT_ID }}
+          NEXT_PUBLIC_SANITY_DATASET: ${{ vars.SANITY_DATASET || 'production' }}
 
       - name: Wait for server to be ready
         uses: iFaxity/wait-on-action@v1
@@ -37,6 +40,35 @@ jobs:
       - name: Run smoke tests
         run: npm run test:smoke
 
+      - name: Run Sanity integration tests
+        run: npm run test:sanity
+
       - name: Upload test results
         if: always()
         run: echo "Tests completed"
+
+  build-validation:
+    name: Build Validation
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build static site
+        run: npm run build
+        env:
+          NEXT_PUBLIC_SANITY_PROJECT_ID: ${{ secrets.SANITY_PROJECT_ID }}
+          NEXT_PUBLIC_SANITY_DATASET: ${{ vars.SANITY_DATASET || 'production' }}
+
+      - name: Validate build output
+        run: npm run test:build
