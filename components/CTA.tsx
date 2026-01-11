@@ -70,7 +70,7 @@ export default function CTA({
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          access_key: 'YOUR_WEB3FORMS_ACCESS_KEY', // TODO: Replace with actual key from web3forms.com
+          access_key: '52da23ac-e8a4-4f34-bee4-4d47e100fd89',
           name: formData.name,
           email: formData.email,
           message: formData.message,
