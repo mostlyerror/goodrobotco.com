@@ -63,7 +63,7 @@ export default function Home() {
             </p>
             <div className="flex gap-3 flex-wrap max-md:flex-col">
               <Link href="#contact" className="inline-block px-6 py-3 bg-coral text-white font-semibold text-base rounded-full hover:bg-coral-hover hover:-translate-y-0.5 hover:shadow-lg hover:shadow-coral/30 transition-all duration-300 text-center">
-                Book a Free 20-Min Call →
+                Let&apos;s Talk →
               </Link>
               <Link href="#services" className="inline-block px-6 py-3 bg-white/80 backdrop-blur-sm text-charcoal font-semibold text-base rounded-full border-2 border-charcoal/20 hover:bg-charcoal hover:text-white hover:border-charcoal transition-all duration-300 text-center">
                 See How We Help
