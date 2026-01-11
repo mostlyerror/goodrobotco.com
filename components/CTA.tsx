@@ -188,109 +188,152 @@ export default function CTA({
             </p>
 
             <form onSubmit={handleSubmit} className="flex flex-col flex-grow">
-              <div className="space-y-4 mb-6">
-                {/* Name field */}
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-charcoal mb-1.5">
-                    Name
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    className={`w-full px-4 py-3 bg-cream rounded-lg border-2 ${
-                      errors.name ? 'border-red-500' : 'border-charcoal/20'
-                    } focus:border-coral focus:outline-none focus:ring-2 focus:ring-coral/20 transition-colors`}
-                    disabled={isSubmitting}
-                    aria-invalid={!!errors.name}
-                    aria-describedby={errors.name ? 'name-error' : undefined}
-                  />
-                  {errors.name && (
-                    <p id="name-error" className="text-red-600 text-sm mt-1">{errors.name}</p>
-                  )}
-                </div>
+              {submitStatus === 'success' ? (
+                // Success state with paper airplane
+                <div className="flex-grow flex flex-col items-center justify-center text-center py-8 animate-fade-in">
+                  {/* Paper airplane SVG */}
+                  <svg
+                    className="w-24 h-24 mb-6 text-coral animate-float"
+                    viewBox="0 0 100 100"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M10 10L90 50L10 90L30 50L10 10Z"
+                      fill="currentColor"
+                      opacity="0.2"
+                    />
+                    <path
+                      d="M10 10L90 50L10 90L30 50L10 10Z"
+                      stroke="currentColor"
+                      strokeWidth="3"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                    <path
+                      d="M30 50L90 50"
+                      stroke="currentColor"
+                      strokeWidth="3"
+                      strokeLinecap="round"
+                    />
+                  </svg>
 
-                {/* Email field */}
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-charcoal mb-1.5">
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    className={`w-full px-4 py-3 bg-cream rounded-lg border-2 ${
-                      errors.email ? 'border-red-500' : 'border-charcoal/20'
-                    } focus:border-coral focus:outline-none focus:ring-2 focus:ring-coral/20 transition-colors`}
-                    disabled={isSubmitting}
-                    aria-invalid={!!errors.email}
-                    aria-describedby={errors.email ? 'email-error' : undefined}
-                  />
-                  {errors.email && (
-                    <p id="email-error" className="text-red-600 text-sm mt-1">{errors.email}</p>
-                  )}
+                  <h4 className="text-2xl font-semibold text-charcoal mb-3">Message Sent!</h4>
+                  <p className="text-charcoal-light mb-6 max-w-sm">
+                    Thanks for reaching out. I&apos;ll get back to you within 24 hours.
+                  </p>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setSubmitStatus('idle')
+                      setFormData({ name: '', email: '', message: '' })
+                    }}
+                    className="text-coral font-medium hover:underline"
+                  >
+                    Send another message
+                  </button>
                 </div>
+              ) : (
+                <>
+                  <div className="space-y-4 mb-6">
+                    {/* Name field */}
+                    <div>
+                      <label htmlFor="name" className="block text-sm font-medium text-charcoal mb-1.5">
+                        Name
+                      </label>
+                      <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleInputChange}
+                        className={`w-full px-4 py-3 bg-cream rounded-lg border-2 ${
+                          errors.name ? 'border-red-500' : 'border-charcoal/20'
+                        } focus:border-coral focus:outline-none focus:ring-2 focus:ring-coral/20 transition-colors`}
+                        disabled={isSubmitting}
+                        aria-invalid={!!errors.name}
+                        aria-describedby={errors.name ? 'name-error' : undefined}
+                      />
+                      {errors.name && (
+                        <p id="name-error" className="text-red-600 text-sm mt-1">{errors.name}</p>
+                      )}
+                    </div>
 
-                {/* Message field */}
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-charcoal mb-1.5">
-                    Message
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows={4}
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    className={`w-full px-4 py-3 bg-cream rounded-lg border-2 ${
-                      errors.message ? 'border-red-500' : 'border-charcoal/20'
-                    } focus:border-coral focus:outline-none focus:ring-2 focus:ring-coral/20 transition-colors resize-none`}
-                    disabled={isSubmitting}
-                    aria-invalid={!!errors.message}
-                    aria-describedby={errors.message ? 'message-error' : undefined}
-                  />
-                  {errors.message && (
-                    <p id="message-error" className="text-red-600 text-sm mt-1">{errors.message}</p>
-                  )}
-                </div>
-              </div>
+                    {/* Email field */}
+                    <div>
+                      <label htmlFor="email" className="block text-sm font-medium text-charcoal mb-1.5">
+                        Email
+                      </label>
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleInputChange}
+                        className={`w-full px-4 py-3 bg-cream rounded-lg border-2 ${
+                          errors.email ? 'border-red-500' : 'border-charcoal/20'
+                        } focus:border-coral focus:outline-none focus:ring-2 focus:ring-coral/20 transition-colors`}
+                        disabled={isSubmitting}
+                        aria-invalid={!!errors.email}
+                        aria-describedby={errors.email ? 'email-error' : undefined}
+                      />
+                      {errors.email && (
+                        <p id="email-error" className="text-red-600 text-sm mt-1">{errors.email}</p>
+                      )}
+                    </div>
 
-              {/* Status messages */}
-              {submitStatus === 'success' && (
-                <div className="p-4 bg-sage/20 border-2 border-sage rounded-lg text-sage-dark mb-4">
-                  Message sent! I&apos;ll get back to you within 24 hours.
-                </div>
+                    {/* Message field */}
+                    <div>
+                      <label htmlFor="message" className="block text-sm font-medium text-charcoal mb-1.5">
+                        Message
+                      </label>
+                      <textarea
+                        id="message"
+                        name="message"
+                        rows={4}
+                        value={formData.message}
+                        onChange={handleInputChange}
+                        className={`w-full px-4 py-3 bg-cream rounded-lg border-2 ${
+                          errors.message ? 'border-red-500' : 'border-charcoal/20'
+                        } focus:border-coral focus:outline-none focus:ring-2 focus:ring-coral/20 transition-colors resize-none`}
+                        disabled={isSubmitting}
+                        aria-invalid={!!errors.message}
+                        aria-describedby={errors.message ? 'message-error' : undefined}
+                      />
+                      {errors.message && (
+                        <p id="message-error" className="text-red-600 text-sm mt-1">{errors.message}</p>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Error message */}
+                  {submitStatus === 'error' && (
+                    <div className="p-4 bg-red-50 border-2 border-red-200 rounded-lg text-red-700 mb-4">
+                      Something went wrong. Please try again or email{' '}
+                      <a href="mailto:ben@goodrobotco.com" className="underline font-medium">
+                        ben@goodrobotco.com
+                      </a>
+                    </div>
+                  )}
+
+                  {/* Submit button section - aligns with left card button */}
+                  <div className="mt-auto">
+                    <button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="w-full px-6 py-3 bg-coral text-white font-semibold rounded-full hover:bg-coral-hover hover:-translate-y-1 hover:shadow-xl hover:shadow-coral/30 transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:translate-y-0"
+                    >
+                      {isSubmitting ? 'Sending...' : 'Send Message →'}
+                    </button>
+                    <p className="text-sm text-charcoal-light text-center mt-4">
+                      Prefer to email directly?{' '}
+                      <a href="mailto:ben@goodrobotco.com" className="text-coral font-medium hover:underline">
+                        ben@goodrobotco.com
+                      </a>
+                    </p>
+                  </div>
+                </>
               )}
-
-              {submitStatus === 'error' && (
-                <div className="p-4 bg-red-50 border-2 border-red-200 rounded-lg text-red-700 mb-4">
-                  Something went wrong. Please try again or email{' '}
-                  <a href="mailto:ben@goodrobotco.com" className="underline font-medium">
-                    ben@goodrobotco.com
-                  </a>
-                </div>
-              )}
-
-              {/* Submit button section - aligns with left card button */}
-              <div className="mt-auto">
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full px-6 py-3 bg-coral text-white font-semibold rounded-full hover:bg-coral-hover hover:-translate-y-1 hover:shadow-xl hover:shadow-coral/30 transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:translate-y-0"
-                >
-                  {isSubmitting ? 'Sending...' : 'Send Message →'}
-                </button>
-                <p className="text-sm text-charcoal-light text-center mt-4">
-                  Prefer to email directly?{' '}
-                  <a href="mailto:ben@goodrobotco.com" className="text-coral font-medium hover:underline">
-                    ben@goodrobotco.com
-                  </a>
-                </p>
-              </div>
             </form>
           </article>
 
