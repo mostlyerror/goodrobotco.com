@@ -5,15 +5,11 @@ import { useState } from 'react'
 interface CTAProps {
   headline?: string
   subheadline?: string
-  gradientFrom?: string
-  gradientTo?: string
 }
 
 export default function CTA({
   headline = "Let's figure out what you actually need.",
-  subheadline = "Book a free 20-minute call or send me a message. No pitch, no pressure. Just an honest conversation about what's not working and how to fix it.",
-  gradientFrom = "coral/5",
-  gradientTo = "mustard/10"
+  subheadline = "Book a free 20-minute call or send me a message. No pitch, no pressure. Just an honest conversation about what's not working and how to fix it."
 }: CTAProps) {
   // Form state management
   const [formData, setFormData] = useState({ name: '', email: '', message: '' })
@@ -92,7 +88,7 @@ export default function CTA({
   }
 
   return (
-    <section id="contact" className={`py-28 text-center relative overflow-hidden bg-gradient-to-br from-${gradientFrom} via-cream to-${gradientTo}`}>
+    <section id="contact" className="py-28 text-center relative overflow-hidden bg-gradient-to-br from-sage/20 via-sky/15 to-lavender/20">
       {/* Decorative elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
         {/* Large gradient blobs */}
@@ -310,8 +306,8 @@ export default function CTA({
                   {submitStatus === 'error' && (
                     <div className="p-4 bg-red-50 border-2 border-red-200 rounded-lg text-red-700 mb-4">
                       Something went wrong. Please try again or email{' '}
-                      <a href="mailto:ben@goodrobotco.com" className="underline font-medium">
-                        ben@goodrobotco.com
+                      <a href="mailto:hello@goodrobotco.com" className="underline font-medium">
+                        hello@goodrobotco.com
                       </a>
                     </div>
                   )}
@@ -327,8 +323,8 @@ export default function CTA({
                     </button>
                     <p className="text-sm text-charcoal-light text-center mt-4">
                       Prefer to email directly?{' '}
-                      <a href="mailto:ben@goodrobotco.com" className="text-coral font-medium hover:underline">
-                        ben@goodrobotco.com
+                      <a href="mailto:hello@goodrobotco.com" className="text-coral font-medium hover:underline">
+                        hello@goodrobotco.com
                       </a>
                     </p>
                   </div>
