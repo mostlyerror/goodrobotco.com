@@ -53,7 +53,7 @@ export default async function Blog() {
               className="block bg-white rounded-3xl overflow-hidden mb-16 hover:shadow-xl transition-shadow duration-300 no-underline text-charcoal"
             >
               <div className="grid md:grid-cols-2">
-                {featuredPost.featuredImage ? (
+                {featuredPost.featuredImage?.asset ? (
                   <div className="relative h-64 md:h-auto">
                     <Image
                       src={urlFor(featuredPost.featuredImage.asset).width(800).height(600).url()}
@@ -98,7 +98,7 @@ export default async function Blog() {
                   href={`/blog/${post.slug}`}
                   className="block bg-white rounded-3xl overflow-hidden hover:shadow-xl transition-shadow duration-300 no-underline text-charcoal"
                 >
-                  {post.featuredImage ? (
+                  {post.featuredImage?.asset ? (
                     <div className="relative h-48">
                       <Image
                         src={urlFor(post.featuredImage.asset).width(600).height(400).url()}
