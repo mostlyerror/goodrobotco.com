@@ -31,6 +31,27 @@ This is a static marketing site for Good Robot Co., a technology consulting busi
 - Fonts: Fraunces (display/headings) + DM Sans (body)
 - Custom float animations
 
+## Tailwind CSS Rules
+
+**NEVER use dynamic class names** - Tailwind's JIT compiler cannot generate classes from template literals or dynamic strings.
+
+❌ **Bad:**
+```tsx
+className={`bg-${color}`}
+className={`from-${gradientFrom} to-${gradientTo}`}
+```
+
+✅ **Good:**
+```tsx
+className="bg-coral"
+className="from-sage/20 to-sky/15"
+```
+
+If you need conditional styling, use full class names in conditionals:
+```tsx
+className={isActive ? "bg-coral text-white" : "bg-cream text-charcoal"}
+```
+
 ## Testing
 
 **Smoke Tests** (`/tests`):
