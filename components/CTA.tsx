@@ -306,8 +306,8 @@ export default function CTA({
                   {submitStatus === 'error' && (
                     <div className="p-4 bg-red-50 border-2 border-red-200 rounded-lg text-red-700 mb-4">
                       Something went wrong. Please try again or email{' '}
-                      <a href="mailto:ben@goodrobotco.com" className="underline font-medium">
-                        ben@goodrobotco.com
+                      <a href="mailto:hello@goodrobotco.com" className="underline font-medium">
+                        hello@goodrobotco.com
                       </a>
                     </div>
                   )}
@@ -323,8 +323,8 @@ export default function CTA({
                     </button>
                     <p className="text-sm text-charcoal-light text-center mt-4">
                       Prefer to email directly?{' '}
-                      <a href="mailto:ben@goodrobotco.com" className="text-coral font-medium hover:underline">
-                        ben@goodrobotco.com
+                      <a href="mailto:hello@goodrobotco.com" className="text-coral font-medium hover:underline">
+                        hello@goodrobotco.com
                       </a>
                     </p>
                   </div>

@@ -72,5 +72,5 @@ className={isActive ? "bg-coral text-white" : "bg-cream text-charcoal"}
 
 - Static export: `next.config.js` sets `output: 'export'`
 - No backend/API routes - all content is in page files
-- Contact: ben@goodrobotco.com
+- Contact: hello@goodrobotco.com
 - Deploys to Vercel
