@@ -8,10 +8,13 @@ import { getAllBlogPosts, getBlogPostBySlug } from '@/lib/sanity.client'
 import { urlFor } from '@/lib/sanity.image'
 
 interface BlogPostPageProps {
-  params: {
+  params: Promise<{
     slug: string
-  }
+  }>
 }
+
+// Disable dynamic params for static export
+export const dynamicParams = false
 
 /**
  * Generate static params for all blog posts at build time
@@ -19,6 +22,12 @@ interface BlogPostPageProps {
  */
 export async function generateStaticParams() {
   const posts = await getAllBlogPosts()
+
+  // Return at least one placeholder to satisfy static export requirements
+  // If no posts exist, this will result in a 404 when accessed
+  if (posts.length === 0) {
+    return []
+  }
 
   return posts.map((post) => ({
     slug: post.slug,
@@ -29,7 +38,8 @@ export async function generateStaticParams() {
  * Generate metadata for SEO (title, description, Open Graph, Twitter Cards)
  */
 export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
-  const post = await getBlogPostBySlug(params.slug)
+  const { slug } = await params
+  const post = await getBlogPostBySlug(slug)
 
   if (!post) {
     return {
@@ -76,7 +86,8 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
  * Blog post page component
  */
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
-  const post = await getBlogPostBySlug(params.slug)
+  const { slug } = await params
+  const post = await getBlogPostBySlug(slug)
 
   if (!post) {
     notFound()
@@ -87,7 +98,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       {/* Hero with title and excerpt */}
       <HeroSimple
         title={post.title}
-        subtitle={post.excerpt}
+        subtitle={post.excerpt || ''}
         maxWidth="max-w-4xl"
       />
 
@@ -108,7 +119,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           </div>
 
           {/* Featured Image */}
-          {post.featuredImage && (
+          {post.featuredImage?.asset && (
             <div className="mb-12 rounded-3xl overflow-hidden">
               <div className="relative w-full" style={{ aspectRatio: '16/9' }}>
                 <Image
