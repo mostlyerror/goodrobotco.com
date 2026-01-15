@@ -108,9 +108,9 @@ export default function Home() {
               &quot;The best solution is usually simpler than you think.&quot;
             </p>
             <div className="space-y-4 text-charcoal-light mb-8">
-              <p>Most tech consultants default to building something complex. I take a different approach: I find the solution that fits your problem, your budget, and your team.</p>
-              <p>Sometimes that&apos;s a simple automation or an off-the-shelf tool. Sometimes it&apos;s custom software built exactly for your needs. The difference is I&apos;ll always tell you which one makes sense and why.</p>
-              <p>No unnecessary complexity. No overselling. Just the right solution for where you are and where your business is going.</p>
+              <p>I&apos;m building my consulting practice and keeping things simple. I focus on finding the solution that fits your problem and budget—whether that&apos;s a quick automation, a simple website, or custom development.</p>
+              <p>I won&apos;t overcomplicate things or sell you services you don&apos;t need. You&apos;ll get honest advice, fair pricing, and quality work.</p>
+              <p>I&apos;m transparent about where I am: building my portfolio with real client projects. That means accessible pricing and personalized attention.</p>
             </div>
             <div className="flex items-center gap-3">
               <img 
@@ -207,7 +207,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-6">
           <div className="max-w-[550px] mb-12">
             <h2 className="text-3xl md:text-4xl font-semibold mb-3.5">Why work with me?</h2>
-            <p className="text-lg text-charcoal-light">I&apos;m not a huge agency. You&apos;ll work directly with a senior technologist who understands your business—no account managers, no junior staff, no runaround.</p>
+            <p className="text-lg text-charcoal-light">You&apos;ll work directly with me—no account managers, no runaround. I&apos;m building my practice and keeping things personal and affordable.</p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -227,9 +227,9 @@ export default function Home() {
               <p className="text-charcoal-light text-[15px]">I answer emails. I show up to calls. You&apos;ll never wonder where your project stands.</p>
             </div>
             <div className="p-4">
-              <div className="w-16 h-16 bg-sky-light rounded-2xl flex items-center justify-center text-2xl mb-5">🔧</div>
-              <h3 className="text-xl font-semibold mb-2.5">Built to Last</h3>
-              <p className="text-charcoal-light text-[15px]">No fragile systems that break when I&apos;m not around. Everything I deliver is maintainable and documented.</p>
+              <div className="w-16 h-16 bg-sky-light rounded-2xl flex items-center justify-center text-2xl mb-5">💰</div>
+              <h3 className="text-xl font-semibold mb-2.5">Fair Pricing</h3>
+              <p className="text-charcoal-light text-[15px]">I&apos;m building my portfolio, so my rates are accessible. You get quality work without the agency markup.</p>
             </div>
           </div>
         </div>
