@@ -236,124 +236,166 @@ export default function Home() {
       </section>
 
       {/* Recent Work */}
-      <section id="work" className="py-20 bg-gradient-to-br from-cream via-white to-sage/5">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-semibold mb-3">Recent Work</h2>
-            <p className="text-lg text-charcoal-light">Real projects, real results</p>
+      <section id="work" className="py-20 bg-gradient-to-br from-cream via-white to-sage/5 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex items-end justify-between mb-12">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-semibold mb-3">Recent Work</h2>
+              <p className="text-lg text-charcoal-light">Real projects, real results</p>
+            </div>
+            <Link
+              href="/case-studies"
+              className="inline-flex items-center gap-2 text-charcoal hover:text-coral font-medium transition-colors"
+            >
+              View all case studies
+              <span className="transition-transform hover:translate-x-1">→</span>
+            </Link>
           </div>
 
-          {/* Case Study Cards */}
-          <div className="max-w-4xl mx-auto space-y-8">
-            {/* SWAPP Case Study Card */}
-            <Link
-              href="/case-studies/swapp"
-              className="block bg-white rounded-2xl border border-charcoal/10 overflow-hidden hover:border-coral/30 hover:shadow-2xl transition-all duration-300 group"
-            >
-              <div className="grid md:grid-cols-5 gap-0">
-                {/* Left side - Icon */}
-                <div className="md:col-span-2 relative bg-gradient-to-br from-coral/20 to-mustard/15 min-h-[200px] md:min-h-0">
-                  <div className="absolute inset-0 flex items-center justify-center p-8">
+          {/* Horizontal Scrolling Carousel */}
+          <div className="relative">
+            <div className="overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-8 -mx-6 px-6">
+              <div className="flex gap-6 w-max">
+                {/* SWAPP Case Study Card */}
+                <Link
+                  href="/case-studies/swapp"
+                  className="flex-shrink-0 w-[70vw] md:w-[340px] bg-white rounded-2xl border border-charcoal/10 overflow-hidden hover:border-coral/30 hover:shadow-2xl transition-all duration-300 group snap-start"
+                >
+                  {/* Icon/Header */}
+                  <div className="relative bg-gradient-to-br from-coral/20 to-mustard/15 h-28 flex items-center justify-center">
                     <div className="text-center">
-                      <div className="text-6xl mb-4">🏔️</div>
-                      <div className="text-sm font-semibold text-charcoal/60 uppercase tracking-wider">Case Study</div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Right side - Content */}
-                <div className="md:col-span-3 p-8">
-                  <div className="flex items-start justify-between mb-4">
-                    <h3 className="text-2xl font-bold text-charcoal group-hover:text-coral transition-colors">
-                      SWAPP: Emergency Response
-                    </h3>
-                    <span className="text-coral ml-2 group-hover:translate-x-1 transition-transform">→</span>
-                  </div>
-
-                  <p className="text-charcoal-light mb-6 leading-relaxed">
-                    Led development of rapid-response system that reduced intake time by 80% during
-                    severe weather emergencies, preventing 8,300+ nights of unsheltered homelessness.
-                  </p>
-
-                  {/* Key stats */}
-                  <div className="grid grid-cols-2 gap-4 mb-6">
-                    <div>
-                      <div className="text-2xl font-bold text-coral mb-1">80%</div>
-                      <div className="text-sm text-charcoal/60">Faster intake time</div>
-                    </div>
-                    <div>
-                      <div className="text-2xl font-bold text-sage mb-1">15x</div>
-                      <div className="text-sm text-charcoal/60">Capacity increase</div>
+                      <div className="text-4xl mb-1">🏔️</div>
+                      <div className="text-xs font-semibold text-charcoal/60 uppercase tracking-wider">Case Study</div>
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-2 text-coral font-semibold group-hover:gap-3 transition-all">
-                    Read case study
-                    <span>→</span>
-                  </div>
-                </div>
-              </div>
-            </Link>
+                  {/* Content */}
+                  <div className="p-5 flex flex-col h-[calc(100%-7rem)]">
+                    <div className="mb-3">
+                      <h3 className="text-xl font-bold text-charcoal group-hover:text-coral transition-colors">
+                        SWAPP: Emergency Response
+                      </h3>
+                    </div>
 
-            {/* Mayday Case Study Card */}
-            <Link
-              href="/case-studies/mayday"
-              className="block bg-white rounded-2xl border border-charcoal/10 overflow-hidden hover:border-coral/30 hover:shadow-2xl transition-all duration-300 group"
-            >
-              <div className="grid md:grid-cols-5 gap-0">
-                {/* Left side - Icon */}
-                <div className="md:col-span-2 relative bg-gradient-to-br from-sage/20 to-sky/15 min-h-[200px] md:min-h-0">
-                  <div className="absolute inset-0 flex items-center justify-center p-8">
+                    <p className="text-charcoal-light text-sm mb-5 leading-relaxed">
+                      Led development of rapid-response system that reduced intake time by 80% during
+                      severe weather emergencies, preventing 8,300+ nights of unsheltered homelessness.
+                    </p>
+
+                    {/* Key stats */}
+                    <div className="grid grid-cols-2 gap-3 mb-4">
+                      <div>
+                        <div className="text-2xl font-bold text-coral mb-0.5">80%</div>
+                        <div className="text-xs text-charcoal/60">Faster intake time</div>
+                      </div>
+                      <div>
+                        <div className="text-2xl font-bold text-sage mb-0.5">15x</div>
+                        <div className="text-xs text-charcoal/60">Capacity increase</div>
+                      </div>
+                    </div>
+
+                    <div className="mt-auto flex items-center gap-2 text-coral font-semibold text-sm group-hover:gap-3 transition-all">
+                      Read case study
+                      <span>→</span>
+                    </div>
+                  </div>
+                </Link>
+
+                {/* Mayday Case Study Card */}
+                <Link
+                  href="/case-studies/mayday"
+                  className="flex-shrink-0 w-[70vw] md:w-[340px] bg-white rounded-2xl border border-charcoal/10 overflow-hidden hover:border-coral/30 hover:shadow-2xl transition-all duration-300 group snap-start"
+                >
+                  {/* Icon/Header */}
+                  <div className="relative bg-gradient-to-br from-sage/20 to-sky/15 h-28 flex items-center justify-center">
                     <div className="text-center">
-                      <div className="text-6xl mb-4">🎯</div>
-                      <div className="text-sm font-semibold text-charcoal/60 uppercase tracking-wider">Case Study</div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Right side - Content */}
-                <div className="md:col-span-3 p-8">
-                  <div className="flex items-start justify-between mb-4">
-                    <h3 className="text-2xl font-bold text-charcoal group-hover:text-coral transition-colors">
-                      Mayday: Lead Generation
-                    </h3>
-                    <span className="text-coral ml-2 group-hover:translate-x-1 transition-transform">→</span>
-                  </div>
-
-                  <p className="text-charcoal-light mb-6 leading-relaxed">
-                    Automated system that eliminates 15 hours/week of manual prospecting work by
-                    continuously scanning businesses and delivering daily digests of pre-qualified leads.
-                  </p>
-
-                  {/* Key stats */}
-                  <div className="grid grid-cols-2 gap-4 mb-6">
-                    <div>
-                      <div className="text-2xl font-bold text-coral mb-1">~15 hours</div>
-                      <div className="text-sm text-charcoal/60">Eliminated weekly</div>
-                    </div>
-                    <div>
-                      <div className="text-2xl font-bold text-sage mb-1">10-15k</div>
-                      <div className="text-sm text-charcoal/60">Businesses scanned/month</div>
+                      <div className="text-4xl mb-1">🎯</div>
+                      <div className="text-xs font-semibold text-charcoal/60 uppercase tracking-wider">Case Study</div>
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-2 text-coral font-semibold group-hover:gap-3 transition-all">
-                    Read case study
-                    <span>→</span>
+                  {/* Content */}
+                  <div className="p-5 flex flex-col h-[calc(100%-7rem)]">
+                    <div className="mb-3">
+                      <h3 className="text-xl font-bold text-charcoal group-hover:text-coral transition-colors">
+                        Mayday: Lead Generation
+                      </h3>
+                    </div>
+
+                    <p className="text-charcoal-light text-sm mb-5 leading-relaxed">
+                      Automated system that eliminates 15 hours/week of manual prospecting work by
+                      continuously scanning businesses and delivering daily digests of pre-qualified leads.
+                    </p>
+
+                    {/* Key stats */}
+                    <div className="grid grid-cols-2 gap-3 mb-4">
+                      <div>
+                        <div className="text-2xl font-bold text-coral mb-0.5">~15 hours</div>
+                        <div className="text-xs text-charcoal/60">Eliminated weekly</div>
+                      </div>
+                      <div>
+                        <div className="text-2xl font-bold text-sage mb-0.5">10-15k</div>
+                        <div className="text-xs text-charcoal/60">Businesses scanned/month</div>
+                      </div>
+                    </div>
+
+                    <div className="mt-auto flex items-center gap-2 text-coral font-semibold text-sm group-hover:gap-3 transition-all">
+                      Read case study
+                      <span>→</span>
+                    </div>
                   </div>
-                </div>
+                </Link>
+
+                {/* LLT Case Study Card */}
+                <Link
+                  href="/case-studies/llt"
+                  className="flex-shrink-0 w-[70vw] md:w-[340px] bg-white rounded-2xl border border-charcoal/10 overflow-hidden hover:border-coral/30 hover:shadow-2xl transition-all duration-300 group snap-start"
+                >
+                  {/* Icon/Header */}
+                  <div className="relative bg-gradient-to-br from-lavender/20 to-mustard/10 h-28 flex items-center justify-center">
+                    <div className="text-center">
+                      <div className="text-4xl mb-1">📚</div>
+                      <div className="text-xs font-semibold text-charcoal/60 uppercase tracking-wider">Case Study</div>
+                    </div>
+                  </div>
+
+                  {/* Content */}
+                  <div className="p-5 flex flex-col h-[calc(100%-7rem)]">
+                    <div className="mb-3">
+                      <h3 className="text-xl font-bold text-charcoal group-hover:text-coral transition-colors">
+                        Let&apos;s Learn Together
+                      </h3>
+                    </div>
+
+                    <p className="text-charcoal-light text-sm mb-5 leading-relaxed">
+                      Helped Houston tutoring agency optimize billing operations and adopt the right business
+                      management platform, saving hours weekly while enabling growth.
+                    </p>
+
+                    {/* Key stats */}
+                    <div className="grid grid-cols-2 gap-3 mb-4">
+                      <div>
+                        <div className="text-2xl font-bold text-coral mb-0.5">Hours</div>
+                        <div className="text-xs text-charcoal/60">Saved weekly</div>
+                      </div>
+                      <div>
+                        <div className="text-2xl font-bold text-sage mb-0.5">3</div>
+                        <div className="text-xs text-charcoal/60">Vendors evaluated</div>
+                      </div>
+                    </div>
+
+                    <div className="mt-auto flex items-center gap-2 text-coral font-semibold text-sm group-hover:gap-3 transition-all">
+                      Read case study
+                      <span>→</span>
+                    </div>
+                  </div>
+                </Link>
               </div>
-            </Link>
+            </div>
 
-            {/* Link to all case studies */}
-            <div className="text-center mt-8">
-              <Link
-                href="/case-studies"
-                className="inline-flex items-center gap-2 text-charcoal hover:text-coral font-medium transition-colors"
-              >
-                View all case studies
-                <span className="transition-transform hover:translate-x-1">→</span>
-              </Link>
+            {/* Scroll hint */}
+            <div className="text-center mt-6 text-sm text-charcoal/40">
+              <span className="md:hidden">← Swipe to see more →</span>
             </div>
           </div>
         </div>
