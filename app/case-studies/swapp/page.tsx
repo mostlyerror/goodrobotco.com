@@ -28,10 +28,23 @@ export default function SwappCaseStudy() {
             <strong>11 minutes per person</strong>, forcing people to wait in freezing temperatures
             while caseworkers processed paperwork.
           </p>
-          <p className="text-lg text-charcoal/80 leading-relaxed">
+          <p className="text-lg text-charcoal/80 leading-relaxed mb-8">
             Centralized intake meant people had to choose between their belongings and shelter—with
             no guarantee a room would still be available when they reached the front of the line. The
             program could only serve 60-80 people per night, leaving hundreds without help.
+          </p>
+
+          <div className="relative rounded-lg overflow-hidden border border-charcoal/10 shadow-lg">
+            <Image
+              src="/case-studies/swapp/city-hall-line.jpg"
+              alt="People waiting in line outside Historic City Hall for emergency shelter intake"
+              width={1600}
+              height={900}
+              className="w-full h-auto"
+            />
+          </div>
+          <p className="text-sm text-charcoal/60 text-center mt-3">
+            Long lines at Historic City Hall during cold weather—the centralized intake bottleneck
           </p>
         </section>
 
@@ -149,13 +162,33 @@ export default function SwappCaseStudy() {
             </div>
           </div>
 
-          <div className="bg-white border-l-4 border-sage p-6 rounded-r-lg">
-            <p className="text-xl text-charcoal font-semibold mb-3">
-              &quot;[The app] has allowed me to go through the line faster, and [our clients&apos;]
-              anxiety has decreased because they don&apos;t have to fill out so much paperwork—and it
-              has allowed them to speak up more on their needs.&quot;
+        </section>
+
+        {/* Quote and Image */}
+        <section className="grid md:grid-cols-[1fr,1.5fr] gap-6 items-center">
+          <div>
+            <div className="bg-white border-l-4 border-sage p-6 rounded-r-lg shadow-sm">
+              <p className="text-xl text-charcoal font-semibold mb-3">
+                &quot;[The app] has allowed me to go through the line faster, and [our clients&apos;]
+                anxiety has decreased because they don&apos;t have to fill out so much paperwork—and it
+                has allowed them to speak up more on their needs.&quot;
+              </p>
+              <p className="text-charcoal/60">— Nubia Saenz, Almost Home caseworker</p>
+            </div>
+          </div>
+          <div>
+            <div className="relative rounded-lg overflow-hidden border border-charcoal/10 shadow-xl">
+              <Image
+                src="/case-studies/swapp/intake-session.jpg"
+                alt="Caseworker conducting intake with tablet during severe weather, with snow visible through window"
+                width={1600}
+                height={1200}
+                className="w-full h-auto"
+              />
+            </div>
+            <p className="text-sm text-charcoal/60 text-center mt-3">
+              Field-ready digital intake in action—meeting people where they are during severe weather
             </p>
-            <p className="text-charcoal/60">— Nubia Saenz, Almost Home caseworker</p>
           </div>
         </section>
 
@@ -263,7 +296,7 @@ export default function SwappCaseStudy() {
                 href="https://adamscountyco.gov/our-county/community-safety-wellbeing/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block"
+                className="inline-block bg-charcoal/20 px-3 py-2 rounded hover:bg-charcoal/30 transition-colors"
                 aria-label="Adams County Office of Community Safety & Wellbeing"
               >
                 <Image
