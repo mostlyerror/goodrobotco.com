@@ -5,6 +5,8 @@ module.exports = {
     '/',
     '/ai-for-business',
     '/blog',
-    '/pricing'
+    '/pricing',
+    '/case-studies',
+    '/case-studies/mayday'
   ]
 }
