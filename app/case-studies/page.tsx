@@ -10,6 +10,20 @@ export const metadata: Metadata = {
 
 const caseStudies = [
   {
+    slug: "swapp",
+    title: "SWAPP: Severe Weather Emergency Response",
+    tagline: "From 11 minutes to 2.5 minutes—80% faster intake during emergencies",
+    description:
+      "Led development of a rapid-response system for Adams County, Colorado that streamlined hotel voucher distribution for people experiencing homelessness during severe weather. Weekend prototype to production deployment, preventing 8,300+ nights of unsheltered homelessness.",
+    highlights: [
+      "80% reduction in intake time (11 min → 2.5 min)",
+      "15x increase in capacity (8,300+ nights vs. 500)",
+      "Weekend prototype to production in weeks",
+      "560+ people served in one cold weather season",
+    ],
+    tech: ["Ruby on Rails", "PostgreSQL", "Twilio", "SendGrid"],
+  },
+  {
     slug: "mayday",
     title: "Mayday: Intelligent Lead Generation",
     tagline: "From 15 hours/week of manual work to zero",

@@ -243,14 +243,65 @@ export default function Home() {
             <p className="text-lg text-charcoal-light">Real projects, real results</p>
           </div>
 
-          {/* Mayday Case Study Card */}
-          <div className="max-w-4xl mx-auto">
+          {/* Case Study Cards */}
+          <div className="max-w-4xl mx-auto space-y-8">
+            {/* SWAPP Case Study Card */}
+            <Link
+              href="/case-studies/swapp"
+              className="block bg-white rounded-2xl border border-charcoal/10 overflow-hidden hover:border-coral/30 hover:shadow-2xl transition-all duration-300 group"
+            >
+              <div className="grid md:grid-cols-5 gap-0">
+                {/* Left side - Icon */}
+                <div className="md:col-span-2 relative bg-gradient-to-br from-coral/20 to-mustard/15 min-h-[200px] md:min-h-0">
+                  <div className="absolute inset-0 flex items-center justify-center p-8">
+                    <div className="text-center">
+                      <div className="text-6xl mb-4">🏔️</div>
+                      <div className="text-sm font-semibold text-charcoal/60 uppercase tracking-wider">Case Study</div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Right side - Content */}
+                <div className="md:col-span-3 p-8">
+                  <div className="flex items-start justify-between mb-4">
+                    <h3 className="text-2xl font-bold text-charcoal group-hover:text-coral transition-colors">
+                      SWAPP: Emergency Response
+                    </h3>
+                    <span className="text-coral ml-2 group-hover:translate-x-1 transition-transform">→</span>
+                  </div>
+
+                  <p className="text-charcoal-light mb-6 leading-relaxed">
+                    Led development of rapid-response system that reduced intake time by 80% during
+                    severe weather emergencies, preventing 8,300+ nights of unsheltered homelessness.
+                  </p>
+
+                  {/* Key stats */}
+                  <div className="grid grid-cols-2 gap-4 mb-6">
+                    <div>
+                      <div className="text-2xl font-bold text-coral mb-1">80%</div>
+                      <div className="text-sm text-charcoal/60">Faster intake time</div>
+                    </div>
+                    <div>
+                      <div className="text-2xl font-bold text-sage mb-1">15x</div>
+                      <div className="text-sm text-charcoal/60">Capacity increase</div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-2 text-coral font-semibold group-hover:gap-3 transition-all">
+                    Read case study
+                    <span>→</span>
+                  </div>
+                </div>
+              </div>
+            </Link>
+
+            {/* Mayday Case Study Card */}
             <Link
               href="/case-studies/mayday"
               className="block bg-white rounded-2xl border border-charcoal/10 overflow-hidden hover:border-coral/30 hover:shadow-2xl transition-all duration-300 group"
             >
               <div className="grid md:grid-cols-5 gap-0">
-                {/* Left side - Image */}
+                {/* Left side - Icon */}
                 <div className="md:col-span-2 relative bg-gradient-to-br from-sage/20 to-sky/15 min-h-[200px] md:min-h-0">
                   <div className="absolute inset-0 flex items-center justify-center p-8">
                     <div className="text-center">
@@ -264,7 +315,7 @@ export default function Home() {
                 <div className="md:col-span-3 p-8">
                   <div className="flex items-start justify-between mb-4">
                     <h3 className="text-2xl font-bold text-charcoal group-hover:text-coral transition-colors">
-                      Mayday: Intelligent Lead Generation
+                      Mayday: Lead Generation
                     </h3>
                     <span className="text-coral ml-2 group-hover:translate-x-1 transition-transform">→</span>
                   </div>

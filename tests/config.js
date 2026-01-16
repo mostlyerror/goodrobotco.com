@@ -7,6 +7,7 @@ module.exports = {
     '/blog',
     '/pricing',
     '/case-studies',
-    '/case-studies/mayday'
+    '/case-studies/mayday',
+    '/case-studies/swapp'
   ]
 }
