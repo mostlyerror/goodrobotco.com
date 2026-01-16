@@ -10,6 +10,20 @@ export const metadata: Metadata = {
 
 const caseStudies = [
   {
+    slug: "swapp",
+    title: "SWAPP: Severe Weather Emergency Response",
+    tagline: "From 11 minutes to 2.5 minutes—80% faster intake during emergencies",
+    description:
+      "Led development of a rapid-response system for Adams County, Colorado that streamlined hotel voucher distribution for people experiencing homelessness during severe weather. Weekend prototype to production deployment, preventing 8,300+ nights of unsheltered homelessness.",
+    highlights: [
+      "80% reduction in intake time (11 min → 2.5 min)",
+      "15x increase in capacity (8,300+ nights vs. 500)",
+      "Weekend prototype to production in weeks",
+      "560+ people served in one cold weather season",
+    ],
+    tech: ["Ruby on Rails", "PostgreSQL", "Twilio", "SendGrid"],
+  },
+  {
     slug: "mayday",
     title: "Mayday: Intelligent Lead Generation",
     tagline: "From 15 hours/week of manual work to zero",
@@ -22,6 +36,20 @@ const caseStudies = [
       "24/7 continuous monitoring and discovery",
     ],
     tech: ["Next.js 14", "PostgreSQL", "Google Places API", "TypeScript"],
+  },
+  {
+    slug: "llt",
+    title: "Let's Learn Together: Operations & Technology Advisory",
+    tagline: "From manual spreadsheets to scalable systems",
+    description:
+      "Helped a Houston tutoring agency optimize billing operations and adopt the right business management platform. Evaluated three vendors, provided technical guidance, and implemented a solution that saves hours weekly while enabling growth.",
+    highlights: [
+      "Hours of weekly time savings from spreadsheet optimization",
+      "3 vendors evaluated with technical guidance",
+      "2-month engagement from chaos to clarity",
+      "Platform ready to launch and scale with business",
+    ],
+    tech: ["Spreadsheet Optimization", "Vendor Evaluation", "Teachworks", "Operations Advisory"],
   },
 ];
 
