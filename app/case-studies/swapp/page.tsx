@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import HeroSimple from "@/components/HeroSimple";
 import CTA from "@/components/CTA";
 
@@ -239,35 +240,57 @@ export default function SwappCaseStudy() {
           </div>
         </section>
 
-        {/* Context */}
-        <section className="bg-gradient-to-br from-sage/20 to-sky/15 p-8 rounded-lg">
-          <p className="text-sm text-charcoal/60 mb-4">
-            <strong>About this project:</strong>
-          </p>
-          <p className="text-charcoal/80 leading-relaxed mb-4">
-            Built as part of a{" "}
-            <Link
-              href="https://www.codeforamerica.org/"
-              className="text-coral hover:underline"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Code for America
-            </Link>{" "}
-            fellowship with Adams County, Colorado. I served as technical lead and senior developer,
-            leading the engineering effort from prototype to production deployment.
-          </p>
-          <p className="text-sm text-charcoal/60">
-            Read more about the project:{" "}
-            <Link
-              href="https://github.com/JV-ADCOGOV/swapp"
-              className="text-coral hover:underline"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              View on GitHub
-            </Link>
-          </p>
+        {/* Partners */}
+        <section className="border-t border-charcoal/10 pt-12">
+          <div className="grid md:grid-cols-2 gap-8 items-start">
+            <div className="space-y-6">
+              <Link
+                href="https://www.codeforamerica.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block"
+                aria-label="Code for America"
+              >
+                <Image
+                  src="/case-studies/swapp/logo-code-for-america.svg"
+                  alt="Code for America"
+                  width={200}
+                  height={70}
+                  className="h-16 w-auto text-charcoal hover:text-coral transition-colors"
+                />
+              </Link>
+              <Link
+                href="https://adamscountyco.gov/our-county/community-safety-wellbeing/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block"
+                aria-label="Adams County Office of Community Safety & Wellbeing"
+              >
+                <Image
+                  src="/case-studies/swapp/logo-adams-county.svg"
+                  alt="Adams County Colorado"
+                  width={280}
+                  height={70}
+                  className="h-14 w-auto opacity-90 hover:opacity-100 transition-opacity"
+                />
+              </Link>
+            </div>
+            <div className="space-y-3">
+              <p className="text-charcoal/80 leading-relaxed">
+                Partnered with Adams County, Colorado and Adams County Office of Community Safety & Wellbeing to build this system for their emergency weather response program.
+              </p>
+              <p className="text-sm text-charcoal/60">
+                <Link
+                  href="https://github.com/JV-ADCOGOV/swapp"
+                  className="text-coral hover:underline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View project on GitHub →
+                </Link>
+              </p>
+            </div>
+          </div>
         </section>
       </main>
 
