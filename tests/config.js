@@ -8,6 +8,7 @@ module.exports = {
     '/pricing',
     '/case-studies',
     '/case-studies/mayday',
-    '/case-studies/swapp'
+    '/case-studies/swapp',
+    '/case-studies/llt'
   ]
 }

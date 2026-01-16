@@ -37,6 +37,20 @@ const caseStudies = [
     ],
     tech: ["Next.js 14", "PostgreSQL", "Google Places API", "TypeScript"],
   },
+  {
+    slug: "llt",
+    title: "Let's Learn Together: Operations & Technology Advisory",
+    tagline: "From manual spreadsheets to scalable systems",
+    description:
+      "Helped a Houston tutoring agency optimize billing operations and adopt the right business management platform. Evaluated three vendors, provided technical guidance, and implemented a solution that saves hours weekly while enabling growth.",
+    highlights: [
+      "Hours of weekly time savings from spreadsheet optimization",
+      "3 vendors evaluated with technical guidance",
+      "2-month engagement from chaos to clarity",
+      "Platform ready to launch and scale with business",
+    ],
+    tech: ["Spreadsheet Optimization", "Vendor Evaluation", "Teachworks", "Operations Advisory"],
+  },
 ];
 
 export default function CaseStudiesPage() {
