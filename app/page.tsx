@@ -235,6 +235,79 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Recent Work */}
+      <section id="work" className="py-20 bg-gradient-to-br from-cream via-white to-sage/5">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-semibold mb-3">Recent Work</h2>
+            <p className="text-lg text-charcoal-light">Real projects, real results</p>
+          </div>
+
+          {/* Mayday Case Study Card */}
+          <div className="max-w-4xl mx-auto">
+            <Link
+              href="/case-studies/mayday"
+              className="block bg-white rounded-2xl border border-charcoal/10 overflow-hidden hover:border-coral/30 hover:shadow-2xl transition-all duration-300 group"
+            >
+              <div className="grid md:grid-cols-5 gap-0">
+                {/* Left side - Image */}
+                <div className="md:col-span-2 relative bg-gradient-to-br from-sage/20 to-sky/15 min-h-[200px] md:min-h-0">
+                  <div className="absolute inset-0 flex items-center justify-center p-8">
+                    <div className="text-center">
+                      <div className="text-6xl mb-4">🎯</div>
+                      <div className="text-sm font-semibold text-charcoal/60 uppercase tracking-wider">Case Study</div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Right side - Content */}
+                <div className="md:col-span-3 p-8">
+                  <div className="flex items-start justify-between mb-4">
+                    <h3 className="text-2xl font-bold text-charcoal group-hover:text-coral transition-colors">
+                      Mayday: Intelligent Lead Generation
+                    </h3>
+                    <span className="text-coral ml-2 group-hover:translate-x-1 transition-transform">→</span>
+                  </div>
+
+                  <p className="text-charcoal-light mb-6 leading-relaxed">
+                    Automated system that eliminates 15 hours/week of manual prospecting work by
+                    continuously scanning businesses and delivering daily digests of pre-qualified leads.
+                  </p>
+
+                  {/* Key stats */}
+                  <div className="grid grid-cols-2 gap-4 mb-6">
+                    <div>
+                      <div className="text-2xl font-bold text-coral mb-1">~15 hours</div>
+                      <div className="text-sm text-charcoal/60">Eliminated weekly</div>
+                    </div>
+                    <div>
+                      <div className="text-2xl font-bold text-sage mb-1">10-15k</div>
+                      <div className="text-sm text-charcoal/60">Businesses scanned/month</div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-2 text-coral font-semibold group-hover:gap-3 transition-all">
+                    Read case study
+                    <span>→</span>
+                  </div>
+                </div>
+              </div>
+            </Link>
+
+            {/* Link to all case studies */}
+            <div className="text-center mt-8">
+              <Link
+                href="/case-studies"
+                className="inline-flex items-center gap-2 text-charcoal hover:text-coral font-medium transition-colors"
+              >
+                View all case studies
+                <span className="transition-transform hover:translate-x-1">→</span>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <CTA />
     </>
