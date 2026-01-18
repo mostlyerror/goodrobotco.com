@@ -1,9 +1,48 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import CTA from '@/components/CTA'
-import { HEADSHOT_SRC } from '@/components/constants'
+import { JsonLd } from '@/components/JsonLd'
 
 export default function Home() {
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'What if a developer ghosted us and our website is broken?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Good Robot Co. specializes in tech rescue services, helping businesses recover from abandoned projects and fixing broken websites.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Can AI actually help my business?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Good Robot Co. provides practical AI integration services, cutting through the hype to implement AI solutions that are actually useful and maintainable for your business.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Why am I being quoted $50K for simple software?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Good Robot Co. offers right-sized solutions that match the problem to your actual needs and budget, with fair pricing and no overselling.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'How can I automate manual processes?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Good Robot Co. specializes in process automation using tools like Zapier, Make, or custom scripts to eliminate repetitive tasks.',
+        },
+      },
+    ],
+  }
+
   return (
     <>
       {/* Hero */}
@@ -80,6 +119,7 @@ export default function Home() {
 
       {/* Sound Familiar + Philosophy Combined */}
       <section className="py-20 bg-white">
+        <JsonLd data={faqSchema} />
         <div className="max-w-4xl mx-auto px-6">
           <h2 className="text-2xl md:text-3xl font-semibold mb-8">Sound familiar?</h2>
           
@@ -113,9 +153,11 @@ export default function Home() {
               <p>I&apos;m transparent about where I am: building my portfolio with real client projects. That means accessible pricing and personalized attention.</p>
             </div>
             <div className="flex items-center gap-3">
-              <img 
-                src={HEADSHOT_SRC} 
-                alt="Ben Poon" 
+              <Image
+                src="/ben-headshot.jpg"
+                alt="Ben Poon"
+                width={64}
+                height={64}
                 className="w-16 h-16 rounded-full object-cover ring-2 ring-cream"
               />
               <div>

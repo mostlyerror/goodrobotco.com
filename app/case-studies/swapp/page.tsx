@@ -3,15 +3,45 @@ import Link from "next/link";
 import Image from "next/image";
 import HeroSimple from "@/components/HeroSimple";
 import CTA from "@/components/CTA";
+import { SEO } from "@/lib/seo.constants";
+import { buildBreadcrumbSchema } from "@/lib/schema-builders";
+import { JsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   title: "Case Study: SWAPP | Good Robot Co.",
   description: "How we built a rapid-response system that reduced intake time from 11 minutes to 2.5 minutes and prevented 8,300+ nights of unsheltered homelessness.",
+  openGraph: {
+    title: "SWAPP: Severe Weather Emergency Response | Good Robot Co.",
+    description: "From weekend prototype to production—reducing intake time by 80% during Colorado's coldest winter.",
+    url: `${SEO.baseUrl}/case-studies/swapp`,
+    type: 'article',
+    images: [
+      {
+        url: '/case-studies/swapp/intake-session.jpg',
+        width: 1600,
+        height: 1200,
+        alt: 'Caseworker conducting digital intake during severe weather',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "SWAPP: Severe Weather Emergency Response",
+    description: "Reducing intake time by 80% during Colorado's coldest winter.",
+    images: ['/case-studies/swapp/intake-session.jpg'],
+  },
 };
 
 export default function SwappCaseStudy() {
   return (
     <>
+      <JsonLd
+        data={buildBreadcrumbSchema([
+          { name: 'Home', url: SEO.baseUrl },
+          { name: 'Case Studies', url: `${SEO.baseUrl}/case-studies` },
+          { name: 'SWAPP', url: `${SEO.baseUrl}/case-studies/swapp` },
+        ])}
+      />
       <HeroSimple
         title="SWAPP: Severe Weather Emergency Response"
         subtitle="From weekend prototype to production—reducing intake time by 80% during Colorado's coldest winter"

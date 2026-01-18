@@ -5,6 +5,9 @@ import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
+import { SEO } from '@/lib/seo.constants'
+import { buildOrganizationSchema } from '@/lib/schema-builders'
+import { JsonLd } from '@/components/JsonLd'
 
 const dmSans = DM_Sans({
   subsets: ['latin'],
@@ -24,29 +27,29 @@ const fraunces = Fraunces({
 
 export const metadata: Metadata = {
   title: 'Good Robot Co. | Technology That Works For Your Business',
-  description: 'Technology consulting for small and mid-size businesses. Honest guidance, practical solutions, and the right tech approach for your needs.',
-  metadataBase: new URL('https://goodrobotco.com'),
+  description: SEO.organization.description,
+  metadataBase: new URL(SEO.baseUrl),
   openGraph: {
     title: 'Good Robot Co. | Technology That Works For Your Business',
-    description: 'Technology consulting for small and mid-size businesses. Honest guidance, practical solutions, and the right tech approach for your needs.',
-    url: 'https://goodrobotco.com',
-    siteName: 'Good Robot Co.',
+    description: SEO.organization.description,
+    url: SEO.baseUrl,
+    siteName: SEO.siteName,
     locale: 'en_US',
     type: 'website',
     images: [
       {
-        url: '/og-image.png',
-        width: 1200,
-        height: 630,
-        alt: 'Good Robot Co. - Technology That Works For Your Business',
+        url: SEO.images.og.url,
+        width: SEO.images.og.width,
+        height: SEO.images.og.height,
+        alt: SEO.images.og.alt,
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Good Robot Co. | Technology That Works For Your Business',
-    description: 'Technology consulting for small and mid-size businesses. Honest guidance, practical solutions, and the right tech approach for your needs.',
-    images: ['/og-image.png'],
+    description: SEO.organization.description,
+    images: [SEO.images.og.url],
   },
 }
 
@@ -58,6 +61,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${dmSans.variable} ${fraunces.variable}`}>
       <body className="bg-cream text-charcoal text-[17px] leading-relaxed overflow-x-hidden font-body">
+        <JsonLd data={buildOrganizationSchema()} />
         <Nav />
         <main>{children}</main>
         <Footer />

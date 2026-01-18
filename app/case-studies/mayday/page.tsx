@@ -2,15 +2,45 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import HeroSimple from "@/components/HeroSimple";
 import CTA from "@/components/CTA";
+import { SEO } from "@/lib/seo.constants";
+import { buildBreadcrumbSchema } from "@/lib/schema-builders";
+import { JsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   title: "Case Study: Mayday | Good Robot Co.",
   description: "How we built an intelligent lead generation system that automatically discovers and qualifies web development opportunities.",
+  openGraph: {
+    title: "Mayday: Intelligent Lead Generation | Good Robot Co.",
+    description: "Automating the hunt for web development clients—from 15 hours/week of manual work to zero.",
+    url: `${SEO.baseUrl}/case-studies/mayday`,
+    type: 'article',
+    images: [
+      {
+        url: '/case-studies/mayday/dashboard.png',
+        width: 1600,
+        height: 1200,
+        alt: 'Mayday lead generation dashboard showing automated business scanning',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "Mayday: Intelligent Lead Generation",
+    description: "Automating the hunt for web development clients—from 15 hours/week of manual work to zero.",
+    images: ['/case-studies/mayday/dashboard.png'],
+  },
 };
 
 export default function MaydayCaseStudy() {
   return (
     <>
+      <JsonLd
+        data={buildBreadcrumbSchema([
+          { name: 'Home', url: SEO.baseUrl },
+          { name: 'Case Studies', url: `${SEO.baseUrl}/case-studies` },
+          { name: 'Mayday', url: `${SEO.baseUrl}/case-studies/mayday` },
+        ])}
+      />
       <HeroSimple
         title="Mayday: Intelligent Lead Generation"
         subtitle="Automating the hunt for web development clients—from 15 hours/week of manual work to zero"

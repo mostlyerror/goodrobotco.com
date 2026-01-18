@@ -2,15 +2,45 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import HeroSimple from "@/components/HeroSimple";
 import CTA from "@/components/CTA";
+import { SEO } from "@/lib/seo.constants";
+import { buildBreadcrumbSchema } from "@/lib/schema-builders";
+import { JsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   title: "Case Study: Let's Learn Together | Good Robot Co.",
   description: "How we helped a growing tutoring agency streamline operations, evaluate business software, and implement the right platform for long-term growth.",
+  openGraph: {
+    title: "Let's Learn Together: Operations & Technology Advisory | Good Robot Co.",
+    description: "From manual spreadsheets to scalable systems—saving hours weekly and setting up a tutoring agency for growth.",
+    url: `${SEO.baseUrl}/case-studies/llt`,
+    type: 'article',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: "Good Robot Co. - Technology That Works For Your Business",
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "Let's Learn Together: Operations & Technology Advisory",
+    description: "From manual spreadsheets to scalable systems—saving hours weekly and setting up a tutoring agency for growth.",
+    images: ['/og-image.png'],
+  },
 };
 
 export default function LLTCaseStudy() {
   return (
     <>
+      <JsonLd
+        data={buildBreadcrumbSchema([
+          { name: 'Home', url: SEO.baseUrl },
+          { name: 'Case Studies', url: `${SEO.baseUrl}/case-studies` },
+          { name: "Let's Learn Together", url: `${SEO.baseUrl}/case-studies/llt` },
+        ])}
+      />
       <HeroSimple
         title="Let's Learn Together: Operations & Technology Advisory"
         subtitle="From manual spreadsheets to scalable systems—saving hours weekly and setting up a tutoring agency for growth"

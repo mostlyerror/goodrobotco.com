@@ -6,6 +6,9 @@ import RichText from '@/components/RichText'
 import CTA from '@/components/CTA'
 import { getAllBlogPosts, getBlogPostBySlug } from '@/lib/sanity.client'
 import { urlFor } from '@/lib/sanity.image'
+import { SEO } from '@/lib/seo.constants'
+import { buildBlogPostingSchema } from '@/lib/schema-builders'
+import { JsonLd } from '@/components/JsonLd'
 
 interface BlogPostPageProps {
   params: Promise<{
@@ -60,7 +63,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
     openGraph: {
       title: post.title,
       description: metaDescription,
-      url: `https://goodrobotco.com/blog/${post.slug}`,
+      url: `${SEO.baseUrl}/blog/${post.slug}`,
       type: 'article',
       publishedTime: post.publishedAt,
       authors: [post.author],
@@ -104,6 +107,19 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
       {/* Blog Post Content */}
       <article className="py-12 bg-cream">
+        <JsonLd
+          data={buildBlogPostingSchema({
+            ...post,
+            excerpt: post.excerpt || '',
+            featuredImage: post.featuredImage?.asset
+              ? {
+                  asset: {
+                    url: urlFor(post.featuredImage.asset).width(1200).height(630).url(),
+                  },
+                }
+              : undefined,
+          })}
+        />
         <div className="max-w-4xl mx-auto px-6">
           {/* Meta info */}
           <div className="flex items-center gap-4 text-sm text-charcoal-light mb-8">
