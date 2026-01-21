@@ -35,3 +35,6 @@ next-env.d.ts
 
 # Sanity
 /dist
+
+# Blog drafts (content managed in Sanity)
+blog-drafts/
