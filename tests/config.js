@@ -4,6 +4,7 @@ module.exports = {
   routes: [
     '/',
     '/ai-for-business',
+    '/about',
     '/blog',
     '/pricing',
     '/case-studies',

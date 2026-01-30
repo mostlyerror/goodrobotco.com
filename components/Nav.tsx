@@ -26,11 +26,10 @@ export default function Nav() {
   }
 
   const navLinks = [
-    { href: '/#how-it-works', label: 'How It Works' },
     { href: '/#services', label: 'Services' },
     { href: '/case-studies', label: 'Case Studies' },
+    { href: '/about', label: 'About' },
     { href: '/pricing', label: 'Pricing' },
-    { href: '/ai-for-business', label: 'AI for Your Business' },
     { href: '/blog', label: 'Blog' },
   ]
 

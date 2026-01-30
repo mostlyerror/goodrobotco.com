@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import Link from 'next/link'
 import HeroSimple from '@/components/HeroSimple'
 import CTA from '@/components/CTA'
 
@@ -30,10 +31,23 @@ export const metadata: Metadata = {
 export default function AIForBusiness() {
   return (
     <>
-      <HeroSimple 
+      <HeroSimple
         title="Can AI actually help my business?"
         subtitle="Everyone's talking about AI. But for most small and mid-size business owners, it's unclear what's real, what's hype, and whether any of it applies to them. This guide will help you figure that out."
       />
+
+      {/* Prominent CTA */}
+      <section className="py-16 bg-white">
+        <div className="max-w-3xl mx-auto px-6">
+          <div className="bg-gradient-to-br from-sage/10 to-sky/10 p-8 rounded-2xl border-2 border-sage/20">
+            <h3 className="text-2xl font-semibold mb-3">Want to know if this applies to your business?</h3>
+            <p className="text-charcoal-light mb-6">Book a free 20-minute AI assessment. I&apos;ll audit your processes and tell you what&apos;s actually worth implementing—with no obligation to hire me.</p>
+            <Link href="/#contact" className="inline-block px-8 py-4 bg-coral text-white font-bold text-lg rounded-full shadow-xl shadow-coral/40 hover:bg-coral-hover hover:-translate-y-1 transition-all duration-300">
+              Book Your Free AI Assessment →
+            </Link>
+          </div>
+        </div>
+      </section>
 
       {/* Cut through the hype */}
       <section className="py-20 bg-cream">

@@ -16,6 +16,7 @@ export default function CTA({
   const [errors, setErrors] = useState<Record<string, string>>({})
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
+  const [showNextSteps, setShowNextSteps] = useState(false)
 
   // Handle input changes
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -77,6 +78,7 @@ export default function CTA({
       if (response.ok) {
         setSubmitStatus('success')
         setFormData({ name: '', email: '', message: '' })
+        setShowNextSteps(true)
       } else {
         setSubmitStatus('error')
       }
@@ -166,6 +168,7 @@ export default function CTA({
                 href="https://calendly.com/benjamintpoon/20min"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => setShowNextSteps(true)}
                 className="inline-block w-full px-6 py-3 bg-coral text-white font-semibold text-center rounded-full hover:bg-coral-hover hover:-translate-y-1 hover:shadow-xl hover:shadow-coral/30 transition-all duration-300"
               >
                 Book Your Free Call →
@@ -334,6 +337,30 @@ export default function CTA({
           </article>
 
         </div>
+
+        {/* What Happens Next - Only show after interaction */}
+        {showNextSteps && (
+          <div className="max-w-3xl mx-auto mt-16 text-center animate-fade-in">
+            <h3 className="text-2xl md:text-3xl font-semibold mb-8">What happens next?</h3>
+            <div className="grid md:grid-cols-3 gap-6 text-left">
+              <div className="bg-white/80 backdrop-blur-sm p-6 rounded-xl">
+                <div className="w-12 h-12 bg-coral/10 text-coral rounded-full flex items-center justify-center text-xl font-bold mb-4">1</div>
+                <h4 className="font-semibold mb-2">I&apos;ll respond within 24 hours</h4>
+                <p className="text-sm text-charcoal-light">Usually much faster. I&apos;ll read your message carefully and ask any clarifying questions.</p>
+              </div>
+              <div className="bg-white/80 backdrop-blur-sm p-6 rounded-xl">
+                <div className="w-12 h-12 bg-sage/10 text-sage rounded-full flex items-center justify-center text-xl font-bold mb-4">2</div>
+                <h4 className="font-semibold mb-2">We&apos;ll schedule a quick call</h4>
+                <p className="text-sm text-charcoal-light">20 minutes to understand your situation and see if I can help. No commitment required.</p>
+              </div>
+              <div className="bg-white/80 backdrop-blur-sm p-6 rounded-xl">
+                <div className="w-12 h-12 bg-mustard/10 text-mustard rounded-full flex items-center justify-center text-xl font-bold mb-4">3</div>
+                <h4 className="font-semibold mb-2">You&apos;ll get a clear next step</h4>
+                <p className="text-sm text-charcoal-light">Whether it&apos;s a proposal, a recommendation, or a referral to someone better suited—you&apos;ll know exactly where we stand.</p>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   )

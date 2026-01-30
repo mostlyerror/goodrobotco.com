@@ -193,6 +193,35 @@ export default function MaydayCaseStudy() {
           </div>
         </section>
 
+        {/* The AI Component */}
+        <section>
+          <h2 className="text-3xl font-bold text-charcoal mb-6">The AI Component</h2>
+          <p className="text-lg text-charcoal/80 leading-relaxed mb-6">
+            This project combines intelligent automation with traditional workflows. Here&apos;s what makes it &quot;AI-powered&quot;:
+          </p>
+
+          <div className="bg-cream/50 border-l-4 border-coral p-6 rounded-r-lg space-y-4">
+            <div>
+              <h3 className="font-bold text-charcoal mb-2">Intelligent Web Scraping</h3>
+              <p className="text-charcoal/80">
+                The system doesn&apos;t just scrape data—it understands business context. It can identify relevant information from diverse website structures, adapt to changes, and classify businesses based on multiple signals.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-bold text-charcoal mb-2">Smart Lead Classification</h3>
+              <p className="text-charcoal/80">
+                AI categorizes leads based on dozens of factors: industry, location, current tech stack, team size, and more. This goes beyond simple rule-based filtering to pattern recognition across thousands of data points.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-bold text-charcoal mb-2">Automated Research & Enrichment</h3>
+              <p className="text-charcoal/80">
+                The system automatically researches each business, pulling relevant context from multiple sources and synthesizing it into actionable lead intelligence—work that would take a human 15-30 minutes per lead.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* The Bottom Line */}
         <section>
           <h2 className="text-3xl font-bold text-charcoal mb-6">The Result</h2>
