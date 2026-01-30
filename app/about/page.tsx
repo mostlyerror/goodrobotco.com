@@ -5,10 +5,10 @@ import CTA from '@/components/CTA'
 
 export const metadata: Metadata = {
   title: 'About | Good Robot Co.',
-  description: 'Learn about Ben Poon and Good Robot Co. — modern tech consulting built on honest assessment, practical solutions, and no BS.',
+  description: 'Learn about Ben Poon and Good Robot Co. Modern tech consulting built on honest assessment, practical solutions, and no BS.',
   openGraph: {
     title: 'About | Good Robot Co.',
-    description: 'Learn about Ben Poon and Good Robot Co. — modern tech consulting built on honest assessment, practical solutions, and no BS.',
+    description: 'Learn about Ben Poon and Good Robot Co. Modern tech consulting built on honest assessment, practical solutions, and no BS.',
     url: 'https://goodrobotco.com/about',
     type: 'website',
     images: [
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'About | Good Robot Co.',
-    description: 'Learn about Ben Poon and Good Robot Co. — modern tech consulting built on honest assessment, practical solutions, and no BS.',
+    description: 'Learn about Ben Poon and Good Robot Co. Modern tech consulting built on honest assessment, practical solutions, and no BS.',
     images: ['/og-image.png'],
   },
 }
@@ -42,7 +42,7 @@ export default function About() {
           <div className="flex flex-col md:flex-row gap-12 items-start mb-12">
             <div className="md:w-1/3 flex-shrink-0">
               <Image
-                src="/ben-headshot.jpg"
+                src="/ben-headshot-2.jpg"
                 alt="Ben Poon"
                 width={400}
                 height={400}
@@ -50,10 +50,10 @@ export default function About() {
               />
             </div>
             <div className="md:w-2/3">
-              <h2 className="text-3xl font-semibold mb-6">Hi, I'm Ben</h2>
+              <h2 className="text-3xl font-semibold mb-6">Hi, I'm Ben 👋</h2>
               <div className="space-y-4 text-charcoal-light">
                 <p>
-                  I spent years building systems at scale—AI platforms, automation workflows, and custom software for enterprise clients.
+                  I spent years building systems at scale. AI platforms, automation workflows, and custom software for enterprise clients.
                   I saw how technology gets overcomplicated, oversold, and over-engineered when it doesn't need to be.
                 </p>
                 <p>
@@ -65,7 +65,7 @@ export default function About() {
                   simple automation. It might be custom development. It might just be fixing what's broken.
                 </p>
                 <p>
-                  I don't oversell, I don't use jargon, and I don't disappear after launch. You work directly with me—no account
+                  I don't oversell, I don't use jargon, and I don't disappear after launch. You work directly with me. No account
                   managers, no runaround, no surprises.
                 </p>
               </div>
@@ -114,7 +114,7 @@ export default function About() {
               <div>
                 <h3 className="text-xl font-semibold mb-2">Small client load by design</h3>
                 <p className="text-charcoal-light">
-                  I only take 2-3 new projects per month. This isn't artificial scarcity—it's how I maintain quality
+                  I only take 2-3 new projects per month. This isn't artificial scarcity, it's how I maintain quality
                   and responsiveness. You get personalized attention, not cookie-cutter templates.
                 </p>
               </div>
@@ -125,7 +125,7 @@ export default function About() {
               <div>
                 <h3 className="text-xl font-semibold mb-2">Modern tech stack</h3>
                 <p className="text-charcoal-light">
-                  I use current best practices and proven technologies—Next.js, React, TypeScript, modern AI frameworks.
+                  I use current best practices and proven technologies. Next.js, React, TypeScript, modern AI frameworks.
                   Not legacy systems from 2010 that will be impossible to maintain.
                 </p>
               </div>
@@ -148,7 +148,7 @@ export default function About() {
                 <h3 className="text-xl font-semibold mb-2">I don't disappear after launch</h3>
                 <p className="text-charcoal-light">
                   Things break. Requirements change. Questions come up. I'm here for ongoing support, maintenance, and
-                  evolution of your systems—not just the initial build.
+                  evolution of your systems, not just the initial build.
                 </p>
               </div>
             </div>
@@ -272,7 +272,7 @@ export default function About() {
               <div className="w-16 h-16 bg-mustard/10 rounded-full mx-auto mb-4 flex items-center justify-center text-2xl font-bold text-mustard">3</div>
               <h3 className="font-semibold mb-2">Build practically</h3>
               <p className="text-sm text-charcoal-light">
-                I use the right tool for your problem—whether that's custom dev, automation, AI, or fixing what's broken.
+                I use the right tool for your problem. Whether that's custom dev, automation, AI, or fixing what's broken.
               </p>
             </div>
           </div>
@@ -282,7 +282,7 @@ export default function About() {
       {/* CTA */}
       <CTA
         headline="Want to work together?"
-        subheadline="Book a free 20-minute call and let's talk about what you need. No pitch, no pressure—just an honest conversation."
+        subheadline="Book a free 20-minute call and let's talk about what you need. No pitch, no pressure, just an honest conversation."
       />
     </>
   )

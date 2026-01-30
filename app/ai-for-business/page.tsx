@@ -41,7 +41,7 @@ export default function AIForBusiness() {
         <div className="max-w-3xl mx-auto px-6">
           <div className="bg-gradient-to-br from-sage/10 to-sky/10 p-8 rounded-2xl border-2 border-sage/20">
             <h3 className="text-2xl font-semibold mb-3">Want to know if this applies to your business?</h3>
-            <p className="text-charcoal-light mb-6">Book a free 20-minute AI assessment. I&apos;ll audit your processes and tell you what&apos;s actually worth implementing—with no obligation to hire me.</p>
+            <p className="text-charcoal-light mb-6">Book a free 20-minute AI assessment. I&apos;ll audit your processes and tell you what&apos;s actually worth implementing, with no obligation to hire me.</p>
             <Link href="/#contact" className="inline-block px-8 py-4 bg-coral text-white font-bold text-lg rounded-full shadow-xl shadow-coral/40 hover:bg-coral-hover hover:-translate-y-1 transition-all duration-300">
               Book Your Free AI Assessment →
             </Link>
@@ -65,10 +65,10 @@ export default function AIForBusiness() {
       <section className="py-20 bg-white">
         <div className="max-w-3xl mx-auto px-6">
           <h2 className="text-3xl font-semibold mb-6">RAG Chatbots: AI That Knows Your Business</h2>
-          <p className="text-lg text-charcoal-light mb-5">One of the most practical AI implementations for businesses is called RAG (Retrieval-Augmented Generation). Don&apos;t worry about the technical term—here&apos;s what it actually means:</p>
+          <p className="text-lg text-charcoal-light mb-5">One of the most practical AI implementations for businesses is called RAG (Retrieval-Augmented Generation). Don&apos;t worry about the technical term, here&apos;s what it actually means:</p>
 
           <div className="bg-sage-light rounded-2xl p-8 mb-6">
-            <p className="text-lg text-charcoal mb-4"><strong>Think of it like this:</strong> A regular AI chatbot is like an intern who&apos;s really good at conversation but doesn&apos;t know anything about your company. A RAG chatbot is like that same intern, but now they have access to all your manuals, FAQs, policies, and documentation—and they can look up the exact answer before responding.</p>
+            <p className="text-lg text-charcoal mb-4"><strong>Think of it like this:</strong> A regular AI chatbot is like an intern who&apos;s really good at conversation but doesn&apos;t know anything about your company. A RAG chatbot is like that same intern, but now they have access to all your manuals, FAQs, policies, and documentation so they can look up the exact answer before responding.</p>
           </div>
 
           <h3 className="text-2xl font-semibold mb-4">Why RAG matters for your business</h3>

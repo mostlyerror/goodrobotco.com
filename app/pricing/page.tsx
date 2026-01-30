@@ -209,7 +209,7 @@ export default function Pricing() {
           <div className="space-y-6">
             <div className="bg-white rounded-2xl p-6 shadow-sm">
               <h3 className="font-semibold text-lg mb-3">What if my project doesn&apos;t fit these tiers?</h3>
-              <p className="text-charcoal-light">No problem. These are just guidelines. Book a free call and tell me what you need—I&apos;ll give you a custom quote that makes sense.</p>
+              <p className="text-charcoal-light">No problem. These are just guidelines. Book a free call and tell me what you need. I&apos;ll give you a custom quote that makes sense.</p>
             </div>
 
             <div className="bg-white rounded-2xl p-6 shadow-sm">

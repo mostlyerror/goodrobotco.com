@@ -137,7 +137,7 @@ export default function CTA({
           <article className="bg-white rounded-2xl p-8 shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col">
             <h3 className="text-2xl font-semibold mb-3">Schedule a Call</h3>
             <p className="text-charcoal-light mb-6">
-              Book a free 20-minute conversation. No pitch, no pressure—just an honest discussion about your needs.
+              Book a free 20-minute conversation. No pitch, no pressure, just an honest discussion about your needs.
             </p>
 
             {/* Benefit bullets */}
@@ -356,7 +356,7 @@ export default function CTA({
               <div className="bg-white/80 backdrop-blur-sm p-6 rounded-xl">
                 <div className="w-12 h-12 bg-mustard/10 text-mustard rounded-full flex items-center justify-center text-xl font-bold mb-4">3</div>
                 <h4 className="font-semibold mb-2">You&apos;ll get a clear next step</h4>
-                <p className="text-sm text-charcoal-light">Whether it&apos;s a proposal, a recommendation, or a referral to someone better suited—you&apos;ll know exactly where we stand.</p>
+                <p className="text-sm text-charcoal-light">Whether it&apos;s a proposal, a recommendation, or a referral to someone better suited, you&apos;ll know exactly where we stand.</p>
               </div>
             </div>
           </div>

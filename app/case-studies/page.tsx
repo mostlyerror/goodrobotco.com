@@ -12,7 +12,7 @@ const caseStudies = [
   {
     slug: "swapp",
     title: "SWAPP: Severe Weather Emergency Response",
-    tagline: "From 11 minutes to 2.5 minutes—80% faster intake during emergencies",
+    tagline: "From 11 minutes to 2.5 minutes. 80% faster intake during emergencies",
     description:
       "Led development of a rapid-response system for Adams County, Colorado that streamlined hotel voucher distribution for people experiencing homelessness during severe weather. Weekend prototype to production deployment, preventing 8,300+ nights of unsheltered homelessness.",
     highlights: [
@@ -28,7 +28,7 @@ const caseStudies = [
     title: "Mayday: Intelligent Lead Generation",
     tagline: "From 15 hours/week of manual work to zero",
     description:
-      "Built an automated system that runs 24/7, scanning local businesses and delivering daily digests of pre-qualified opportunities—broken sites, missing sites, and businesses ready for an upgrade. Eliminates the grunt work of lead generation entirely.",
+      "Built an automated system that runs 24/7, scanning local businesses and delivering daily digests of pre-qualified opportunities: broken sites, missing sites, and businesses ready for an upgrade. Eliminates the grunt work of lead generation entirely.",
     highlights: [
       "~15 hours of manual work eliminated weekly",
       "10-15k businesses scanned monthly within budget",

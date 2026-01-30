@@ -92,7 +92,7 @@ export default function Home() {
               Tech consulting that actually <span className="text-coral italic">makes sense.</span>
             </h1>
             <p className="text-lg text-charcoal-light max-w-[550px] mb-8">
-              From AI integration to custom development to tech rescue—I build solutions that work for small businesses. No jargon, no overselling, no outdated tech.
+              From AI integration to custom development to tech rescue. I build solutions that work for small businesses. No jargon, no overselling, no outdated tech.
             </p>
 
             {/* Illustration */}
@@ -124,7 +124,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-semibold mb-3.5">How we approach tech for your business</h2>
-            <p className="text-lg text-charcoal-light">Assessment first, then implementation—with the right tools for your needs.</p>
+            <p className="text-lg text-charcoal-light">Assessment first, then implementation with the right tools for your needs.</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -137,13 +137,13 @@ export default function Home() {
             <div className="bg-white p-8 rounded-2xl shadow-md">
               <div className="text-5xl mb-5">⚡</div>
               <h3 className="text-xl font-semibold mb-3">Modern Tools</h3>
-              <p className="text-charcoal-light">I use AI, automation, and latest frameworks—not legacy tech from 2010. You get solutions built with current best practices and proven technologies.</p>
+              <p className="text-charcoal-light">I use AI, automation, and latest frameworks, not legacy tech from 2010. You get solutions built with current best practices and proven technologies.</p>
             </div>
 
             <div className="bg-white p-8 rounded-2xl shadow-md">
               <div className="text-5xl mb-5">🛠️</div>
               <h3 className="text-xl font-semibold mb-3">Practical & Maintainable</h3>
-              <p className="text-charcoal-light">Solutions that your team can actually use and maintain—not impressive demos that break after launch or require constant hand-holding.</p>
+              <p className="text-charcoal-light">Solutions that your team can actually use and maintain, not impressive demos that break after launch or require constant hand-holding.</p>
             </div>
           </div>
         </div>
@@ -154,7 +154,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-8">
             <Testimonial
-              quote="[The app] has allowed me to go through the line faster, and [our clients'] anxiety has decreased because they don't have to fill out so much paperwork—and it has allowed them to speak up more on their needs."
+              quote="[The app] has allowed me to go through the line faster, and [our clients'] anxiety has decreased because they don't have to fill out so much paperwork, and it has allowed them to speak up more on their needs."
               author="Nubia Saenz"
               title="Caseworker"
               company="Almost Home"
@@ -204,7 +204,7 @@ export default function Home() {
             <div className="space-y-4 text-charcoal-light mb-8">
               <p>I bring senior-level experience from building systems at scale, now working directly with small and mid-size businesses. My focus: understanding your real problem, then using the right tool to solve it.</p>
               <p>That might be AI. It might be simple automation. It might be fixing technical debt that&apos;s been slowing you down. I won&apos;t overcomplicate things or sell you solutions you don&apos;t need.</p>
-              <p>You&apos;ll get honest assessment, modern tools applied practically, and tech solutions that are actually maintainable—not demos that break after launch.</p>
+              <p>You&apos;ll get honest assessment, modern tools applied practically, and tech solutions that are actually maintainable. Not demos that break after launch.</p>
               <p>Currently accepting 2-3 new projects per month. That means accessible pricing and highly personalized attention to your specific needs. Whether that&apos;s custom development, tech rescue, AI implementation, or just auditing whether your current tech stack makes sense.</p>
             </div>
             <div className="flex items-center gap-4">
@@ -234,10 +234,10 @@ export default function Home() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { emoji: '💻', title: 'Custom Development', desc: "When off-the-shelf doesn't cut it, I build what you need. Web apps, internal tools, APIs, integrations—using modern frameworks and AI capabilities when they add value." },
+              { emoji: '💻', title: 'Custom Development', desc: "When off-the-shelf doesn't cut it, I build what you need. Web apps, internal tools, APIs, integrations using modern frameworks and AI capabilities when they add value." },
               { emoji: '🚑', title: 'Tech Rescue', desc: "Inherited a broken project? Developer ghosted you? I'll assess the damage, fix what's broken, and get you back on track." },
-              { emoji: '🤖', title: 'AI Integration', desc: "AI chatbots, document processing, intelligent assistants—implemented practically when they're the right tool for your problem. No hype, just honest assessment." },
-              { emoji: '⚡', title: 'Process Automation', desc: "Eliminate repetitive tasks with smart automation. Whether it's AI-powered or simple workflows—whichever saves you the most time." },
+              { emoji: '🤖', title: 'AI Integration', desc: "AI chatbots, document processing, intelligent assistants implemented practically when they're the right tool for your problem. No hype, just honest assessment." },
+              { emoji: '⚡', title: 'Process Automation', desc: "Eliminate repetitive tasks with smart automation. Whether it's AI-powered or simple workflows, whichever saves you the most time." },
               { emoji: '🔍', title: 'Tech Assessment', desc: "Not sure where to start? I'll audit your current setup and give you a prioritized roadmap of what's worth fixing, what's fine, and what's costing you money." },
               { emoji: '🛠️', title: 'Ongoing Support', desc: "I don't disappear after launch. Questions come up, requirements change, things break. I'm here for maintenance, updates, and evolution of your systems." },
             ].map((service, i) => (
@@ -256,7 +256,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-6">
           <div className="max-w-[550px] mb-12">
             <h2 className="text-3xl md:text-4xl font-semibold mb-3.5">Why work with me?</h2>
-            <p className="text-lg text-charcoal-light">I work with service businesses, agencies, and local businesses who need AI assessed and implemented properly. You&apos;ll work directly with me—no account managers, no runaround.</p>
+            <p className="text-lg text-charcoal-light">I work with service businesses, agencies, and local businesses who need AI assessed and implemented properly. You&apos;ll work directly with me. No account managers, no runaround.</p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -402,19 +402,19 @@ export default function Home() {
           <FAQ items={[
             {
               question: "What if a developer ghosted us and our website is broken?",
-              answer: "This happens more often than you'd think. I specialize in tech rescue—assessing the damage, fixing what's broken, and getting you back on track. First, I'll audit what you have and give you an honest assessment: what's salvageable, what needs rebuilding, and what it'll cost. Then I'll fix it in a way that's maintainable so you're not stuck in this situation again."
+              answer: "This happens more often than you'd think. I specialize in tech rescue: assessing the damage, fixing what's broken, and getting you back on track. First, I'll audit what you have and give you an honest assessment of what's salvageable, what needs rebuilding, and what it'll cost. Then I'll fix it in a way that's maintainable so you're not stuck in this situation again."
             },
             {
               question: "Can AI actually help my business?",
-              answer: "Maybe. I cut through the hype and assess whether AI makes sense for your specific situation. In our discovery call, I'll audit your processes, show you real examples of what works (and what doesn't), and give you honest guidance. If AI fits, I'll implement it practically. If it doesn't, I'll tell you what would work better—whether that's simple automation, custom development, or something else entirely."
+              answer: "Maybe. I cut through the hype and assess whether AI makes sense for your specific situation. In our discovery call, I'll audit your processes, show you real examples of what works (and what doesn't), and give you honest guidance. If AI fits, I'll implement it practically. If it doesn't, I'll tell you what would work better, whether that's simple automation, custom development, or something else entirely."
             },
             {
               question: "Why am I being quoted $50K for simple software?",
-              answer: "Because many agencies overcomplicate things or pad their estimates. I focus on right-sized solutions—matching the complexity to your actual needs. A $50K quote might be justified for a complex system, but often it's overkill. I'll give you an honest assessment of what you actually need and what it should cost, with transparent pricing and no hidden fees."
+              answer: "Because many agencies overcomplicate things or pad their estimates. I focus on right-sized solutions that match the complexity to your actual needs. A $50K quote might be justified for a complex system, but often it's overkill. I'll give you an honest assessment of what you actually need and what it should cost, with transparent pricing and no hidden fees."
             },
             {
               question: "How can I automate manual processes?",
-              answer: "Depends on what you're trying to automate. Simple repetitive tasks often just need workflow automation (Zapier, Make, or custom scripts). More complex tasks involving documents, customer questions, or unstructured data might benefit from AI. I'll assess your specific processes and recommend the simplest solution that actually works—whether that's automation, AI, or a combination."
+              answer: "Depends on what you're trying to automate. Simple repetitive tasks often just need workflow automation (Zapier, Make, or custom scripts). More complex tasks involving documents, customer questions, or unstructured data might benefit from AI. I'll assess your specific processes and recommend the simplest solution that actually works, whether that's automation, AI, or a combination."
             }
           ]} />
         </div>
@@ -462,26 +462,28 @@ export default function Home() {
                       </h3>
                     </div>
 
-                    <p className="text-charcoal-light text-sm mb-5 leading-relaxed">
+                    <p className="text-charcoal-light text-sm leading-relaxed">
                       AI-powered lead generation system that eliminates 15 hours/week of manual prospecting by
                       intelligently scanning businesses and delivering daily digests of pre-qualified leads.
                     </p>
 
-                    {/* Key stats */}
-                    <div className="grid grid-cols-2 gap-3 mb-4">
-                      <div>
-                        <div className="text-2xl font-bold text-coral mb-0.5">~15 hours</div>
-                        <div className="text-xs text-charcoal/60">Eliminated weekly</div>
+                    {/* Key stats and CTA - pushed to bottom */}
+                    <div className="mt-auto">
+                      <div className="grid grid-cols-2 gap-3 mb-4">
+                        <div>
+                          <div className="text-2xl font-bold text-coral mb-0.5">~15 hours</div>
+                          <div className="text-xs text-charcoal/60">Eliminated weekly</div>
+                        </div>
+                        <div>
+                          <div className="text-2xl font-bold text-sage mb-0.5">10-15k</div>
+                          <div className="text-xs text-charcoal/60">Businesses scanned/month</div>
+                        </div>
                       </div>
-                      <div>
-                        <div className="text-2xl font-bold text-sage mb-0.5">10-15k</div>
-                        <div className="text-xs text-charcoal/60">Businesses scanned/month</div>
-                      </div>
-                    </div>
 
-                    <div className="mt-auto flex items-center gap-2 text-coral font-semibold text-sm group-hover:gap-3 transition-all">
-                      Read case study
-                      <span>→</span>
+                      <div className="flex items-center gap-2 text-coral font-semibold text-sm group-hover:gap-3 transition-all">
+                        Read case study
+                        <span>→</span>
+                      </div>
                     </div>
                   </div>
                 </Link>
@@ -507,26 +509,28 @@ export default function Home() {
                       </h3>
                     </div>
 
-                    <p className="text-charcoal-light text-sm mb-5 leading-relaxed">
+                    <p className="text-charcoal-light text-sm leading-relaxed">
                       Intelligent emergency response system that reduced intake time by 80% using automated workflows and
                       digital forms, preventing 8,300+ nights of unsheltered homelessness.
                     </p>
 
-                    {/* Key stats */}
-                    <div className="grid grid-cols-2 gap-3 mb-4">
-                      <div>
-                        <div className="text-2xl font-bold text-coral mb-0.5">80%</div>
-                        <div className="text-xs text-charcoal/60">Faster intake time</div>
+                    {/* Key stats and CTA - pushed to bottom */}
+                    <div className="mt-auto">
+                      <div className="grid grid-cols-2 gap-3 mb-4">
+                        <div>
+                          <div className="text-2xl font-bold text-coral mb-0.5">80%</div>
+                          <div className="text-xs text-charcoal/60">Faster intake time</div>
+                        </div>
+                        <div>
+                          <div className="text-2xl font-bold text-sage mb-0.5">15x</div>
+                          <div className="text-xs text-charcoal/60">Capacity increase</div>
+                        </div>
                       </div>
-                      <div>
-                        <div className="text-2xl font-bold text-sage mb-0.5">15x</div>
-                        <div className="text-xs text-charcoal/60">Capacity increase</div>
-                      </div>
-                    </div>
 
-                    <div className="mt-auto flex items-center gap-2 text-coral font-semibold text-sm group-hover:gap-3 transition-all">
-                      Read case study
-                      <span>→</span>
+                      <div className="flex items-center gap-2 text-coral font-semibold text-sm group-hover:gap-3 transition-all">
+                        Read case study
+                        <span>→</span>
+                      </div>
                     </div>
                   </div>
                 </Link>
@@ -552,26 +556,28 @@ export default function Home() {
                       </h3>
                     </div>
 
-                    <p className="text-charcoal-light text-sm mb-5 leading-relaxed">
+                    <p className="text-charcoal-light text-sm leading-relaxed">
                       Helped Houston tutoring agency optimize billing operations and adopt the right business
                       management platform, saving hours weekly while enabling growth.
                     </p>
 
-                    {/* Key stats */}
-                    <div className="grid grid-cols-2 gap-3 mb-4">
-                      <div>
-                        <div className="text-2xl font-bold text-coral mb-0.5">Hours</div>
-                        <div className="text-xs text-charcoal/60">Saved weekly</div>
+                    {/* Key stats and CTA - pushed to bottom */}
+                    <div className="mt-auto">
+                      <div className="grid grid-cols-2 gap-3 mb-4">
+                        <div>
+                          <div className="text-2xl font-bold text-coral mb-0.5">Hours</div>
+                          <div className="text-xs text-charcoal/60">Saved weekly</div>
+                        </div>
+                        <div>
+                          <div className="text-2xl font-bold text-sage mb-0.5">3</div>
+                          <div className="text-xs text-charcoal/60">Vendors evaluated</div>
+                        </div>
                       </div>
-                      <div>
-                        <div className="text-2xl font-bold text-sage mb-0.5">3</div>
-                        <div className="text-xs text-charcoal/60">Vendors evaluated</div>
-                      </div>
-                    </div>
 
-                    <div className="mt-auto flex items-center gap-2 text-coral font-semibold text-sm group-hover:gap-3 transition-all">
-                      Read case study
-                      <span>→</span>
+                      <div className="flex items-center gap-2 text-coral font-semibold text-sm group-hover:gap-3 transition-all">
+                        Read case study
+                        <span>→</span>
+                      </div>
                     </div>
                   </div>
                 </Link>

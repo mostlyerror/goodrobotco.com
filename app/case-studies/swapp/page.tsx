@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   description: "How we built a rapid-response system that reduced intake time from 11 minutes to 2.5 minutes and prevented 8,300+ nights of unsheltered homelessness.",
   openGraph: {
     title: "SWAPP: Severe Weather Emergency Response | Good Robot Co.",
-    description: "From weekend prototype to production—reducing intake time by 80% during Colorado's coldest winter.",
+    description: "From weekend prototype to production. Reducing intake time by 80% during Colorado's coldest winter.",
     url: `${SEO.baseUrl}/case-studies/swapp`,
     type: 'article',
     images: [
@@ -44,7 +44,7 @@ export default function SwappCaseStudy() {
       />
       <HeroSimple
         title="SWAPP: Severe Weather Emergency Response"
-        subtitle="From weekend prototype to production—reducing intake time by 80% during Colorado's coldest winter"
+        subtitle="From weekend prototype to production. Reducing intake time by 80% during Colorado's coldest winter"
       />
 
       <main className="max-w-4xl mx-auto px-6 py-16 space-y-16">
@@ -59,7 +59,7 @@ export default function SwappCaseStudy() {
             while caseworkers processed paperwork.
           </p>
           <p className="text-lg text-charcoal/80 leading-relaxed mb-8">
-            Centralized intake meant people had to choose between their belongings and shelter—with
+            Centralized intake meant people had to choose between their belongings and shelter. With
             no guarantee a room would still be available when they reached the front of the line. The
             program could only serve 60-80 people per night, leaving hundreds without help.
           </p>
@@ -74,7 +74,7 @@ export default function SwappCaseStudy() {
             />
           </div>
           <p className="text-sm text-charcoal/60 text-center mt-3">
-            Long lines at Historic City Hall during cold weather—the centralized intake bottleneck
+            Long lines at Historic City Hall during cold weather: the centralized intake bottleneck
           </p>
         </section>
 
@@ -120,7 +120,7 @@ export default function SwappCaseStudy() {
                 <span className="text-sage text-xl flex-shrink-0">✓</span>
                 <div>
                   <strong className="text-charcoal">Digital intake forms</strong> that store client
-                  data for repeat visits—no more filling out paperwork every time
+                  data for repeat visits so they don't fill out paperwork every time
                 </div>
               </div>
               <div className="flex items-start gap-3">
@@ -140,7 +140,7 @@ export default function SwappCaseStudy() {
               <div className="flex items-start gap-3">
                 <span className="text-sage text-xl flex-shrink-0">✓</span>
                 <div>
-                  <strong className="text-charcoal">CSV export</strong> for HMIS integration—no more
+                  <strong className="text-charcoal">CSV export</strong> for HMIS integration, no more
                   manual double-entry of client data
                 </div>
               </div>
@@ -200,7 +200,7 @@ export default function SwappCaseStudy() {
             <div className="bg-white border-l-4 border-sage p-6 rounded-r-lg shadow-sm">
               <p className="text-xl text-charcoal font-semibold mb-3">
                 &quot;[The app] has allowed me to go through the line faster, and [our clients&apos;]
-                anxiety has decreased because they don&apos;t have to fill out so much paperwork—and it
+                anxiety has decreased because they don&apos;t have to fill out so much paperwork, and it
                 has allowed them to speak up more on their needs.&quot;
               </p>
               <p className="text-charcoal/60">— Nubia Saenz, Almost Home caseworker</p>
@@ -217,7 +217,7 @@ export default function SwappCaseStudy() {
               />
             </div>
             <p className="text-sm text-charcoal/60 text-center mt-3">
-              Field-ready digital intake in action—meeting people where they are during severe weather
+              Field-ready digital intake in action, meeting people where they are during severe weather
             </p>
           </div>
         </section>

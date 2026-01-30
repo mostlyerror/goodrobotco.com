@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   description: "How we helped a growing tutoring agency streamline operations, evaluate business software, and implement the right platform for long-term growth.",
   openGraph: {
     title: "Let's Learn Together: Operations & Technology Advisory | Good Robot Co.",
-    description: "From manual spreadsheets to scalable systems—saving hours weekly and setting up a tutoring agency for growth.",
+    description: "From manual spreadsheets to scalable systems. Saving hours weekly and setting up a tutoring agency for growth.",
     url: `${SEO.baseUrl}/case-studies/llt`,
     type: 'article',
     images: [
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: "Let's Learn Together: Operations & Technology Advisory",
-    description: "From manual spreadsheets to scalable systems—saving hours weekly and setting up a tutoring agency for growth.",
+    description: "From manual spreadsheets to scalable systems. Saving hours weekly and setting up a tutoring agency for growth.",
     images: ['/og-image.png'],
   },
 };
@@ -43,7 +43,7 @@ export default function LLTCaseStudy() {
       />
       <HeroSimple
         title="Let's Learn Together: Operations & Technology Advisory"
-        subtitle="From manual spreadsheets to scalable systems—saving hours weekly and setting up a tutoring agency for growth"
+        subtitle="From manual spreadsheets to scalable systems. Saving hours weekly and setting up a tutoring agency for growth"
       />
 
       <main className="max-w-4xl mx-auto px-6 py-16 space-y-16">
@@ -66,7 +66,7 @@ export default function LLTCaseStudy() {
           <p className="text-lg text-charcoal/80 leading-relaxed mb-4">
             Everything ran through manual spreadsheets. Billing calculations were done by hand.
             Invoice generation was copy-paste. Every week, <strong>hours disappeared</strong> into
-            tedious administrative work that could be automated—but the team didn&apos;t have the
+            tedious administrative work that could be automated, but the team didn&apos;t have the
             technical background to know where to start.
           </p>
           <p className="text-lg text-charcoal/80 leading-relaxed">
@@ -174,7 +174,7 @@ export default function LLTCaseStudy() {
             <div className="bg-white p-6 rounded-lg border border-charcoal/10">
               <div className="text-3xl font-bold text-coral mb-2">Hours</div>
               <p className="text-charcoal/80">
-                <strong>Weekly time savings</strong> from optimized spreadsheets—immediate relief
+                <strong>Weekly time savings</strong> from optimized spreadsheets for immediate relief
                 before platform adoption
               </p>
             </div>
@@ -188,7 +188,7 @@ export default function LLTCaseStudy() {
             <div className="bg-white p-6 rounded-lg border border-charcoal/10">
               <div className="text-3xl font-bold text-sage mb-2">2 months</div>
               <p className="text-charcoal/80">
-                <strong>From chaos to clarity</strong>—spreadsheet optimization to vendor selection
+                <strong>From chaos to clarity</strong>. Spreadsheet optimization to vendor selection
                 to implementation
               </p>
             </div>
@@ -216,7 +216,7 @@ export default function LLTCaseStudy() {
           <div className="space-y-4 text-lg text-charcoal/80 leading-relaxed">
             <p>
               <strong>Technical advisory for non-technical clients.</strong> Not every business
-              needs custom software—sometimes they need someone who can evaluate off-the-shelf
+              needs custom software. Sometimes they need someone who can evaluate off-the-shelf
               solutions, ask the right questions, and guide them to the best choice for their
               situation.
             </p>

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   description: "How we built an intelligent lead generation system that automatically discovers and qualifies web development opportunities.",
   openGraph: {
     title: "Mayday: Intelligent Lead Generation | Good Robot Co.",
-    description: "Automating the hunt for web development clients—from 15 hours/week of manual work to zero.",
+    description: "Automating the hunt for web development clients. From 15 hours/week of manual work to zero.",
     url: `${SEO.baseUrl}/case-studies/mayday`,
     type: 'article',
     images: [
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: "Mayday: Intelligent Lead Generation",
-    description: "Automating the hunt for web development clients—from 15 hours/week of manual work to zero.",
+    description: "Automating the hunt for web development clients. From 15 hours/week of manual work to zero.",
     images: ['/case-studies/mayday/dashboard.png'],
   },
 };
@@ -43,7 +43,7 @@ export default function MaydayCaseStudy() {
       />
       <HeroSimple
         title="Mayday: Intelligent Lead Generation"
-        subtitle="Automating the hunt for web development clients—from 15 hours/week of manual work to zero"
+        subtitle="Automating the hunt for web development clients. From 15 hours/week of manual work to zero"
       />
 
       <main className="max-w-4xl mx-auto px-6 py-16 space-y-16">
@@ -122,7 +122,7 @@ export default function MaydayCaseStudy() {
             <div className="bg-white p-6 rounded-lg border border-charcoal/10 hover:border-coral/30 transition-colors">
               <h3 className="text-xl font-bold text-coral mb-2">Fix Leads</h3>
               <p className="text-charcoal/70 mb-3">
-                Businesses with broken websites—SSL errors, expired hosting, parked domains.
+                Businesses with broken websites: SSL errors, expired hosting, parked domains.
                 <strong className="block mt-2 text-charcoal">The pitch: &quot;Your site is down. I can fix it today.&quot;</strong>
               </p>
               <p className="text-sm text-charcoal/60 mt-3">
@@ -171,7 +171,7 @@ export default function MaydayCaseStudy() {
               <h3 className="font-bold text-charcoal mb-2">Smart Retry Logic</h3>
               <p className="text-charcoal/80">
                 Progressive timeout strategy distinguishes between slow sites and broken sites. The system
-                retries with increasing timeouts before marking anything as down—eliminates false positives
+                retries with increasing timeouts before marking anything as down to eliminate false positives
                 without missing genuinely broken sites.
               </p>
             </div>
@@ -204,7 +204,7 @@ export default function MaydayCaseStudy() {
             <div>
               <h3 className="font-bold text-charcoal mb-2">Intelligent Web Scraping</h3>
               <p className="text-charcoal/80">
-                The system doesn&apos;t just scrape data—it understands business context. It can identify relevant information from diverse website structures, adapt to changes, and classify businesses based on multiple signals.
+                The system doesn&apos;t just scrape data, it understands business context. It can identify relevant information from diverse website structures, adapt to changes, and classify businesses based on multiple signals.
               </p>
             </div>
             <div>
@@ -216,7 +216,7 @@ export default function MaydayCaseStudy() {
             <div>
               <h3 className="font-bold text-charcoal mb-2">Automated Research & Enrichment</h3>
               <p className="text-charcoal/80">
-                The system automatically researches each business, pulling relevant context from multiple sources and synthesizing it into actionable lead intelligence—work that would take a human 15-30 minutes per lead.
+                The system automatically researches each business, pulling relevant context from multiple sources and synthesizing it into actionable lead intelligence. Work that would take a human 15-30 minutes per lead.
               </p>
             </div>
           </div>
@@ -233,7 +233,7 @@ export default function MaydayCaseStudy() {
           <p className="text-lg text-charcoal/80 leading-relaxed mb-6">
             Daily digest of pre-qualified leads with business details, contact info, and the exact issue
             to reference in your outreach. Broken sites, missing websites, businesses relying only on
-            social media—all categorized and ready for immediate follow-up.
+            social media, all categorized and ready for immediate follow-up.
           </p>
           <div className="bg-gradient-to-br from-sage/20 to-sky/15 p-6 rounded-lg">
             <p className="text-lg text-charcoal/90 font-semibold mb-2">
