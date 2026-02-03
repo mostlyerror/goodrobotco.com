@@ -209,7 +209,7 @@ export default function Home() {
             </div>
             <div className="flex items-center gap-4">
               <Image
-                src="/ben-headshot.jpg"
+                src="/ben-headshot-3.jpg"
                 alt="Ben Poon"
                 width={96}
                 height={96}

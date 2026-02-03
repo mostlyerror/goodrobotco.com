@@ -42,7 +42,7 @@ export default function About() {
           <div className="flex flex-col md:flex-row gap-12 items-start mb-12">
             <div className="md:w-1/3 flex-shrink-0">
               <Image
-                src="/ben-headshot-2.jpg"
+                src="/ben-headshot-3.jpg"
                 alt="Ben Poon"
                 width={400}
                 height={400}
