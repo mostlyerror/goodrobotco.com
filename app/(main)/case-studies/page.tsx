@@ -5,49 +5,49 @@ import CTA from "@/components/CTA";
 
 export const metadata: Metadata = {
   title: "Case Studies | Good Robot Co.",
-  description: "Real projects, real results. See how we solve complex technical challenges and deliver business value.",
+  description: "Real projects, real growth. See how we help businesses generate leads, increase capacity, and optimize operations.",
 };
 
 const caseStudies = [
   {
-    slug: "swapp",
-    title: "SWAPP: Severe Weather Emergency Response",
-    tagline: "From 11 minutes to 2.5 minutes. 80% faster intake during emergencies",
+    slug: "mayday",
+    title: "Mayday: Automated Lead Generation Pipeline",
+    tagline: "From 15 hours/week of manual prospecting to a pipeline that fills itself",
     description:
-      "Led development of a rapid-response system for Adams County, Colorado that streamlined hotel voucher distribution for people experiencing homelessness during severe weather. Weekend prototype to production deployment, preventing 8,300+ nights of unsheltered homelessness.",
+      "Built an automated lead generation system that runs 24/7, scanning local businesses and delivering daily digests of pre-qualified opportunities. Eliminated manual prospecting entirely and created a repeatable pipeline for growth.",
     highlights: [
-      "80% reduction in intake time (11 min → 2.5 min)",
-      "15x increase in capacity (8,300+ nights vs. 500)",
+      "~15 hours of manual prospecting eliminated weekly",
+      "10-15k businesses scanned monthly within budget",
+      "Intelligent classification into 3 high-value lead types",
+      "24/7 continuous pipeline that never sleeps",
+    ],
+    tech: ["Next.js 14", "PostgreSQL", "Google Places API", "TypeScript"],
+  },
+  {
+    slug: "swapp",
+    title: "SWAPP: 15x Operational Capacity Growth",
+    tagline: "From serving 500 to 8,300+ without adding headcount",
+    description:
+      "Built automated workflows and digital systems that unlocked 15x operational capacity for Adams County, Colorado's emergency response program. The team served dramatically more people with the same resources by eliminating manual bottlenecks.",
+    highlights: [
+      "80% reduction in processing time (11 min → 2.5 min)",
+      "15x increase in capacity (8,300+ vs. 500)",
       "Weekend prototype to production in weeks",
       "560+ people served in one cold weather season",
     ],
     tech: ["Ruby on Rails", "PostgreSQL", "Twilio", "SendGrid"],
   },
   {
-    slug: "mayday",
-    title: "Mayday: Intelligent Lead Generation",
-    tagline: "From 15 hours/week of manual work to zero",
-    description:
-      "Built an automated system that runs 24/7, scanning local businesses and delivering daily digests of pre-qualified opportunities: broken sites, missing sites, and businesses ready for an upgrade. Eliminates the grunt work of lead generation entirely.",
-    highlights: [
-      "~15 hours of manual work eliminated weekly",
-      "10-15k businesses scanned monthly within budget",
-      "Intelligent classification into 3 high-value lead types",
-      "24/7 continuous monitoring and discovery",
-    ],
-    tech: ["Next.js 14", "PostgreSQL", "Google Places API", "TypeScript"],
-  },
-  {
     slug: "llt",
-    title: "Let's Learn Together: Operations & Technology Advisory",
-    tagline: "From manual spreadsheets to scalable systems",
+    title: "Let's Learn Together: Operational Optimization",
+    tagline: "From manual spreadsheets to scalable systems that enable growth",
     description:
-      "Helped a Houston tutoring agency optimize billing operations and adopt the right business management platform. Evaluated three vendors, provided technical guidance, and implemented a solution that saves hours weekly while enabling growth.",
+      "Helped a Houston tutoring agency optimize billing operations and adopt the right business management platform. Evaluated three vendors, provided strategic guidance, and implemented a solution that saves hours weekly while enabling the business to scale.",
     highlights: [
-      "Hours of weekly time savings from spreadsheet optimization",
-      "3 vendors evaluated with technical guidance",
+      "Hours of weekly time savings from operational optimization",
+      "3 vendors evaluated with strategic guidance",
       "2-month engagement from chaos to clarity",
-      "Platform ready to launch and scale with business",
+      "Platform ready to scale with business growth",
     ],
     tech: ["Spreadsheet Optimization", "Vendor Evaluation", "Teachworks", "Operations Advisory"],
   },
@@ -58,7 +58,7 @@ export default function CaseStudiesPage() {
     <>
       <HeroSimple
         title="Case Studies"
-        subtitle="Real projects, real results. Technical problem-solving in action."
+        subtitle="Real projects, real growth. See how the right technology drives measurable business outcomes."
       />
 
       <main className="max-w-6xl mx-auto px-6 py-16">
@@ -117,8 +117,8 @@ export default function CaseStudiesPage() {
 
       {/* CTA - Full width section outside constrained container */}
       <CTA
-        headline="Ready to build something remarkable?"
-        subheadline="Let's discuss how we can solve your technical challenges."
+        headline="Ready to see results like these?"
+        subheadline="Let's discuss how we can drive growth for your business."
       />
     </>
   );

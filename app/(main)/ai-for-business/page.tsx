@@ -4,11 +4,11 @@ import HeroSimple from '@/components/HeroSimple'
 import CTA from '@/components/CTA'
 
 export const metadata: Metadata = {
-  title: 'Can AI Actually Help My Business? | Good Robot Co.',
-  description: 'A practical guide to understanding if and how AI can help your small or mid-size business save time, reduce costs, and serve customers better.',
+  title: 'AI for Business Growth | Good Robot Co.',
+  description: 'A practical guide to using AI for business growth - lead generation, speed-to-lead, customer retention, and revenue-driving automation for small and mid-size businesses.',
   openGraph: {
-    title: 'Can AI Actually Help My Business? | Good Robot Co.',
-    description: 'A practical guide to understanding if and how AI can help your small or mid-size business save time, reduce costs, and serve customers better.',
+    title: 'AI for Business Growth | Good Robot Co.',
+    description: 'A practical guide to using AI for business growth - lead generation, speed-to-lead, customer retention, and revenue-driving automation for small and mid-size businesses.',
     url: 'https://goodrobotco.com/ai-for-business',
     type: 'article',
     images: [
@@ -16,14 +16,14 @@ export const metadata: Metadata = {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Can AI Actually Help My Business? - Good Robot Co.',
+        alt: 'AI for Business Growth - Good Robot Co.',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Can AI Actually Help My Business? | Good Robot Co.',
-    description: 'A practical guide to understanding if and how AI can help your small or mid-size business save time, reduce costs, and serve customers better.',
+    title: 'AI for Business Growth | Good Robot Co.',
+    description: 'A practical guide to using AI for business growth - lead generation, speed-to-lead, customer retention, and revenue-driving automation for small and mid-size businesses.',
     images: ['/og-image.png'],
   },
 }
@@ -32,18 +32,18 @@ export default function AIForBusiness() {
   return (
     <>
       <HeroSimple
-        title="Can AI actually help my business?"
-        subtitle="Everyone's talking about AI. But for most small and mid-size business owners, it's unclear what's real, what's hype, and whether any of it applies to them. This guide will help you figure that out."
+        title="Can AI actually grow my business?"
+        subtitle="Everyone's talking about AI. But for most small business owners, the real question isn't whether AI works - it's whether it can help you get more leads, close more sales, and keep more customers. This guide will help you figure that out."
       />
 
       {/* Prominent CTA */}
       <section className="py-16 bg-white">
         <div className="max-w-3xl mx-auto px-6">
           <div className="bg-gradient-to-br from-sage/10 to-sky/10 p-8 rounded-2xl border-2 border-sage/20">
-            <h3 className="text-2xl font-semibold mb-3">Want to know if this applies to your business?</h3>
-            <p className="text-charcoal-light mb-6">Book a free 20-minute AI assessment. I&apos;ll audit your processes and tell you what&apos;s actually worth implementing, with no obligation to hire me.</p>
+            <h3 className="text-2xl font-semibold mb-3">Want to know how AI can drive growth for your business?</h3>
+            <p className="text-charcoal-light mb-6">Book a free 20-minute growth audit. I&apos;ll assess your lead generation, speed-to-lead, and customer retention and tell you where AI can drive real revenue, with no obligation to hire me.</p>
             <Link href="/#contact" className="inline-block px-8 py-4 bg-coral text-white font-bold text-lg rounded-full shadow-xl shadow-coral/40 hover:bg-coral-hover hover:-translate-y-1 transition-all duration-300">
-              Book Your Free AI Assessment →
+              Book Your Free Growth Assessment →
             </Link>
           </div>
         </div>
@@ -57,6 +57,7 @@ export default function AIForBusiness() {
           <p className="text-lg text-charcoal-light mb-5">The AI that&apos;s useful for most businesses right now falls into two categories:</p>
           <p className="text-lg text-charcoal-light mb-5"><strong>1. Assistants that can understand and generate text.</strong> Think ChatGPT. These can write, summarize, answer questions, and have conversations. They can be trained on your specific business information so they actually know your products, policies, and procedures.</p>
           <p className="text-lg text-charcoal-light mb-5"><strong>2. Automation that handles repetitive tasks.</strong> Sorting emails, extracting data from documents, categorizing support requests, generating reports. Things that used to require a human clicking and copying can often be automated.</p>
+          <p className="text-lg text-charcoal-light mb-5"><strong>3. Growth engines that work while you sleep.</strong> Automated lead generation, speed-to-lead systems, review solicitation, and re-engagement campaigns that run 24/7. These are the AI use cases that directly impact your top line.</p>
           <p className="text-lg text-charcoal-light">If your business problem doesn&apos;t fit into one of those buckets, AI probably isn&apos;t the answer (yet). And that&apos;s fine.</p>
         </div>
       </section>
@@ -77,19 +78,19 @@ export default function AIForBusiness() {
           <div className="space-y-3 mb-6">
             <div className="flex gap-3 items-start">
               <span className="text-coral text-xl">✓</span>
-              <p className="text-charcoal-light"><strong>Pull from your actual documents</strong> – Product specs, return policies, troubleshooting guides, internal wikis</p>
+              <p className="text-charcoal-light"><strong>Pull from your actual documents</strong>. Product specs, return policies, troubleshooting guides, internal wikis</p>
             </div>
             <div className="flex gap-3 items-start">
               <span className="text-coral text-xl">✓</span>
-              <p className="text-charcoal-light"><strong>Cite their sources</strong> – &quot;According to your shipping policy document, page 3...&quot;</p>
+              <p className="text-charcoal-light"><strong>Cite their sources</strong>. &quot;According to your shipping policy document, page 3...&quot;</p>
             </div>
             <div className="flex gap-3 items-start">
               <span className="text-coral text-xl">✓</span>
-              <p className="text-charcoal-light"><strong>Stay up to date</strong> – Update your docs, the chatbot instantly knows the new information</p>
+              <p className="text-charcoal-light"><strong>Stay up to date</strong>. Update your docs, the chatbot instantly knows the new information</p>
             </div>
             <div className="flex gap-3 items-start">
               <span className="text-coral text-xl">✓</span>
-              <p className="text-charcoal-light"><strong>Reduce hallucinations</strong> – They stick to what&apos;s in your knowledge base instead of making things up</p>
+              <p className="text-charcoal-light"><strong>Reduce hallucinations</strong>. They stick to what&apos;s in your knowledge base instead of making things up</p>
             </div>
           </div>
 
@@ -107,6 +108,10 @@ export default function AIForBusiness() {
               <p className="font-semibold text-lg mb-2">Onboarding Assistant</p>
               <p className="text-charcoal-light">New employees can ask questions about benefits, processes, and policies and get instant, accurate answers from your employee handbook.</p>
             </div>
+            <div className="border-l-4 border-sky pl-6">
+              <p className="font-semibold text-lg mb-2">Lead Qualification</p>
+              <p className="text-charcoal-light">Automatically qualify incoming leads, respond instantly, and route hot opportunities to your sales team before they go cold.</p>
+            </div>
           </div>
         </div>
       </section>
@@ -120,6 +125,34 @@ export default function AIForBusiness() {
           </div>
           
           <div className="space-y-8">
+            <div className="grid md:grid-cols-2 gap-8 items-center bg-cream rounded-3xl p-8 md:p-10">
+              <div>
+                <h3 className="text-2xl font-semibold mb-4 flex items-center gap-3">
+                  <span className="text-3xl">🎯</span> Lead Generation & Speed-to-Lead
+                </h3>
+                <p className="text-charcoal-light mb-4">AI-powered prospecting that scans for your ideal customers, qualifies leads instantly, and responds in minutes instead of hours. Stop losing leads to slow follow-up.</p>
+                <p className="text-charcoal-light"><strong>Real example:</strong> A service business automated lead qualification and reduced response time from 4 hours to 3 minutes. Conversion rate increased 40% in the first month.</p>
+              </div>
+              <div className="bg-coral-light rounded-2xl p-8">
+                <p className="text-sm uppercase tracking-wider text-charcoal-light font-semibold mb-2">Typical Savings</p>
+                <p className="text-2xl font-semibold text-charcoal">40-60% increase in lead conversion</p>
+              </div>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-8 items-center bg-cream rounded-3xl p-8 md:p-10">
+              <div>
+                <h3 className="text-2xl font-semibold mb-4 flex items-center gap-3">
+                  <span className="text-3xl">⭐</span> Customer Retention & Reputation
+                </h3>
+                <p className="text-charcoal-light mb-4">Automated review solicitation after service delivery, intelligent re-engagement campaigns for past customers, and reputation monitoring that alerts you to issues before they spread.</p>
+                <p className="text-charcoal-light"><strong>Real example:</strong> A local business automated review requests and went from 12 Google reviews to 85 in three months, dramatically improving local search visibility.</p>
+              </div>
+              <div className="bg-mustard-light rounded-2xl p-8">
+                <p className="text-sm uppercase tracking-wider text-charcoal-light font-semibold mb-2">Typical Savings</p>
+                <p className="text-2xl font-semibold text-charcoal">3-5x increase in review volume</p>
+              </div>
+            </div>
+
             <div className="grid md:grid-cols-2 gap-8 items-center bg-cream rounded-3xl p-8 md:p-10">
               <div>
                 <h3 className="text-2xl font-semibold mb-4 flex items-center gap-3">
@@ -182,7 +215,7 @@ export default function AIForBusiness() {
       {/* When NOT to use AI */}
       <section className="py-20 bg-cream">
         <div className="max-w-3xl mx-auto px-6">
-          <h2 className="text-3xl font-semibold mb-6">Where to be thoughtful</h2>
+          <h2 className="text-3xl font-semibold mb-6">Where to be thoughtful about AI</h2>
           <p className="text-lg text-charcoal-light mb-6">AI works best when you understand its limitations. Here&apos;s what to keep in mind:</p>
           
           <div className="space-y-4">
@@ -231,16 +264,16 @@ export default function AIForBusiness() {
             </div>
             <div className="flex gap-4 items-start">
               <span className="w-8 h-8 bg-coral text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">3</span>
-              <p className="text-lg text-charcoal-light">If it makes sense, we&apos;ll talk about a small pilot project. Low risk, clear outcomes, so you can see results before committing to anything bigger.</p>
+              <p className="text-lg text-charcoal-light">If it makes sense, we&apos;ll start with a quick win that shows measurable growth impact. Low risk, clear ROI, so you can see results before committing to anything bigger.</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* CTA */}
-      <CTA 
-        headline="Want to know if AI makes sense for your business?"
-        subheadline="Book a free 20-minute call. I'll ask about your specific situation and tell you honestly whether AI can help."
+      <CTA
+        headline="Want to know how AI can grow your business?"
+        subheadline="Book a free 20-minute growth assessment. I'll look at your specific situation and tell you honestly where AI can drive revenue."
       />
     </>
   )

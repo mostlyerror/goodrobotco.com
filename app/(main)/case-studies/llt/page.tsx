@@ -42,8 +42,8 @@ export default function LLTCaseStudy() {
         ])}
       />
       <HeroSimple
-        title="Let's Learn Together: Operations & Technology Advisory"
-        subtitle="From manual spreadsheets to scalable systems. Saving hours weekly and setting up a tutoring agency for growth"
+        title="Let's Learn Together: Operational Optimization"
+        subtitle="From manual spreadsheets to scalable systems. Eliminating operational bottlenecks to enable business growth"
       />
 
       <main className="max-w-4xl mx-auto px-6 py-16 space-y-16">
@@ -96,7 +96,7 @@ export default function LLTCaseStudy() {
                   &quot;I still have a lot of work to do, but your simple formulas and set up are
                   saving me hours and so much stress.&quot;
                 </p>
-                <p className="text-charcoal/60 text-sm">— Sara Ho, Founder</p>
+                <p className="text-charcoal/60 text-sm">- Sara Ho, Founder</p>
               </div>
             </div>
 
@@ -205,7 +205,7 @@ export default function LLTCaseStudy() {
             <p className="text-xl text-charcoal font-semibold mb-3">
               &quot;...and am LOVING this new system! Saves me so many hours of tedious work!&quot;
             </p>
-            <p className="text-charcoal/60">— Sara Ho, Founder</p>
+            <p className="text-charcoal/60">- Sara Ho, Founder</p>
           </div>
         </section>
 
@@ -241,8 +241,8 @@ export default function LLTCaseStudy() {
 
       {/* CTA - Full width section outside constrained container */}
       <CTA
-        headline="Need help choosing the right technology?"
-        subheadline="From vendor evaluation to custom solutions, we help businesses make smart technology decisions. Let's talk about your operations."
+        headline="Ready to optimize your operations for growth?"
+        subheadline="From operational audits to the right technology choices, we help businesses eliminate bottlenecks and scale. Let's talk about your growth goals."
       />
     </>
   );

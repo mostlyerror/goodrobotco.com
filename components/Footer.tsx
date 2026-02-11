@@ -11,16 +11,16 @@ export default function Footer() {
               Good Robot Co.
             </Link>
             <p className="text-white/60 text-[15px]">
-              Technology consulting for small and mid-size businesses. Honest guidance, practical solutions.
+              Technology & growth partner for small and mid-size businesses. Strategy, execution, and honest guidance.
             </p>
           </div>
           
           <div>
             <h4 className="text-sm uppercase tracking-wider text-white/50 font-semibold mb-3.5">Navigation</h4>
-            <Link href="/#how-it-works" className="block text-white/80 hover:text-coral py-1 text-[15px]">How It Works</Link>
-            <Link href="/#services" className="block text-white/80 hover:text-coral py-1 text-[15px]">Services</Link>
+            <Link href="/#services" className="block text-white/80 hover:text-coral py-1 text-[15px]">Growth Services</Link>
+            <Link href="/case-studies" className="block text-white/80 hover:text-coral py-1 text-[15px]">Case Studies</Link>
             <Link href="/pricing" className="block text-white/80 hover:text-coral py-1 text-[15px]">Pricing</Link>
-            <Link href="/ai-for-business" className="block text-white/80 hover:text-coral py-1 text-[15px]">AI for Your Business</Link>
+            <Link href="/ai-for-business" className="block text-white/80 hover:text-coral py-1 text-[15px]">AI for Growth</Link>
             <Link href="/blog" className="block text-white/80 hover:text-coral py-1 text-[15px]">Blog</Link>
             <Link href="/#contact" className="block text-white/80 hover:text-coral py-1 text-[15px]">Contact</Link>
           </div>
@@ -28,6 +28,7 @@ export default function Footer() {
           <div>
             <h4 className="text-sm uppercase tracking-wider text-white/50 font-semibold mb-3.5">Resources</h4>
             <Link href="/ai-for-business" className="block text-white/80 hover:text-coral py-1 text-[15px]">Can AI Help My Business?</Link>
+            <Link href="/about" className="block text-white/80 hover:text-coral py-1 text-[15px]">About</Link>
             <Link href="/blog" className="block text-white/80 hover:text-coral py-1 text-[15px]">Latest Articles</Link>
           </div>
         </div>

@@ -8,8 +8,8 @@ interface CTAProps {
 }
 
 export default function CTA({
-  headline = "Let's figure out what you actually need.",
-  subheadline = "Book a free 20-minute call or send me a message. No pitch, no pressure. Just an honest conversation about what's not working and how to fix it."
+  headline = "Let's figure out how to grow your business.",
+  subheadline = "Book a free 20-minute strategy call or send me a message. No pitch, no pressure. Just an honest conversation about what's holding you back and how to fix it."
 }: CTAProps) {
   // Form state management
   const [formData, setFormData] = useState({ name: '', email: '', message: '' })

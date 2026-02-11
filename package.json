@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "mv app/redesign app/_redesign 2>/dev/null; next build; r=$?; mv app/_redesign app/redesign 2>/dev/null; exit $r",
     "start": "next start",
     "lint": "next lint",
     "test:smoke": "node tests/smoke-tests.js",

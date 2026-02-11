@@ -43,7 +43,7 @@ export default function MaydayCaseStudy() {
       />
       <HeroSimple
         title="Mayday: Intelligent Lead Generation"
-        subtitle="Automating the hunt for web development clients. From 15 hours/week of manual work to zero"
+        subtitle="Automated lead generation that fills your pipeline while you sleep. From 15 hours/week of manual prospecting to zero"
       />
 
       <main className="max-w-4xl mx-auto px-6 py-16 space-y-16">
@@ -250,8 +250,8 @@ export default function MaydayCaseStudy() {
 
       {/* CTA - Full width section outside constrained container */}
       <CTA
-        headline="Need a custom solution like this?"
-        subheadline="We build intelligent automation systems that solve real business problems. Let's talk about your project."
+        headline="Want a lead pipeline that fills itself?"
+        subheadline="We build automated lead generation and growth systems that drive real business outcomes. Let's talk about your growth goals."
       />
     </>
   );

@@ -6,10 +6,10 @@ export const SEO = {
     name: 'Good Robot Co.',
     url: 'https://goodrobotco.com',
     logo: 'https://goodrobotco.com/og-image.png',
-    description: 'Technology consulting for small and mid-size businesses. Honest guidance, practical solutions, and the right tech approach for your needs.',
+    description: 'Technology and growth consulting for small and mid-size businesses. Strategy, execution, and honest guidance to grow your revenue.',
     founder: { name: 'Ben Poon' },
     email: 'hello@goodrobotco.com',
-    serviceTypes: ['Technology Consulting', 'Web Development', 'Process Automation', 'AI Integration'],
+    serviceTypes: ['Technology Consulting', 'Growth Consulting', 'Lead Generation', 'Sales Automation', 'Customer Retention', 'AI Integration', 'Process Automation', 'Web Development'],
   },
 
   images: {

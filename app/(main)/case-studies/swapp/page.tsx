@@ -44,7 +44,7 @@ export default function SwappCaseStudy() {
       />
       <HeroSimple
         title="SWAPP: Severe Weather Emergency Response"
-        subtitle="From weekend prototype to production. Reducing intake time by 80% during Colorado's coldest winter"
+        subtitle="15x operational capacity growth. How automation unlocked massive scale without adding headcount"
       />
 
       <main className="max-w-4xl mx-auto px-6 py-16 space-y-16">
@@ -203,7 +203,7 @@ export default function SwappCaseStudy() {
                 anxiety has decreased because they don&apos;t have to fill out so much paperwork, and it
                 has allowed them to speak up more on their needs.&quot;
               </p>
-              <p className="text-charcoal/60">— Nubia Saenz, Almost Home caseworker</p>
+              <p className="text-charcoal/60">- Nubia Saenz, Almost Home caseworker</p>
             </div>
           </div>
           <div>
@@ -359,8 +359,8 @@ export default function SwappCaseStudy() {
 
       {/* CTA - Full width section outside constrained container */}
       <CTA
-        headline="Need someone who can build under pressure?"
-        subheadline="From rapid prototypes to production systems, we build software that works in the real world. Let's talk about your project."
+        headline="Ready to unlock operational capacity?"
+        subheadline="We build automation systems that help you serve more customers without adding headcount. Let's talk about your growth goals."
       />
     </>
   );

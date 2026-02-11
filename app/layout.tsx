@@ -1,13 +1,9 @@
 import type { Metadata } from 'next'
 import { DM_Sans, Fraunces } from 'next/font/google'
 import './globals.css'
-import Nav from '@/components/Nav'
-import Footer from '@/components/Footer'
 import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { SEO } from '@/lib/seo.constants'
-import { buildOrganizationSchema } from '@/lib/schema-builders'
-import { JsonLd } from '@/components/JsonLd'
 
 const dmSans = DM_Sans({
   subsets: ['latin'],
@@ -26,11 +22,11 @@ const fraunces = Fraunces({
 })
 
 export const metadata: Metadata = {
-  title: 'Modern Tech Consulting for Small Businesses | Good Robot Co.',
+  title: 'Technology & Growth Partner for Small Businesses | Good Robot Co.',
   description: SEO.organization.description,
   metadataBase: new URL(SEO.baseUrl),
   openGraph: {
-    title: 'Modern Tech Consulting for Small Businesses | Good Robot Co.',
+    title: 'Technology & Growth Partner for Small Businesses | Good Robot Co.',
     description: SEO.organization.description,
     url: SEO.baseUrl,
     siteName: SEO.siteName,
@@ -47,7 +43,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Modern Tech Consulting for Small Businesses | Good Robot Co.',
+    title: 'Technology & Growth Partner for Small Businesses | Good Robot Co.',
     description: SEO.organization.description,
     images: [SEO.images.og.url],
   },
@@ -61,10 +57,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${dmSans.variable} ${fraunces.variable}`}>
       <body className="bg-cream text-charcoal text-[17px] leading-relaxed overflow-x-hidden font-body">
-        <JsonLd data={buildOrganizationSchema()} />
-        <Nav />
-        <main>{children}</main>
-        <Footer />
+        {children}
         <Analytics />
         <SpeedInsights />
       </body>

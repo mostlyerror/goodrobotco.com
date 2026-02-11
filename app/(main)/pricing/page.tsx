@@ -4,10 +4,10 @@ import CTA from '@/components/CTA'
 
 export const metadata: Metadata = {
   title: 'Pricing | Good Robot Co.',
-  description: 'Transparent pricing for tech consulting, AI integration, custom development, and ongoing support. Solutions sized for small and mid-size businesses.',
+  description: 'Transparent pricing for tech consulting, AI integration, and growth partnership. Solutions sized for small and mid-size businesses ready to scale.',
   openGraph: {
     title: 'Pricing | Good Robot Co.',
-    description: 'Transparent pricing for tech consulting, AI integration, custom development, and ongoing support. Solutions sized for small and mid-size businesses.',
+    description: 'Transparent pricing for tech consulting, AI integration, and growth partnership. Solutions sized for small and mid-size businesses ready to scale.',
     url: 'https://goodrobotco.com/pricing',
     type: 'website',
     images: [
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Pricing | Good Robot Co.',
-    description: 'Transparent pricing for tech consulting, AI integration, custom development, and ongoing support. Solutions sized for small and mid-size businesses.',
+    description: 'Transparent pricing for tech consulting, AI integration, and growth partnership. Solutions sized for small and mid-size businesses ready to scale.',
     images: ['/og-image.png'],
   },
 }
@@ -32,16 +32,16 @@ export default function Pricing() {
     <>
       <HeroSimple
         title="Transparent Pricing"
-        subtitle="No hidden fees, no surprise invoices. Here's what you can expect to invest when working with Good Robot Co."
+        subtitle="No hidden fees, no surprise invoices. Investment tiers designed around the growth outcomes that matter most to your business."
       />
 
       {/* Pricing Philosophy */}
       <section className="py-16 bg-white">
         <div className="max-w-3xl mx-auto px-6">
           <div className="border-l-4 border-coral pl-8">
-            <h2 className="text-2xl font-semibold mb-4">Simple, straightforward pricing</h2>
+            <h2 className="text-2xl font-semibold mb-4">Simple, growth-focused pricing</h2>
             <div className="space-y-4 text-charcoal-light mb-6">
-              <p>I keep pricing simple and accessible for small businesses. You know exactly what you&apos;re paying, and there are no hidden fees or surprise invoices.</p>
+              <p>I keep pricing simple and accessible for small businesses. Every tier is built around a specific growth outcome, so you know exactly what you&apos;re investing in and the results you can expect.</p>
               <p>Every project includes planning, regular updates, and support after launch. If something&apos;s not clear, I&apos;ll explain it in plain English.</p>
             </div>
             <div>
@@ -72,100 +72,100 @@ export default function Pricing() {
 
           <div className="grid md:grid-cols-3 gap-8">
 
-            {/* Small Projects */}
+            {/* Quick Win */}
             <div className="bg-white rounded-2xl p-8 shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
               <div className="w-16 h-16 bg-sage-light rounded-2xl flex items-center justify-center text-3xl mb-6">⚡</div>
-              <h3 className="text-2xl font-semibold mb-2">Small Projects</h3>
+              <h3 className="text-2xl font-semibold mb-2">Quick Win</h3>
               <div className="mb-6">
                 <span className="text-4xl font-bold text-charcoal">$1,500</span>
-                <span className="text-charcoal-light"> – $3,000</span>
+                <span className="text-charcoal-light"> - $3,000</span>
               </div>
-              <p className="text-charcoal-light mb-6">Perfect for quick wins and getting started.</p>
+              <p className="text-charcoal-light mb-6">Fast-impact projects that show results in 1-2 weeks.</p>
 
               <div className="space-y-3 mb-8">
                 <p className="text-sm font-semibold text-charcoal mb-3">Good for:</p>
                 <div className="flex gap-2 items-start">
                   <span className="text-sage flex-shrink-0 mt-0.5">✓</span>
-                  <span className="text-sm text-charcoal-light">Simple websites (Squarespace, Webflow)</span>
+                  <span className="text-sm text-charcoal-light">Speed-to-lead automation</span>
                 </div>
                 <div className="flex gap-2 items-start">
                   <span className="text-sage flex-shrink-0 mt-0.5">✓</span>
-                  <span className="text-sm text-charcoal-light">Basic automations (Zapier, Make)</span>
+                  <span className="text-sm text-charcoal-light">Review solicitation system</span>
                 </div>
                 <div className="flex gap-2 items-start">
                   <span className="text-sage flex-shrink-0 mt-0.5">✓</span>
-                  <span className="text-sm text-charcoal-light">Quick fixes and improvements</span>
+                  <span className="text-sm text-charcoal-light">Basic process automation</span>
                 </div>
                 <div className="flex gap-2 items-start">
                   <span className="text-sage flex-shrink-0 mt-0.5">✓</span>
-                  <span className="text-sm text-charcoal-light">Tech consultation and planning</span>
+                  <span className="text-sm text-charcoal-light">Tech assessment & roadmap</span>
                 </div>
               </div>
 
               <p className="text-sm text-charcoal-light italic">Timeline: 1-2 weeks</p>
             </div>
 
-            {/* Medium Projects */}
+            {/* Growth Engine */}
             <div className="bg-white rounded-2xl p-8 shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border-2 border-coral">
               <div className="inline-block px-3 py-1 bg-coral text-white text-xs font-semibold rounded-full mb-4">Most Common</div>
-              <div className="w-16 h-16 bg-coral/10 rounded-2xl flex items-center justify-center text-3xl mb-6">🛠️</div>
-              <h3 className="text-2xl font-semibold mb-2">Medium Projects</h3>
+              <div className="w-16 h-16 bg-coral/10 rounded-2xl flex items-center justify-center text-3xl mb-6">📈</div>
+              <h3 className="text-2xl font-semibold mb-2">Growth Engine</h3>
               <div className="mb-6">
                 <span className="text-4xl font-bold text-charcoal">$3,000</span>
-                <span className="text-charcoal-light"> – $6,000</span>
+                <span className="text-charcoal-light"> - $6,000</span>
               </div>
-              <p className="text-charcoal-light mb-6">Custom builds and integrations that make a real impact.</p>
+              <p className="text-charcoal-light mb-6">Custom systems that drive measurable growth.</p>
 
               <div className="space-y-3 mb-8">
                 <p className="text-sm font-semibold text-charcoal mb-3">Good for:</p>
                 <div className="flex gap-2 items-start">
                   <span className="text-sage flex-shrink-0 mt-0.5">✓</span>
-                  <span className="text-sm text-charcoal-light">Custom websites with CMS</span>
+                  <span className="text-sm text-charcoal-light">Lead generation pipeline</span>
                 </div>
                 <div className="flex gap-2 items-start">
                   <span className="text-sage flex-shrink-0 mt-0.5">✓</span>
-                  <span className="text-sm text-charcoal-light">AI chatbots and assistants</span>
+                  <span className="text-sm text-charcoal-light">Sales automation workflow</span>
                 </div>
                 <div className="flex gap-2 items-start">
                   <span className="text-sage flex-shrink-0 mt-0.5">✓</span>
-                  <span className="text-sm text-charcoal-light">Process automation workflows</span>
+                  <span className="text-sm text-charcoal-light">AI-powered tools & chatbots</span>
                 </div>
                 <div className="flex gap-2 items-start">
                   <span className="text-sage flex-shrink-0 mt-0.5">✓</span>
-                  <span className="text-sm text-charcoal-light">Simple web apps and tools</span>
+                  <span className="text-sm text-charcoal-light">Custom web apps & integrations</span>
                 </div>
               </div>
 
               <p className="text-sm text-charcoal-light italic">Timeline: 3-5 weeks</p>
             </div>
 
-            {/* Ongoing Support */}
+            {/* Growth Partnership */}
             <div className="bg-white rounded-2xl p-8 shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
               <div className="w-16 h-16 bg-lavender-light rounded-2xl flex items-center justify-center text-3xl mb-6">🤝</div>
-              <h3 className="text-2xl font-semibold mb-2">Ongoing Support</h3>
+              <h3 className="text-2xl font-semibold mb-2">Growth Partnership</h3>
               <div className="mb-6">
                 <span className="text-charcoal-light text-base">Starting at</span>
                 <div><span className="text-4xl font-bold text-charcoal">$300</span><span className="text-charcoal-light text-xl">/mo</span></div>
               </div>
-              <p className="text-charcoal-light mb-6">Keep your tech running smoothly with regular help.</p>
+              <p className="text-charcoal-light mb-6">Ongoing tech partnership and growth optimization.</p>
 
               <div className="space-y-3 mb-8">
                 <p className="text-sm font-semibold text-charcoal mb-3">What&apos;s included:</p>
                 <div className="flex gap-2 items-start">
                   <span className="text-sage flex-shrink-0 mt-0.5">✓</span>
-                  <span className="text-sm text-charcoal-light">Email/Slack support</span>
+                  <span className="text-sm text-charcoal-light">Continuous system optimization</span>
                 </div>
                 <div className="flex gap-2 items-start">
                   <span className="text-sage flex-shrink-0 mt-0.5">✓</span>
-                  <span className="text-sm text-charcoal-light">Monthly check-ins</span>
+                  <span className="text-sm text-charcoal-light">Strategic growth guidance</span>
                 </div>
                 <div className="flex gap-2 items-start">
                   <span className="text-sage flex-shrink-0 mt-0.5">✓</span>
-                  <span className="text-sm text-charcoal-light">Bug fixes and updates</span>
+                  <span className="text-sm text-charcoal-light">Priority support & maintenance</span>
                 </div>
                 <div className="flex gap-2 items-start">
                   <span className="text-sage flex-shrink-0 mt-0.5">✓</span>
-                  <span className="text-sm text-charcoal-light">Small improvements</span>
+                  <span className="text-sm text-charcoal-light">New opportunity identification</span>
                 </div>
               </div>
 
@@ -223,6 +223,11 @@ export default function Pricing() {
             </div>
 
             <div className="bg-white rounded-2xl p-6 shadow-sm">
+              <h3 className="font-semibold text-lg mb-3">What does &apos;Growth Partnership&apos; actually mean?</h3>
+              <p className="text-charcoal-light">It means I don&apos;t disappear after launch. I stay on as your tech and growth partner, keep optimizing your systems, spot new opportunities, and make sure the tech keeps driving results. Think of it as having a senior technologist on your team without the full-time salary.</p>
+            </div>
+
+            <div className="bg-white rounded-2xl p-6 shadow-sm">
               <h3 className="font-semibold text-lg mb-3">What if I just need advice?</h3>
               <p className="text-charcoal-light">The first call is free. If you just need 20 minutes of guidance, that&apos;s totally fine. If you need more, we can do a paid consultation or ongoing support.</p>
             </div>
@@ -237,8 +242,8 @@ export default function Pricing() {
 
       {/* CTA */}
       <CTA
-        headline="Ready to get a specific quote for your project?"
-        subheadline="Book a free 20-minute call and I'll give you an honest assessment of what your project would cost and how long it would take."
+        headline="Ready to find the right growth plan for your business?"
+        subheadline="Book a free 20-minute call and I'll give you an honest assessment of which tier fits your goals, what it would cost, and how fast you'll see results."
       />
     </>
   )
