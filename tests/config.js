@@ -10,26 +10,6 @@ module.exports = {
     '/case-studies',
     '/case-studies/mayday',
     '/case-studies/swapp',
-    '/case-studies/llt',
-    '/redesign',
-    '/redesign/1',
-    '/redesign/2',
-    '/redesign/3',
-    '/redesign/4',
-    '/redesign/5',
-    '/redesign/6',
-    '/redesign/7',
-    '/redesign/8',
-    '/redesign/9',
-    '/redesign/10',
-    '/redesign/11',
-    '/redesign/12',
-    '/redesign/13',
-    '/redesign/14',
-    '/redesign/15',
-    '/redesign/16',
-    '/redesign/17',
-    '/redesign/18',
-    '/redesign/hybrid'
+    '/case-studies/llt'
   ]
 }
