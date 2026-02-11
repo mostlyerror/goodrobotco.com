@@ -36,12 +36,68 @@ function Reveal({ children, className = '', delay = 0 }: { children: React.React
   )
 }
 
-function AnimatedCounter({ end, suffix = '', prefix = '', duration = 2000 }: {
-  end: number; suffix?: string; prefix?: string; duration?: number
+function formatCounter(n: number, decimals: number): string {
+  if (decimals > 0) {
+    const parts = n.toFixed(decimals).split('.')
+    parts[0] = Number(parts[0]).toLocaleString()
+    return parts.join('.')
+  }
+  return Math.round(n).toLocaleString()
+}
+
+function RollingDigit({ digit }: { digit: number }) {
+  const [pos, setPos] = useState(digit)
+  const [animate, setAnimate] = useState(true)
+  const prevRef = useRef(digit)
+
+  useEffect(() => {
+    const prev = prevRef.current
+    prevRef.current = digit
+    if (digit === prev) return
+
+    if (digit < prev) {
+      // Rollover (e.g. 9→0): animate forward to second strip, then snap back
+      setAnimate(true)
+      setPos(10 + digit)
+      const t = setTimeout(() => {
+        setAnimate(false)
+        setPos(digit)
+        requestAnimationFrame(() => setAnimate(true))
+      }, 400)
+      return () => clearTimeout(t)
+    }
+    setAnimate(true)
+    setPos(digit)
+  }, [digit])
+
+  return (
+    <span className="inline-block overflow-hidden align-bottom" style={{ height: '1em', lineHeight: 1 }}>
+      <span
+        className="block"
+        style={{
+          transform: `translateY(${-pos}em)`,
+          transition: animate ? 'transform 0.35s cubic-bezier(0.4, 0, 0.2, 1)' : 'none',
+        }}
+      >
+        {[0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9].map((n, i) => (
+          <span key={i} className="block text-center" style={{ height: '1em' }}>{n}</span>
+        ))}
+      </span>
+    </span>
+  )
+}
+
+function AnimatedCounter({ end, suffix = '', prefix = '', duration = 2000, tickRate = 0, decimals = 0 }: {
+  end: number; suffix?: string; prefix?: string; duration?: number; tickRate?: number; decimals?: number
 }) {
   const { ref, inView } = useInView(0.5)
-  const [count, setCount] = useState(0)
+  const [display, setDisplay] = useState(formatCounter(0, decimals))
+  const [tickDisplay, setTickDisplay] = useState('')
+  const [isTicking, setIsTicking] = useState(false)
   const started = useRef(false)
+  const tickStart = useRef(0)
+
+  // Initial count-up animation
   useEffect(() => {
     if (!inView || started.current) return
     started.current = true
@@ -49,12 +105,45 @@ function AnimatedCounter({ end, suffix = '', prefix = '', duration = 2000 }: {
     const animate = (now: number) => {
       const progress = Math.min((now - startTime) / duration, 1)
       const eased = 1 - Math.pow(1 - progress, 3)
-      setCount(Math.round(end * eased))
-      if (progress < 1) requestAnimationFrame(animate)
+      setDisplay(formatCounter(end * eased, decimals))
+      if (progress < 1) {
+        requestAnimationFrame(animate)
+      } else if (tickRate > 0) {
+        tickStart.current = performance.now()
+        setTickDisplay(formatCounter(end, decimals))
+        setIsTicking(true)
+      }
     }
     requestAnimationFrame(animate)
-  }, [inView, end, duration])
-  return <span ref={ref}>{prefix}{count.toLocaleString()}{suffix}</span>
+  }, [inView, end, duration, tickRate, decimals])
+
+  // Continuous ticking with rolling digits
+  useEffect(() => {
+    if (!isTicking || tickRate <= 0) return
+    const id = setInterval(() => {
+      const elapsed = (performance.now() - tickStart.current) / 1000
+      setTickDisplay(formatCounter(end + elapsed * tickRate, decimals))
+    }, 100)
+    return () => clearInterval(id)
+  }, [isTicking, end, tickRate, decimals])
+
+  // During ticking phase, render with rolling digit animation
+  if (isTicking) {
+    const chars = tickDisplay.split('')
+    return (
+      <span ref={ref}>
+        {prefix}
+        {chars.map((char, i) => {
+          const key = `p${chars.length - 1 - i}`
+          return /\d/.test(char)
+            ? <RollingDigit key={key} digit={parseInt(char, 10)} />
+            : <span key={key}>{char}</span>
+        })}
+        {suffix}
+      </span>
+    )
+  }
+  return <span ref={ref}>{prefix}{display}{suffix}</span>
 }
 
 /* ────────────────────────────────────────────
@@ -380,32 +469,32 @@ export default function Home() {
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
               <Reveal delay={0.1}>
                 <div className="space-y-2">
-                  <p className="text-4xl md:text-5xl font-display font-black text-coral">
-                    $<AnimatedCounter end={47} suffix="K" />
+                  <p className="text-4xl md:text-5xl font-display font-black text-coral tabular-nums whitespace-nowrap">
+                    $<AnimatedCounter end={30} suffix="K" tickRate={1} />
                   </p>
                   <p className="text-cream/50 text-sm leading-relaxed">Wasted on wrong solutions</p>
                 </div>
               </Reveal>
               <Reveal delay={0.2}>
                 <div className="space-y-2">
-                  <p className="text-4xl md:text-5xl font-display font-black text-sage">
-                    <AnimatedCounter end={20} suffix="h" /><span className="text-2xl text-sage/60">/wk</span>
+                  <p className="text-4xl md:text-5xl font-display font-black text-sage tabular-nums whitespace-nowrap">
+                    <AnimatedCounter end={12} suffix="h" tickRate={1} /><span className="text-2xl text-sage/60">/wk</span>
                   </p>
                   <p className="text-cream/50 text-sm leading-relaxed">Lost to manual processes</p>
                 </div>
               </Reveal>
               <Reveal delay={0.3}>
                 <div className="space-y-2">
-                  <p className="text-4xl md:text-5xl font-display font-black text-mustard">
-                    <AnimatedCounter end={68} suffix="%" />
+                  <p className="text-4xl md:text-5xl font-display font-black text-mustard tabular-nums whitespace-nowrap">
+                    <AnimatedCounter end={68} suffix="%" tickRate={0.03} decimals={1} />
                   </p>
                   <p className="text-cream/50 text-sm leading-relaxed">Of tech projects over budget</p>
                 </div>
               </Reveal>
               <Reveal delay={0.4}>
                 <div className="space-y-2">
-                  <p className="text-4xl md:text-5xl font-display font-black text-sky">
-                    <AnimatedCounter end={6} suffix=" mo" />
+                  <p className="text-4xl md:text-5xl font-display font-black text-sky tabular-nums whitespace-nowrap">
+                    <AnimatedCounter end={6} suffix=" mo" tickRate={0.02} decimals={1} />
                   </p>
                   <p className="text-cream/50 text-sm leading-relaxed">Avg. delay from bad decisions</p>
                 </div>
@@ -586,9 +675,8 @@ export default function Home() {
                     height={400}
                     className="w-full aspect-square object-cover rounded-2xl shadow-xl"
                   />
-                  <div className="absolute -bottom-3 -right-3 bg-charcoal text-cream px-4 py-3 rounded-xl shadow-lg">
-                    <span className="text-lg font-display font-black text-coral">2-3</span>
-                    <span className="text-[10px] text-cream/60 block">projects/mo</span>
+                  <div className="absolute -bottom-3 -right-3 bg-charcoal text-cream px-4 py-3 rounded-xl shadow-lg text-center text-2xl leading-none">
+                    &#128075;&#129299;
                   </div>
                 </div>
                 <div className="md:col-span-8">
@@ -602,10 +690,10 @@ export default function Home() {
                   </div>
                   <div className="grid grid-cols-4 gap-3">
                     {[
-                      { v: '<24h', l: 'Response' },
-                      { v: '100%', l: 'Delivered' },
-                      { v: '~20h', l: 'Avg. saved' },
-                      { v: '95%', l: 'Retention' },
+                      { v: '1', l: 'Human (me)' },
+                      { v: '0', l: 'Account mgrs' },
+                      { v: '10+', l: 'Yrs building' },
+                      { v: '100%', l: 'Gives a damn' },
                     ].map(m => (
                       <div key={m.l} className="bg-cream p-3 rounded-lg text-center">
                         <div className="text-base font-display font-black text-coral">{m.v}</div>
