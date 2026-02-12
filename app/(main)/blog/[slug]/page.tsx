@@ -4,6 +4,7 @@ import Image from 'next/image'
 import HeroSimple from '@/components/HeroSimple'
 import RichText from '@/components/RichText'
 import CTA from '@/components/CTA'
+import { Reveal } from '@/components/Reveal'
 import { getAllBlogPosts, getBlogPostBySlug } from '@/lib/sanity.client'
 import { urlFor } from '@/lib/sanity.image'
 import { SEO } from '@/lib/seo.constants'
@@ -106,7 +107,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       />
 
       {/* Blog Post Content */}
-      <article className="py-12 bg-cream">
+      <article className="py-16 md:py-24 bg-cream">
         <JsonLd
           data={buildBlogPostingSchema({
             ...post,
@@ -120,40 +121,46 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               : undefined,
           })}
         />
-        <div className="max-w-4xl mx-auto px-6">
+        <div className="max-w-4xl mx-auto px-6 md:px-12">
           {/* Meta info */}
-          <div className="flex items-center gap-4 text-sm text-charcoal-light mb-8">
-            <span className="font-medium">{post.author}</span>
-            <span>•</span>
-            <time dateTime={post.publishedAt}>
-              {new Date(post.publishedAt).toLocaleDateString('en-US', {
-                month: 'long',
-                day: 'numeric',
-                year: 'numeric',
-              })}
-            </time>
-          </div>
+          <Reveal>
+            <div className="flex items-center gap-4 text-sm text-charcoal-light mb-8">
+              <span className="font-medium">{post.author}</span>
+              <span>•</span>
+              <time dateTime={post.publishedAt}>
+                {new Date(post.publishedAt).toLocaleDateString('en-US', {
+                  month: 'long',
+                  day: 'numeric',
+                  year: 'numeric',
+                })}
+              </time>
+            </div>
+          </Reveal>
 
           {/* Featured Image */}
           {post.featuredImage?.asset && (
-            <div className="mb-12 rounded-3xl overflow-hidden">
-              <div className="relative w-full" style={{ aspectRatio: '16/9' }}>
-                <Image
-                  src={urlFor(post.featuredImage.asset).width(1200).height(675).url()}
-                  alt={post.featuredImage.alt || post.title}
-                  fill
-                  className="object-cover"
-                  priority
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
-                />
+            <Reveal delay={0.1}>
+              <div className="mb-12 rounded-3xl overflow-hidden">
+                <div className="relative w-full" style={{ aspectRatio: '16/9' }}>
+                  <Image
+                    src={urlFor(post.featuredImage.asset).width(1200).height(675).url()}
+                    alt={post.featuredImage.alt || post.title}
+                    fill
+                    className="object-cover"
+                    priority
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
+                  />
+                </div>
               </div>
-            </div>
+            </Reveal>
           )}
 
           {/* Post Content */}
-          <div className="prose prose-lg max-w-none">
-            {post.content && <RichText content={post.content} />}
-          </div>
+          <Reveal delay={0.15}>
+            <div className="prose prose-lg max-w-none">
+              {post.content && <RichText content={post.content} />}
+            </div>
+          </Reveal>
         </div>
       </article>
 

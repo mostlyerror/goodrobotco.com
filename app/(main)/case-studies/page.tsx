@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import HeroSimple from "@/components/HeroSimple";
 import CTA from "@/components/CTA";
+import { Reveal } from "@/components/Reveal";
+import SectionLabel from "@/components/SectionLabel";
 
 export const metadata: Metadata = {
   title: "Case Studies | Good Robot Co.",
@@ -59,61 +61,85 @@ export default function CaseStudiesPage() {
       <HeroSimple
         title="Case Studies"
         subtitle="Real projects, real growth. See how the right technology drives measurable business outcomes."
+        label="Case Studies"
       />
 
-      <main className="max-w-6xl mx-auto px-6 py-16">
-        <div className="space-y-12">
-          {caseStudies.map((study) => (
-            <article
-              key={study.slug}
-              className="bg-white border border-charcoal/10 rounded-lg p-8 hover:border-coral/30 transition-colors"
-            >
-              <Link href={`/case-studies/${study.slug}`} className="group">
-                <h2 className="text-3xl font-bold text-charcoal mb-2 group-hover:text-coral transition-colors">
-                  {study.title}
-                </h2>
-                <p className="text-lg text-charcoal/70 mb-4">{study.tagline}</p>
-                <p className="text-charcoal/80 leading-relaxed mb-6">
-                  {study.description}
-                </p>
+      <section className="py-24 md:py-32 bg-white">
+        <div className="max-w-6xl mx-auto px-6 md:px-12">
+          <Reveal>
+            <SectionLabel>Real results</SectionLabel>
+            <h2 className="text-3xl md:text-4xl font-display font-bold text-charcoal mb-14">
+              Projects that drive growth.
+            </h2>
+          </Reveal>
 
-                <div className="mb-6">
-                  <h3 className="font-bold text-charcoal mb-2">Key Results:</h3>
-                  <ul className="grid md:grid-cols-2 gap-2">
-                    {study.highlights.map((highlight, idx) => (
-                      <li key={idx} className="flex items-start text-charcoal/80">
-                        <span className="text-sage mr-2">✓</span>
-                        <span>{highlight}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div className="mb-6">
-                  <h3 className="font-bold text-charcoal mb-2">Technologies:</h3>
-                  <div className="flex flex-wrap gap-2">
-                    {study.tech.map((tech, idx) => (
-                      <span
-                        key={idx}
-                        className="px-3 py-1 bg-cream text-charcoal text-sm rounded-full"
-                      >
-                        {tech}
-                      </span>
-                    ))}
+          <div className="space-y-12">
+            {caseStudies.map((study, i) => (
+              <Reveal key={study.slug} delay={i * 0.1}>
+                <article className="bg-white border border-charcoal/10 overflow-hidden rounded-2xl hover:border-coral/30 transition-colors">
+                  <div
+                    className={
+                      study.slug === "mayday"
+                        ? "bg-gradient-to-br from-sage/20 to-sky/15 px-8 py-6"
+                        : study.slug === "swapp"
+                          ? "bg-gradient-to-br from-coral/20 to-mustard/15 px-8 py-6"
+                          : "bg-gradient-to-br from-lavender/20 to-mustard/10 px-8 py-6"
+                    }
+                  >
+                    <Link href={`/case-studies/${study.slug}`} className="group">
+                      <h2 className="text-3xl font-display font-bold text-charcoal group-hover:text-coral transition-colors">
+                        {study.title}
+                      </h2>
+                      <p className="text-lg text-charcoal/70 mt-1">{study.tagline}</p>
+                    </Link>
                   </div>
-                </div>
 
-                <span className="inline-flex items-center text-coral font-semibold group-hover:gap-2 transition-all">
-                  Read full case study
-                  <span className="ml-1 group-hover:translate-x-1 transition-transform">
-                    →
-                  </span>
-                </span>
-              </Link>
-            </article>
-          ))}
+                  <div className="px-8 py-8">
+                    <Link href={`/case-studies/${study.slug}`} className="group">
+                      <p className="text-charcoal/80 leading-relaxed mb-6">
+                        {study.description}
+                      </p>
+
+                      <div className="mb-6">
+                        <h3 className="font-bold text-charcoal mb-2">Key Results:</h3>
+                        <ul className="grid md:grid-cols-2 gap-2">
+                          {study.highlights.map((highlight, idx) => (
+                            <li key={idx} className="flex items-start text-charcoal/80">
+                              <span className="text-sage mr-2">✓</span>
+                              <span>{highlight}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      <div className="mb-6">
+                        <h3 className="font-bold text-charcoal mb-2">Technologies:</h3>
+                        <div className="flex flex-wrap gap-2">
+                          {study.tech.map((tech, idx) => (
+                            <span
+                              key={idx}
+                              className="px-3 py-1 bg-cream text-charcoal text-sm rounded-full"
+                            >
+                              {tech}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+
+                      <span className="inline-flex items-center text-coral font-semibold group-hover:gap-2 transition-all">
+                        Read full case study
+                        <span className="ml-1 group-hover:translate-x-1 transition-transform">
+                          →
+                        </span>
+                      </span>
+                    </Link>
+                  </div>
+                </article>
+              </Reveal>
+            ))}
+          </div>
         </div>
-      </main>
+      </section>
 
       {/* CTA - Full width section outside constrained container */}
       <CTA

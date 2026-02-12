@@ -5,36 +5,9 @@ import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
 import { JsonLd } from '@/components/JsonLd'
 import { MESSAGING } from '@/lib/messaging.constants'
-
-/* ────────────────────────────────────────────
-   Shared utilities
-   ──────────────────────────────────────────── */
-
-function useInView(threshold = 0.15) {
-  const ref = useRef<HTMLDivElement>(null)
-  const [inView, setInView] = useState(false)
-  useEffect(() => {
-    const el = ref.current
-    if (!el) return
-    const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setInView(true); obs.disconnect() } }, { threshold })
-    obs.observe(el)
-    return () => obs.disconnect()
-  }, [threshold])
-  return { ref, inView }
-}
-
-function Reveal({ children, className = '', delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
-  const { ref, inView } = useInView()
-  return (
-    <div ref={ref} className={className} style={{
-      opacity: inView ? 1 : 0,
-      transform: inView ? 'translateY(0)' : 'translateY(28px)',
-      transition: `all 0.9s cubic-bezier(0.16,1,0.3,1) ${delay}s`,
-    }}>
-      {children}
-    </div>
-  )
-}
+import { Reveal, useInView } from '@/components/Reveal'
+import ContactForm from '@/components/ContactForm'
+import FAQAccordion from '@/components/FAQAccordion'
 
 function formatCounter(n: number, decimals: number): string {
   if (decimals > 0) {
@@ -146,137 +119,12 @@ function AnimatedCounter({ end, suffix = '', prefix = '', duration = 2000, tickR
   return <span ref={ref}>{prefix}{display}{suffix}</span>
 }
 
-/* ────────────────────────────────────────────
-   FAQ Accordion (inline, styled to match)
-   ──────────────────────────────────────────── */
-
-function FAQItem({ question, answer, isOpen, onToggle }: {
-  question: string; answer: string; isOpen: boolean; onToggle: () => void
-}) {
-  return (
-    <div className={`bg-white border rounded-2xl overflow-hidden transition-all duration-300 ${isOpen ? 'border-coral shadow-lg' : 'border-charcoal/10 hover:border-charcoal/20'}`}>
-      <button
-        onClick={onToggle}
-        className="w-full text-left p-6 flex items-center justify-between gap-4 hover:bg-cream/50 transition-colors duration-200 cursor-pointer"
-        aria-expanded={isOpen}
-        type="button"
-      >
-        <span className="font-semibold text-lg text-charcoal">{question}</span>
-        <svg
-          className={`w-6 h-6 flex-shrink-0 text-coral transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
-          fill="none" stroke="currentColor" viewBox="0 0 24 24"
-        >
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-        </svg>
-      </button>
-      <div className={`px-6 text-charcoal-light leading-relaxed transition-all duration-300 overflow-hidden ${isOpen ? 'pb-6 max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
-        {answer}
-      </div>
-    </div>
-  )
-}
-
-/* ────────────────────────────────────────────
-   Contact Form
-   ──────────────────────────────────────────── */
-
-function ContactForm() {
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' })
-  const [errors, setErrors] = useState<Record<string, string>>({})
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
-    setFormData(prev => ({ ...prev, [name]: value }))
-    if (errors[name]) {
-      setErrors(prev => { const n = { ...prev }; delete n[name]; return n })
-    }
-  }
-
-  const validateForm = () => {
-    const newErrors: Record<string, string> = {}
-    if (!formData.name.trim() || formData.name.length < 2) newErrors.name = 'Name must be at least 2 characters'
-    if (!formData.email.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) newErrors.email = 'Please enter a valid email address'
-    if (!formData.message.trim() || formData.message.length < 10) newErrors.message = 'Message must be at least 10 characters'
-    setErrors(newErrors)
-    return Object.keys(newErrors).length === 0
-  }
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    if (!validateForm()) return
-    setIsSubmitting(true)
-    setSubmitStatus('idle')
-    try {
-      const response = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          access_key: '52da23ac-e8a4-4f34-bee4-4d47e100fd89',
-          name: formData.name, email: formData.email, message: formData.message,
-          subject: `New contact form submission from ${formData.name}`
-        })
-      })
-      if (response.ok) { setSubmitStatus('success'); setFormData({ name: '', email: '', message: '' }) }
-      else setSubmitStatus('error')
-    } catch { setSubmitStatus('error') }
-    finally { setIsSubmitting(false) }
-  }
-
-  if (submitStatus === 'success') {
-    return (
-      <div className="flex flex-col items-center justify-center text-center py-8">
-        <div className="text-5xl mb-4">&#9993;</div>
-        <h4 className="text-xl font-display font-bold text-charcoal mb-2">Message Sent!</h4>
-        <p className="text-charcoal-light mb-4 text-sm">I&apos;ll get back to you within 24 hours.</p>
-        <button type="button" onClick={() => setSubmitStatus('idle')} className="text-coral font-medium hover:underline text-sm">
-          Send another message
-        </button>
-      </div>
-    )
-  }
-
-  return (
-    <form onSubmit={handleSubmit} className="space-y-4">
-      <div>
-        <label htmlFor="name" className="block text-sm font-medium text-cream/70 mb-1.5">Name</label>
-        <input type="text" id="name" name="name" value={formData.name} onChange={handleInputChange}
-          className={`w-full px-4 py-3 bg-white/10 rounded-lg border ${errors.name ? 'border-red-400' : 'border-white/20'} text-cream placeholder-cream/30 focus:border-coral focus:outline-none transition-colors`}
-          disabled={isSubmitting} />
-        {errors.name && <p className="text-red-400 text-xs mt-1">{errors.name}</p>}
-      </div>
-      <div>
-        <label htmlFor="email" className="block text-sm font-medium text-cream/70 mb-1.5">Email</label>
-        <input type="email" id="email" name="email" value={formData.email} onChange={handleInputChange}
-          className={`w-full px-4 py-3 bg-white/10 rounded-lg border ${errors.email ? 'border-red-400' : 'border-white/20'} text-cream placeholder-cream/30 focus:border-coral focus:outline-none transition-colors`}
-          disabled={isSubmitting} />
-        {errors.email && <p className="text-red-400 text-xs mt-1">{errors.email}</p>}
-      </div>
-      <div>
-        <label htmlFor="message" className="block text-sm font-medium text-cream/70 mb-1.5">Message</label>
-        <textarea id="message" name="message" rows={3} value={formData.message} onChange={handleInputChange}
-          className={`w-full px-4 py-3 bg-white/10 rounded-lg border ${errors.message ? 'border-red-400' : 'border-white/20'} text-cream placeholder-cream/30 focus:border-coral focus:outline-none transition-colors resize-none`}
-          disabled={isSubmitting} />
-        {errors.message && <p className="text-red-400 text-xs mt-1">{errors.message}</p>}
-      </div>
-      {submitStatus === 'error' && (
-        <p className="text-red-400 text-sm">Something went wrong. Try again or email <a href="mailto:hello@goodrobotco.com" className="underline">hello@goodrobotco.com</a></p>
-      )}
-      <button type="submit" disabled={isSubmitting}
-        className="w-full px-6 py-3 bg-coral text-white font-bold rounded-full hover:bg-coral/90 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-coral/20 transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed">
-        {isSubmitting ? 'Sending...' : 'Send Message'}
-      </button>
-    </form>
-  )
-}
 
 /* ════════════════════════════════════════════
    HOME PAGE
    ════════════════════════════════════════════ */
 
 export default function Home() {
-  const [openFAQ, setOpenFAQ] = useState<number | null>(null)
 
   const faqSchema = {
     '@context': 'https://schema.org',
@@ -803,17 +651,7 @@ export default function Home() {
             </Reveal>
 
             <Reveal delay={0.1}>
-              <div className="space-y-4">
-                {MESSAGING.faqItems.map((faq, i) => (
-                  <FAQItem
-                    key={i}
-                    question={faq.question}
-                    answer={faq.answer}
-                    isOpen={openFAQ === i}
-                    onToggle={() => setOpenFAQ(openFAQ === i ? null : i)}
-                  />
-                ))}
-              </div>
+              <FAQAccordion items={MESSAGING.faqItems} />
             </Reveal>
           </div>
         </section>
