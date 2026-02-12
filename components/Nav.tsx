@@ -30,6 +30,7 @@ export default function Nav() {
     { href: '/case-studies', label: 'Case Studies' },
     { href: '/about', label: 'About' },
     { href: '/pricing', label: 'Pricing' },
+    { href: '/faq', label: 'FAQ' },
     { href: '/blog', label: 'Blog' },
   ]
 

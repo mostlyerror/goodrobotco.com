@@ -138,6 +138,26 @@ export const MESSAGING = {
       question: "How quickly can I expect to see results?",
       answer: "It depends on the project, but I bias toward fast wins. Lead generation and automation systems typically show results within 2-4 weeks. Larger custom builds take 4-8 weeks. I always try to find quick wins we can ship early while building toward the bigger vision.",
     },
+    {
+      question: "How much does this cost?",
+      answer: "Projects typically range from $1,500 for quick wins to $15K+ for larger builds. I also offer ongoing growth partnerships on a monthly retainer. I'll always give you a clear quote upfront — no surprises, no scope creep billing.",
+    },
+    {
+      question: "What happens on the first call?",
+      answer: "You tell me what's going on in your business. I ask questions, listen, and give you an honest take on what I'd do. If I can help, I'll outline a rough approach and next steps. If I'm not the right fit, I'll tell you that too. 20 minutes, no pitch.",
+    },
+    {
+      question: "Do I need to know anything technical?",
+      answer: "Not at all. I translate between business goals and technical solutions — that's the whole point. You tell me what you need the business to do, and I figure out how to make the technology do it. No jargon required.",
+    },
+    {
+      question: "What industries do you work with?",
+      answer: "I've worked with nonprofits, real estate, education, professional services, and local businesses. The common thread is small teams ready to grow who need a technical partner, not a vendor. If you have customers and want more of them, we can probably work together.",
+    },
+    {
+      question: "What if I just need advice, not a full project?",
+      answer: "The first call is always free. If you just need a second opinion or a sanity check on a tech decision, that's totally fine. For deeper consulting, I offer paid strategy sessions.",
+    },
   ],
 
   // "When to invest" decision matrix

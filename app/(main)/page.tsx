@@ -3,7 +3,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
-import { JsonLd } from '@/components/JsonLd'
 import { MESSAGING } from '@/lib/messaging.constants'
 import { Reveal, useInView } from '@/components/Reveal'
 import ContactForm from '@/components/ContactForm'
@@ -126,22 +125,8 @@ function AnimatedCounter({ end, suffix = '', prefix = '', duration = 2000, tickR
 
 export default function Home() {
 
-  const faqSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: MESSAGING.faqItems.slice(0, 4).map((item) => ({
-      '@type': 'Question',
-      name: item.question,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: item.answer,
-      },
-    })),
-  }
-
   return (
     <>
-      <JsonLd data={faqSchema} />
       <div className="bg-cream min-h-screen">
 
         {/* ══════════════════════════════════════
@@ -556,108 +541,87 @@ export default function Home() {
         </section>
 
         {/* ══════════════════════════════════════
-           9. PROCESS
+           9. READY + PROCESS
            ══════════════════════════════════════ */}
-        <section className="py-20 md:py-28 bg-cream">
-          <div className="max-w-4xl mx-auto px-6 md:px-12">
+        <section className="py-24 md:py-32 bg-charcoal text-cream relative overflow-hidden">
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute top-[30%] left-[5%] w-[400px] h-[400px] bg-sage/5 rounded-full blur-[150px]" />
+            <div className="absolute bottom-[10%] right-[10%] w-[350px] h-[350px] bg-coral/5 rounded-full blur-[120px]" />
+          </div>
+
+          <div className="max-w-6xl mx-auto px-6 md:px-12 relative z-10">
             <Reveal>
-              <span className="text-xs font-bold tracking-[0.3em] uppercase text-coral block mb-4">How it works</span>
-              <h2 className="text-3xl font-display font-bold text-charcoal mb-3">
-                How this usually goes.
+              <span className="text-xs font-bold tracking-[0.3em] uppercase text-coral block mb-4">Ready to grow?</span>
+              <h2 className="text-3xl md:text-4xl font-display font-black text-cream mb-16">
+                See yourself here? Here&apos;s how we fix it.
               </h2>
-              <p className="text-charcoal-light mb-12">(Refreshingly uncomplicated.)</p>
             </Reveal>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-              {[
-                { n: '1', title: 'Strategy Session', desc: "20 min. You tell me what's holding your business back. I'll tell you if I can help.", color: 'bg-coral' },
-                { n: '2', title: 'Growth Audit', desc: 'I dig into your lead flow, sales process, and operations. You get a clear action plan.', color: 'bg-sage' },
-                { n: '3', title: 'Build & Launch', desc: 'I build the systems. Regular updates, no jargon. You see results fast.', color: 'bg-mustard' },
-                { n: '4', title: 'Grow Together', desc: "I don't disappear after launch. Continuous optimization and a partner invested in your growth.", color: 'bg-lavender' },
-              ].map((s, i) => (
-                <Reveal key={s.n} delay={i * 0.08}>
-                  <div className={`${s.color} text-cream p-6 rounded-2xl text-center`}>
-                    <span className="text-4xl font-display font-black text-cream/20 block mb-2">{s.n}</span>
-                    <h3 className="font-bold text-lg mb-1">{s.title}</h3>
-                    <p className="text-cream/70 text-sm">{s.desc}</p>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+              {/* Left column — readiness signals */}
+              <Reveal>
+                <div className="h-full">
+                  <div className="flex items-center gap-2.5 mb-8">
+                    <div className="w-2.5 h-2.5 rounded-full bg-coral animate-pulse" />
+                    <span className="text-sm font-bold text-cream/50 uppercase tracking-wider">You&apos;re ready if&hellip;</span>
                   </div>
-                </Reveal>
-              ))}
+                  <div className="space-y-4">
+                    {[
+                      { title: 'Lead Gen', signal: 'You have no system to find your ideal customer — relying on word-of-mouth while competitors show up everywhere', dot: 'bg-sage', border: 'border-sage/20' },
+                      { title: 'Sales Automation', signal: 'Leads go cold because follow-up takes too long and your team is doing data entry instead of selling', dot: 'bg-sky', border: 'border-sky/20' },
+                      { title: 'Customer Retention', signal: 'You\'re chasing new customers but neglecting the ones who already trust you — sparse reviews, no re-engagement', dot: 'bg-mustard', border: 'border-mustard/20' },
+                      { title: 'Operational Efficiency', signal: 'Your team spends hours on repetitive tasks that break when key people are out', dot: 'bg-coral', border: 'border-coral/20' },
+                    ].map((item, i) => (
+                      <Reveal key={i} delay={i * 0.06}>
+                        <div className={`border-l-2 ${item.border} pl-5 py-3`}>
+                          <div className="flex items-center gap-2 mb-1.5">
+                            <div className={`w-2 h-2 rounded-full ${item.dot}`} />
+                            <span className="text-xs font-bold uppercase tracking-wider text-cream/40">{item.title}</span>
+                          </div>
+                          <p className="text-cream/70 text-[15px] leading-relaxed">{item.signal}</p>
+                        </div>
+                      </Reveal>
+                    ))}
+                  </div>
+                </div>
+              </Reveal>
+
+              {/* Right column — process steps */}
+              <Reveal delay={0.15}>
+                <div className="h-full">
+                  <div className="flex items-center gap-2.5 mb-8">
+                    <div className="w-2.5 h-2.5 rounded-full bg-sage" />
+                    <span className="text-sm font-bold text-cream/50 uppercase tracking-wider">How this usually goes</span>
+                  </div>
+                  <div className="space-y-3">
+                    {[
+                      { n: '01', title: 'Strategy Session', desc: "20 min. You tell me what's holding your business back. I'll tell you if I can help.", accent: 'text-coral' },
+                      { n: '02', title: 'Growth Audit', desc: 'I dig into your lead flow, sales process, and operations. You get a clear action plan.', accent: 'text-sage' },
+                      { n: '03', title: 'Build & Launch', desc: 'I build the systems. Regular updates, no jargon. You see results fast.', accent: 'text-mustard' },
+                      { n: '04', title: 'Grow Together', desc: "I don't disappear after launch. Continuous optimization and a partner invested in your growth.", accent: 'text-lavender' },
+                    ].map((s, i) => (
+                      <Reveal key={s.n} delay={0.15 + i * 0.06}>
+                        <div className="bg-white/5 border border-white/10 rounded-xl p-5 hover:bg-white/[0.08] transition-colors duration-300">
+                          <div className="flex items-start gap-4">
+                            <span className={`text-2xl font-display font-black ${s.accent} opacity-40 leading-none mt-0.5`}>{s.n}</span>
+                            <div>
+                              <h3 className="font-bold text-cream mb-1">{s.title}</h3>
+                              <p className="text-cream/50 text-sm leading-relaxed">{s.desc}</p>
+                            </div>
+                          </div>
+                        </div>
+                      </Reveal>
+                    ))}
+                  </div>
+                  <p className="text-cream/25 text-sm mt-5 italic">(Refreshingly uncomplicated.)</p>
+                </div>
+              </Reveal>
             </div>
           </div>
         </section>
 
         {/* ══════════════════════════════════════
-           10. WHEN TO INVEST
-           ══════════════════════════════════════ */}
-        <section className="py-24 md:py-32 bg-white">
-          <div className="max-w-5xl mx-auto px-6 md:px-12">
-            <Reveal>
-              <span className="text-xs font-bold tracking-[0.3em] uppercase text-coral block mb-4">Not sure where to start?</span>
-              <h2 className="text-3xl md:text-4xl font-display font-bold text-charcoal mb-14 text-center">
-                When to invest in growth.
-              </h2>
-            </Reveal>
-
-            <div className="grid md:grid-cols-2 gap-6">
-              {MESSAGING.investMatrix.map((category, i) => {
-                const colorMap: Record<string, { gradient: string; text: string; check: string }> = {
-                  sage: { gradient: 'from-sage/10 to-sage/5', text: 'text-sage', check: 'text-sage' },
-                  sky: { gradient: 'from-sky/10 to-sky/5', text: 'text-sky', check: 'text-sky' },
-                  mustard: { gradient: 'from-mustard/10 to-mustard/5', text: 'text-mustard', check: 'text-mustard' },
-                  coral: { gradient: 'from-coral/10 to-coral/5', text: 'text-coral', check: 'text-coral' },
-                }
-                const colors = colorMap[category.color] || colorMap.sage
-                return (
-                  <Reveal key={category.title} delay={i * 0.08}>
-                    <div className={`bg-gradient-to-br ${colors.gradient} p-8 rounded-2xl`}>
-                      <h3 className={`text-xl font-display font-bold mb-5 ${colors.text}`}>{category.title}</h3>
-                      <ul className="space-y-3">
-                        {category.items.map((item, j) => (
-                          <li key={j} className="flex items-start gap-3 text-charcoal-light text-sm">
-                            <span className={`${colors.check} mt-0.5 flex-shrink-0`}>&#x2713;</span>
-                            <span>{item}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </Reveal>
-                )
-              })}
-            </div>
-
-            <Reveal delay={0.3}>
-              <div className="text-center mt-12">
-                <p className="text-charcoal-light mb-5">Not sure which approach fits your situation?</p>
-                <Link href="#contact" className="inline-flex items-center gap-3 px-8 py-4 bg-coral text-white font-bold text-lg rounded-full shadow-xl shadow-coral/25 hover:-translate-y-1 hover:shadow-2xl transition-all duration-300">
-                  Let&apos;s Find Your Growth Lever &rarr;
-                </Link>
-              </div>
-            </Reveal>
-          </div>
-        </section>
-
-        {/* ══════════════════════════════════════
-           11. FAQ
-           ══════════════════════════════════════ */}
-        <section className="py-24 md:py-32 bg-cream">
-          <div className="max-w-4xl mx-auto px-6 md:px-12">
-            <Reveal>
-              <span className="text-xs font-bold tracking-[0.3em] uppercase text-coral block mb-4">Common questions</span>
-              <h2 className="text-3xl md:text-4xl font-display font-bold text-charcoal mb-4 text-center">
-                What most people want to know.
-              </h2>
-              <p className="text-charcoal-light text-center mb-14">Before we start working together.</p>
-            </Reveal>
-
-            <Reveal delay={0.1}>
-              <FAQAccordion items={MESSAGING.faqItems} />
-            </Reveal>
-          </div>
-        </section>
-
-        {/* ══════════════════════════════════════
-           12. CTA + CONTACT
+           10. CTA + CONTACT + FAQ
            ══════════════════════════════════════ */}
         <section id="contact" className="py-28 md:py-40 bg-charcoal relative overflow-hidden">
           <div className="absolute inset-0 pointer-events-none">
@@ -724,6 +688,27 @@ export default function Home() {
                 </div>
               </Reveal>
             </div>
+
+            <Reveal delay={0.3}>
+              <div className="mt-20 pt-16 border-t border-white/10">
+                <h3 className="text-2xl font-display font-bold text-cream mb-8 text-center">Before you decide&hellip;</h3>
+                <div className="max-w-3xl mx-auto">
+                  <FAQAccordion
+                    items={[
+                      MESSAGING.faqItems[5], // "How quickly can I expect to see results?"
+                      MESSAGING.faqItems[2], // "Can AI actually help my business grow?"
+                      MESSAGING.faqItems[3], // "What does 'Growth Partnership' actually mean?"
+                    ]}
+                    variant="dark"
+                  />
+                  <p className="text-center mt-6">
+                    <Link href="/faq" className="text-cream/40 text-sm hover:text-cream transition-colors underline underline-offset-4 decoration-cream/20 hover:decoration-cream/50">
+                      More questions &rarr;
+                    </Link>
+                  </p>
+                </div>
+              </div>
+            </Reveal>
           </div>
         </section>
 

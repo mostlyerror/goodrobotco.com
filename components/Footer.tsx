@@ -21,6 +21,7 @@ export default function Footer() {
             <Link href="/case-studies" className="block text-white/80 hover:text-coral py-1 text-[15px]">Case Studies</Link>
             <Link href="/pricing" className="block text-white/80 hover:text-coral py-1 text-[15px]">Pricing</Link>
             <Link href="/ai-for-business" className="block text-white/80 hover:text-coral py-1 text-[15px]">AI for Growth</Link>
+            <Link href="/faq" className="block text-white/80 hover:text-coral py-1 text-[15px]">FAQ</Link>
             <Link href="/blog" className="block text-white/80 hover:text-coral py-1 text-[15px]">Blog</Link>
             <Link href="/#contact" className="block text-white/80 hover:text-coral py-1 text-[15px]">Contact</Link>
           </div>

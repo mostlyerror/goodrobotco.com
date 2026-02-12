@@ -10,6 +10,7 @@ module.exports = {
     '/case-studies',
     '/case-studies/mayday',
     '/case-studies/swapp',
-    '/case-studies/llt'
+    '/case-studies/llt',
+    '/faq'
   ]
 }

@@ -56,7 +56,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${dmSans.variable} ${fraunces.variable}`}>
-      <body className="bg-cream text-charcoal text-[17px] leading-relaxed overflow-x-hidden font-body">
+      <body className="bg-cream text-charcoal text-[18px] leading-relaxed overflow-x-hidden font-body">
         {children}
         <Analytics />
         <SpeedInsights />
