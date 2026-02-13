@@ -8,6 +8,26 @@ import SectionLabel from "@/components/SectionLabel";
 export const metadata: Metadata = {
   title: "Case Studies | Good Robot Co.",
   description: "Real projects, real growth. See how we help businesses generate leads, increase capacity, and optimize operations.",
+  openGraph: {
+    title: "Case Studies | Good Robot Co.",
+    description: "Real projects, real growth. See how we help businesses generate leads, increase capacity, and optimize operations.",
+    url: "https://goodrobotco.com/case-studies",
+    type: "website",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Good Robot Co. - Technology That Works For Your Business",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Case Studies | Good Robot Co.",
+    description: "Real projects, real growth. See how we help businesses generate leads, increase capacity, and optimize operations.",
+    images: ["/og-image.png"],
+  },
 };
 
 const caseStudies = [

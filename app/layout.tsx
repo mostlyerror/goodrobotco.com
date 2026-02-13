@@ -4,6 +4,8 @@ import './globals.css'
 import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { SEO } from '@/lib/seo.constants'
+import { JsonLd } from '@/components/JsonLd'
+import { buildOrganizationSchema } from '@/lib/schema-builders'
 
 const dmSans = DM_Sans({
   subsets: ['latin'],
@@ -57,6 +59,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${dmSans.variable} ${fraunces.variable}`}>
       <body className="bg-cream text-charcoal text-[18px] leading-relaxed overflow-x-hidden font-body">
+        <JsonLd data={buildOrganizationSchema()} />
         {children}
         <Analytics />
         <SpeedInsights />
