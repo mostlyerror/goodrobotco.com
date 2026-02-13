@@ -38,3 +38,6 @@ next-env.d.ts
 
 # Blog drafts (content managed in Sanity)
 blog-drafts/
+
+# Dev logs
+logs/

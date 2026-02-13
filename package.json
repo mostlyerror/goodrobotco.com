@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "mkdir -p logs && : > logs/dev.log && next dev 2>&1 | tee logs/dev.log",
+    "url": "grep -m1 'http://localhost' logs/dev.log || echo 'Dev server not running. Run: npm run dev'",
     "build": "mv app/redesign app/_redesign 2>/dev/null; next build; r=$?; mv app/_redesign app/redesign 2>/dev/null; exit $r",
     "start": "next start",
     "lint": "next lint",
