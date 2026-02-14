@@ -59,6 +59,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${dmSans.variable} ${fraunces.variable}`}>
       <body className="bg-cream text-charcoal text-[18px] leading-relaxed overflow-x-hidden font-body">
+        <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-coral focus:text-white focus:rounded-lg focus:font-semibold">
+          Skip to main content
+        </a>
         <JsonLd data={buildOrganizationSchema()} />
         {children}
         <Analytics />

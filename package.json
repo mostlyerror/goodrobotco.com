@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "mkdir -p logs && : > logs/dev.log && next dev 2>&1 | tee logs/dev.log",
     "url": "grep -m1 'http://localhost' logs/dev.log || echo 'Dev server not running. Run: npm run dev'",
-    "build": "mv app/redesign app/_redesign 2>/dev/null; next build; r=$?; mv app/_redesign app/redesign 2>/dev/null; exit $r",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "test:smoke": "node tests/smoke-tests.js",
@@ -25,8 +25,7 @@
     "next-sanity": "^11.6.12",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "sanity": "^4.22.0",
-    "styled-components": "^6.3.5"
+    "sanity": "^4.22.0"
   },
   "devDependencies": {
     "@sanity/cli": "^5.2.0",

@@ -22,6 +22,12 @@ export const metadata: Metadata = {
       },
     ],
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'FAQ | Good Robot Co.',
+    description: 'Common questions about working with Good Robot Co. — pricing, process, timelines, AI, lead generation, and what to expect from a growth partnership.',
+    images: ['/og-image.png'],
+  },
 }
 
 export default function FAQPage() {

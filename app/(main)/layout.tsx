@@ -1,7 +1,5 @@
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
-import { JsonLd } from '@/components/JsonLd'
-import { buildOrganizationSchema } from '@/lib/schema-builders'
 
 export default function MainLayout({
   children,
@@ -10,9 +8,8 @@ export default function MainLayout({
 }) {
   return (
     <>
-      <JsonLd data={buildOrganizationSchema()} />
       <Nav />
-      <main>{children}</main>
+      <main id="main-content">{children}</main>
       <Footer />
     </>
   )

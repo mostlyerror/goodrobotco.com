@@ -1,9 +1,10 @@
 import { PortableText, PortableTextComponents } from '@portabletext/react'
+import type { PortableTextBlock } from '@portabletext/types'
 import Image from 'next/image'
 import { urlFor } from '@/lib/sanity.image'
 
 interface RichTextProps {
-  content: any[]
+  content: PortableTextBlock[]
 }
 
 /**
