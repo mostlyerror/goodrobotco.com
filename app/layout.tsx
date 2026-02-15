@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { DM_Sans, Fraunces } from 'next/font/google'
+import Script from 'next/script'
 import './globals.css'
 import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
@@ -58,6 +59,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${dmSans.variable} ${fraunces.variable}`}>
+      <head>
+        <Script
+          id="vtag-ai-js"
+          src="https://r2.leadsy.ai/tag.js"
+          data-pid="80OeZtmps2zbJjrI"
+          data-version="062024"
+          strategy="afterInteractive"
+        />
+      </head>
       <body className="bg-cream text-charcoal text-[18px] leading-relaxed overflow-x-hidden font-body">
         <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-coral focus:text-white focus:rounded-lg focus:font-semibold">
           Skip to main content
