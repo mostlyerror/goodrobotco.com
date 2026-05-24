@@ -28,6 +28,9 @@ export const metadata: Metadata = {
   title: 'Smart Automation for Local Service Businesses | Good Robot Co.',
   description: SEO.organization.description,
   metadataBase: new URL(SEO.baseUrl),
+  verification: {
+    google: 'mctBV1WZrCRIsZnxrBM0gupkErmYQpkgWZCWOXg4ehs',
+  },
   openGraph: {
     title: 'Smart Automation for Local Service Businesses | Good Robot Co.',
     description: SEO.organization.description,
