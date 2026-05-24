@@ -19,32 +19,26 @@ export const MESSAGING = {
     {
       emoji: '🎯',
       title: 'Lead Generation & Pipeline',
-      desc: 'Automated prospecting, speed-to-lead systems, and local business targeting. Stop waiting for leads to come to you and start filling your pipeline on autopilot.',
+      desc: 'Automated prospecting and speed-to-lead systems. Fill your pipeline on autopilot instead of waiting for the phone to ring.',
       accent: 'coral',
     },
     {
       emoji: '💰',
       title: 'Sales Conversion',
-      desc: 'Automated follow-ups, AI-powered lead qualification, and streamlined sales workflows. Turn more leads into paying customers without adding headcount.',
+      desc: 'Automated follow-ups and AI-powered lead qualification. Turn more leads into paying customers without adding headcount.',
       accent: 'sage',
     },
     {
       emoji: '⭐',
       title: 'Customer Retention & Reputation',
-      desc: 'Automated review solicitation, reputation management, and re-engagement campaigns. Keep customers coming back and build the online presence that wins new ones.',
+      desc: 'Automated review solicitation and re-engagement campaigns. Keep customers coming back and build the online presence that wins new ones.',
       accent: 'mustard',
     },
     {
       emoji: '⚡',
       title: 'Operational Efficiency',
-      desc: 'Process automation, system rescue, and tech optimization. Free your team from manual busywork so they can focus on revenue-generating activities.',
+      desc: 'Process automation and tech optimization. Free your team from manual busywork so they can focus on revenue.',
       accent: 'sky',
-    },
-    {
-      emoji: '🤝',
-      title: 'Ongoing Growth Partnership',
-      desc: "I stay on as your tech and growth partner after launch. I keep optimizing your systems, find new opportunities, and actually pick up the phone when you call.",
-      accent: 'lavender',
     },
   ],
 

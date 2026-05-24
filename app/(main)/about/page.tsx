@@ -48,7 +48,7 @@ export default function About() {
           <div className="flex flex-col md:flex-row gap-12 items-start mb-12">
             <Reveal delay={0.1} className="md:w-1/3 flex-shrink-0">
               <Image
-                src="/ben-headshot-3.jpg"
+                src="/ben-headshot.jpg"
                 alt="Ben Poon"
                 width={400}
                 height={400}

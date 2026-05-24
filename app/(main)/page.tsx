@@ -2,122 +2,9 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { useEffect, useRef, useState } from 'react'
 import { MESSAGING } from '@/lib/messaging.constants'
-import { Reveal, useInView } from '@/components/Reveal'
+import { Reveal } from '@/components/Reveal'
 import ContactForm from '@/components/ContactForm'
-import FAQAccordion from '@/components/FAQAccordion'
-
-function formatCounter(n: number, decimals: number): string {
-  if (decimals > 0) {
-    const parts = n.toFixed(decimals).split('.')
-    parts[0] = Number(parts[0]).toLocaleString()
-    return parts.join('.')
-  }
-  return Math.round(n).toLocaleString()
-}
-
-function RollingDigit({ digit }: { digit: number }) {
-  const [pos, setPos] = useState(digit)
-  const [animate, setAnimate] = useState(true)
-  const prevRef = useRef(digit)
-
-  useEffect(() => {
-    const prev = prevRef.current
-    prevRef.current = digit
-    if (digit === prev) return
-
-    if (digit < prev) {
-      // Rollover (e.g. 9→0): animate forward to second strip, then snap back
-      setAnimate(true)
-      setPos(10 + digit)
-      const t = setTimeout(() => {
-        setAnimate(false)
-        setPos(digit)
-        requestAnimationFrame(() => setAnimate(true))
-      }, 400)
-      return () => clearTimeout(t)
-    }
-    setAnimate(true)
-    setPos(digit)
-  }, [digit])
-
-  return (
-    <span className="inline-block overflow-hidden align-bottom" style={{ height: '1em', lineHeight: 1 }}>
-      <span
-        className="block"
-        style={{
-          transform: `translateY(${-pos}em)`,
-          transition: animate ? 'transform 0.35s cubic-bezier(0.4, 0, 0.2, 1)' : 'none',
-        }}
-      >
-        {[0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9].map((n, i) => (
-          <span key={i} className="block text-center" style={{ height: '1em' }}>{n}</span>
-        ))}
-      </span>
-    </span>
-  )
-}
-
-function AnimatedCounter({ end, suffix = '', prefix = '', duration = 2000, tickRate = 0, decimals = 0 }: {
-  end: number; suffix?: string; prefix?: string; duration?: number; tickRate?: number; decimals?: number
-}) {
-  const { ref, inView } = useInView(0.5)
-  const [display, setDisplay] = useState(formatCounter(0, decimals))
-  const [tickDisplay, setTickDisplay] = useState('')
-  const [isTicking, setIsTicking] = useState(false)
-  const started = useRef(false)
-  const tickStart = useRef(0)
-
-  // Initial count-up animation
-  useEffect(() => {
-    if (!inView || started.current) return
-    started.current = true
-    const startTime = performance.now()
-    const animate = (now: number) => {
-      const progress = Math.min((now - startTime) / duration, 1)
-      const eased = 1 - Math.pow(1 - progress, 3)
-      setDisplay(formatCounter(end * eased, decimals))
-      if (progress < 1) {
-        requestAnimationFrame(animate)
-      } else if (tickRate > 0) {
-        tickStart.current = performance.now()
-        setTickDisplay(formatCounter(end, decimals))
-        setIsTicking(true)
-      }
-    }
-    requestAnimationFrame(animate)
-  }, [inView, end, duration, tickRate, decimals])
-
-  // Continuous ticking with rolling digits
-  useEffect(() => {
-    if (!isTicking || tickRate <= 0) return
-    const id = setInterval(() => {
-      const elapsed = (performance.now() - tickStart.current) / 1000
-      setTickDisplay(formatCounter(end + elapsed * tickRate, decimals))
-    }, 100)
-    return () => clearInterval(id)
-  }, [isTicking, end, tickRate, decimals])
-
-  // During ticking phase, render with rolling digit animation
-  if (isTicking) {
-    const chars = tickDisplay.split('')
-    return (
-      <span ref={ref}>
-        {prefix}
-        {chars.map((char, i) => {
-          const key = `p${chars.length - 1 - i}`
-          return /\d/.test(char)
-            ? <RollingDigit key={key} digit={parseInt(char, 10)} />
-            : <span key={key}>{char}</span>
-        })}
-        {suffix}
-      </span>
-    )
-  }
-  return <span ref={ref}>{prefix}{display}{suffix}</span>
-}
-
 
 /* ════════════════════════════════════════════
    HOME PAGE
@@ -193,165 +80,15 @@ export default function Home() {
             </Reveal>
           </div>
         </section>
-
         {/* ══════════════════════════════════════
-           2. PAIN POINTS
+           2. SERVICES
            ══════════════════════════════════════ */}
-        <section className="py-20 md:py-28 bg-white">
-          <div className="max-w-4xl mx-auto px-6 md:px-12">
-            <Reveal>
-              <h2 className="text-3xl md:text-4xl font-display font-bold text-charcoal mb-12 text-center">
-                You probably clicked because<br />one of these is <span className="text-coral italic">your</span> situation.
-              </h2>
-            </Reveal>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-              {[
-                { emoji: '\ud83d\udea7', title: 'The Pipeline Gap', desc: "Leads come in but you respond too slowly and lose them to competitors who follow up faster." },
-                { emoji: '\ud83d\udcb8', title: 'The Follow-Up Problem', desc: "You know you should follow up more, but nobody has time. Promising conversations stall and die." },
-                { emoji: '\ud83e\udd16', title: 'The AI Question', desc: "Everyone's using AI to grow faster. You're still trying to figure out where to start." },
-                { emoji: '\ud83d\udcc8', title: 'The Growth Ceiling', desc: "Your team spends hours on manual work instead of the revenue-generating activities that actually grow the business." },
-              ].map((item, i) => (
-                <Reveal key={i} delay={i * 0.06}>
-                  <div className="bg-cream p-6 rounded-2xl hover:shadow-md transition-shadow duration-300">
-                    <div className="flex items-center gap-3 mb-3">
-                      <span className="text-2xl">{item.emoji}</span>
-                      <h3 className="font-display font-bold text-charcoal">{item.title}</h3>
-                    </div>
-                    <p className="text-charcoal-light text-[15px] leading-relaxed">{item.desc}</p>
-                  </div>
-                </Reveal>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ══════════════════════════════════════
-           3. BEFORE / AFTER
-           ══════════════════════════════════════ */}
-        <section className="py-24 md:py-32 bg-charcoal text-cream">
+        <section className="py-24 md:py-32 bg-white">
           <div className="max-w-5xl mx-auto px-6 md:px-12">
             <Reveal>
-              <span className="text-xs font-bold tracking-[0.3em] uppercase text-coral block mb-4">Where you are vs. where you could be</span>
-              <h2 className="text-3xl md:text-4xl font-display font-black text-cream mb-14">
-                The gap between here and there.
-              </h2>
-            </Reveal>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <Reveal>
-                <div className="bg-white/5 border border-white/10 rounded-2xl p-8">
-                  <div className="flex items-center gap-2 mb-6">
-                    <div className="w-3 h-3 rounded-full bg-red-400" />
-                    <span className="text-sm font-bold text-red-400/80 uppercase tracking-wider">What&apos;s holding you back</span>
-                  </div>
-                  <ul className="space-y-4">
-                    {[
-                      '20 hours a week on tasks that should be automated',
-                      'Opportunities passing by because systems can\'t keep up',
-                      'No technical partner, just vendors who disappear',
-                      'Team doing data entry instead of strategy',
-                      'Competitors shipping faster with less',
-                    ].map((item, i) => (
-                      <li key={i} className="flex items-start gap-3 text-cream/50">
-                        <span className="text-red-400 mt-0.5 flex-shrink-0">&#x2715;</span>
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </Reveal>
-
-              <Reveal delay={0.1}>
-                <div className="bg-white/5 border border-sage/30 rounded-2xl p-8">
-                  <div className="flex items-center gap-2 mb-6">
-                    <div className="w-3 h-3 rounded-full bg-sage" />
-                    <span className="text-sm font-bold text-sage uppercase tracking-wider">Where you&apos;re headed</span>
-                  </div>
-                  <ul className="space-y-4">
-                    {[
-                      'AI handling the repetitive work so your team focuses on growth',
-                      'Systems that scale with your ambition',
-                      'A technical partner who\'s invested in your success',
-                      'Your team doing their highest-value work',
-                      'Shipping faster than competitors twice your size',
-                    ].map((item, i) => (
-                      <li key={i} className="flex items-start gap-3 text-cream">
-                        <span className="text-sage mt-0.5 flex-shrink-0">&#x2713;</span>
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </Reveal>
-            </div>
-          </div>
-        </section>
-
-        {/* ══════════════════════════════════════
-           4. COST OF WAITING
-           ══════════════════════════════════════ */}
-        <section className="py-24 md:py-32 bg-charcoal border-t border-cream/5">
-          <div className="max-w-5xl mx-auto px-6 md:px-12">
-            <Reveal>
-              <span className="text-xs font-bold tracking-[0.3em] uppercase text-coral block mb-4">The cost of waiting</span>
-              <h2 className="text-3xl md:text-5xl font-display font-bold text-cream leading-tight mb-16">
-                Every month you wait,<br />it compounds.
-              </h2>
-            </Reveal>
-
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
-              <Reveal delay={0.1}>
-                <div className="space-y-2">
-                  <p className="text-4xl md:text-5xl font-display font-black text-coral tabular-nums whitespace-nowrap">
-                    $<AnimatedCounter end={30} suffix="K" tickRate={1} />
-                  </p>
-                  <p className="text-cream/50 text-sm leading-relaxed">Wasted on wrong solutions</p>
-                </div>
-              </Reveal>
-              <Reveal delay={0.2}>
-                <div className="space-y-2">
-                  <p className="text-4xl md:text-5xl font-display font-black text-sage tabular-nums whitespace-nowrap">
-                    <AnimatedCounter end={12} suffix="h" tickRate={1} /><span className="text-2xl text-sage/60">/wk</span>
-                  </p>
-                  <p className="text-cream/50 text-sm leading-relaxed">Lost to manual processes</p>
-                </div>
-              </Reveal>
-              <Reveal delay={0.3}>
-                <div className="space-y-2">
-                  <p className="text-4xl md:text-5xl font-display font-black text-mustard tabular-nums whitespace-nowrap">
-                    <AnimatedCounter end={68} suffix="%" tickRate={0.03} decimals={1} />
-                  </p>
-                  <p className="text-cream/50 text-sm leading-relaxed">Of tech projects over budget</p>
-                </div>
-              </Reveal>
-              <Reveal delay={0.4}>
-                <div className="space-y-2">
-                  <p className="text-4xl md:text-5xl font-display font-black text-sky tabular-nums whitespace-nowrap">
-                    <AnimatedCounter end={6} suffix=" mo" tickRate={0.02} decimals={1} />
-                  </p>
-                  <p className="text-cream/50 text-sm leading-relaxed">Avg. delay from bad decisions</p>
-                </div>
-              </Reveal>
-            </div>
-
-            <Reveal delay={0.5}>
-              <p className="text-cream/40 italic text-xl mt-16 font-display">
-                It doesn&apos;t have to be this way.
-              </p>
-            </Reveal>
-          </div>
-        </section>
-
-        {/* ══════════════════════════════════════
-           5. SERVICES
-           ══════════════════════════════════════ */}
-        <section className="py-24 md:py-32 bg-cream">
-          <div className="max-w-5xl mx-auto px-6 md:px-12">
-            <Reveal>
-              <span className="text-xs font-bold tracking-[0.3em] uppercase text-coral block mb-4">How I help you grow</span>
+              <span className="text-xs font-bold tracking-[0.3em] uppercase text-coral block mb-4">What I do</span>
               <h2 className="text-3xl md:text-4xl font-display font-bold text-charcoal mb-14">
-                Here&apos;s how we grow it.
+                Growth systems that run while you work.
               </h2>
             </Reveal>
 
@@ -382,20 +119,20 @@ export default function Home() {
         </section>
 
         {/* ══════════════════════════════════════
-           6. TESTIMONIALS
+           4. PROOF
            ══════════════════════════════════════ */}
-        <section className="py-24 md:py-32 bg-charcoal">
+        <section id="work" className="py-24 md:py-32 bg-charcoal">
           <div className="max-w-5xl mx-auto px-6 md:px-12">
             <Reveal>
-              <span className="text-xs font-bold tracking-[0.3em] uppercase text-coral block mb-4">In their words</span>
+              <span className="text-xs font-bold tracking-[0.3em] uppercase text-coral block mb-4">Real results</span>
               <h2 className="text-3xl md:text-4xl font-display font-bold text-cream mb-14">
-                What clients actually say.
+                Don&apos;t take my word for it.
               </h2>
             </Reveal>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-14">
               <Reveal>
-                <div className="bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/[0.08] transition-colors">
+                <div className="bg-white/5 border border-white/10 rounded-2xl p-8">
                   <div className="flex gap-1 mb-5">
                     {[...Array(5)].map((_, i) => <div key={i} className="w-4 h-4 bg-mustard rounded-sm" />)}
                   </div>
@@ -409,7 +146,7 @@ export default function Home() {
                 </div>
               </Reveal>
               <Reveal delay={0.1}>
-                <div className="bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/[0.08] transition-colors">
+                <div className="bg-white/5 border border-white/10 rounded-2xl p-8">
                   <div className="flex gap-1 mb-5">
                     {[...Array(5)].map((_, i) => <div key={i} className="w-4 h-4 bg-mustard rounded-sm" />)}
                   </div>
@@ -423,20 +160,6 @@ export default function Home() {
                 </div>
               </Reveal>
             </div>
-          </div>
-        </section>
-
-        {/* ══════════════════════════════════════
-           7. CASE STUDIES
-           ══════════════════════════════════════ */}
-        <section id="work" className="py-24 md:py-32 bg-cream">
-          <div className="max-w-5xl mx-auto px-6 md:px-12">
-            <Reveal>
-              <span className="text-xs font-bold tracking-[0.3em] uppercase text-coral block mb-4">Real results</span>
-              <h2 className="text-3xl md:text-4xl font-display font-bold text-charcoal mb-14">
-                Recent work.
-              </h2>
-            </Reveal>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {[
@@ -466,20 +189,20 @@ export default function Home() {
                 },
               ].map((cs, i) => (
                 <Reveal key={cs.title} delay={i * 0.08}>
-                  <Link href={cs.href} className="group block bg-white rounded-2xl border border-charcoal/10 overflow-hidden hover:border-coral/30 hover:shadow-xl transition-all duration-300">
+                  <Link href={cs.href} className="group block bg-white/10 rounded-2xl border border-white/10 overflow-hidden hover:bg-white/15 hover:shadow-xl transition-all duration-300">
                     <div className={`bg-gradient-to-br ${cs.gradient} h-24 flex items-center justify-center`}>
                       <span className="text-3xl">{cs.emoji}</span>
                     </div>
                     <div className="p-6">
-                      <h3 className="text-lg font-display font-bold text-charcoal group-hover:text-coral transition-colors mb-2">
+                      <h3 className="text-lg font-display font-bold text-cream group-hover:text-coral transition-colors mb-2">
                         {cs.title}
                       </h3>
-                      <p className="text-charcoal-light text-sm leading-relaxed mb-5">{cs.desc}</p>
+                      <p className="text-cream/60 text-sm leading-relaxed mb-5">{cs.desc}</p>
                       <div className="grid grid-cols-2 gap-3 mb-4">
                         {cs.stats.map(stat => (
                           <div key={stat.label}>
                             <div className="text-xl font-display font-black text-coral">{stat.value}</div>
-                            <div className="text-[10px] text-charcoal/50 uppercase tracking-wider">{stat.label}</div>
+                            <div className="text-[10px] text-cream/40 uppercase tracking-wider">{stat.label}</div>
                           </div>
                         ))}
                       </div>
@@ -503,7 +226,7 @@ export default function Home() {
               <div className="grid grid-cols-1 md:grid-cols-12 gap-10 items-center">
                 <div className="md:col-span-4 relative">
                   <Image
-                    src="/ben-headshot-3.jpg"
+                    src="/ben-headshot.png"
                     alt="Ben Poon"
                     width={400}
                     height={400}
@@ -519,8 +242,8 @@ export default function Home() {
                     Hi, I&apos;m Ben.
                   </h2>
                   <div className="space-y-4 text-charcoal-light leading-relaxed mb-8">
-                    <p>I work with founders who are ready to grow and need a growth partner who actually gets it. Senior engineer background, now working directly with small businesses to drive revenue through lead generation, sales automation, and smarter tech. You talk to me. I do the work. No layers in between.</p>
-                    <p>I take on just a few projects at a time so I can invest real attention in each one. That means accessible pricing and a true partnership where I&apos;m as invested in your growth as you are.</p>
+                    <p>I help local service businesses — dentists, HVAC companies, salons, med spas — get more customers using smart automation. Senior engineer background, now working directly with business owners to build the systems that respond to leads, follow up automatically, and keep customers coming back.</p>
+                    <p>You talk to me. I do the work. No layers, no account managers, no handoffs. I take on a few projects at a time so I can actually invest in each one.</p>
                   </div>
                   <div className="grid grid-cols-4 gap-3">
                     {[
@@ -542,7 +265,7 @@ export default function Home() {
         </section>
 
         {/* ══════════════════════════════════════
-           9. READY + PROCESS
+           6. PROCESS
            ══════════════════════════════════════ */}
         <section className="py-24 md:py-32 bg-charcoal text-cream relative overflow-hidden">
           <div className="absolute inset-0 pointer-events-none">
@@ -550,73 +273,29 @@ export default function Home() {
             <div className="absolute bottom-[10%] right-[10%] w-[350px] h-[350px] bg-coral/5 rounded-full blur-[120px]" />
           </div>
 
-          <div className="max-w-6xl mx-auto px-6 md:px-12 relative z-10">
+          <div className="max-w-5xl mx-auto px-6 md:px-12 relative z-10">
             <Reveal>
-              <span className="text-xs font-bold tracking-[0.3em] uppercase text-coral block mb-4">Ready to grow?</span>
-              <h2 className="text-3xl md:text-4xl font-display font-black text-cream mb-16">
-                See yourself here? Here&apos;s how we fix it.
+              <span className="text-xs font-bold tracking-[0.3em] uppercase text-coral block mb-4">How it works</span>
+              <h2 className="text-3xl md:text-4xl font-display font-black text-cream mb-12">
+                Refreshingly uncomplicated.
               </h2>
             </Reveal>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-              {/* Left column — readiness signals */}
-              <Reveal>
-                <div className="h-full">
-                  <div className="flex items-center gap-2.5 mb-8">
-                    <div className="w-2.5 h-2.5 rounded-full bg-coral animate-pulse" />
-                    <span className="text-sm font-bold text-cream/50 uppercase tracking-wider">You&apos;re ready if&hellip;</span>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+              {[
+                { n: '01', title: 'Strategy Session', desc: "20 min. You tell me what's holding your business back. I'll tell you if I can help.", accent: 'text-coral' },
+                { n: '02', title: 'Growth Audit', desc: 'I dig into your lead flow, sales process, and operations. You get a clear action plan.', accent: 'text-sage' },
+                { n: '03', title: 'Build & Launch', desc: 'I build the systems. Regular updates, no jargon. You see results fast.', accent: 'text-mustard' },
+                { n: '04', title: 'Grow Together', desc: "I don't disappear after launch. Continuous optimization and a partner invested in your growth.", accent: 'text-lavender' },
+              ].map((s, i) => (
+                <Reveal key={s.n} delay={i * 0.08}>
+                  <div className="bg-white/5 border border-white/10 rounded-xl p-6 hover:bg-white/[0.08] transition-colors duration-300 h-full">
+                    <span className={`text-2xl font-display font-black ${s.accent} opacity-40 block mb-3`}>{s.n}</span>
+                    <h3 className="font-bold text-cream mb-2">{s.title}</h3>
+                    <p className="text-cream/50 text-sm leading-relaxed">{s.desc}</p>
                   </div>
-                  <div className="space-y-4">
-                    {[
-                      { title: 'Lead Gen', signal: 'You have no system to find your ideal customer — relying on word-of-mouth while competitors show up everywhere', dot: 'bg-sage', border: 'border-sage/20' },
-                      { title: 'Sales Automation', signal: 'Leads go cold because follow-up takes too long and your team is doing data entry instead of selling', dot: 'bg-sky', border: 'border-sky/20' },
-                      { title: 'Customer Retention', signal: 'You\'re chasing new customers but neglecting the ones who already trust you — sparse reviews, no re-engagement', dot: 'bg-mustard', border: 'border-mustard/20' },
-                      { title: 'Operational Efficiency', signal: 'Your team spends hours on repetitive tasks that break when key people are out', dot: 'bg-coral', border: 'border-coral/20' },
-                    ].map((item, i) => (
-                      <Reveal key={i} delay={i * 0.06}>
-                        <div className={`border-l-2 ${item.border} pl-5 py-3`}>
-                          <div className="flex items-center gap-2 mb-1.5">
-                            <div className={`w-2 h-2 rounded-full ${item.dot}`} />
-                            <span className="text-xs font-bold uppercase tracking-wider text-cream/40">{item.title}</span>
-                          </div>
-                          <p className="text-cream/70 text-[15px] leading-relaxed">{item.signal}</p>
-                        </div>
-                      </Reveal>
-                    ))}
-                  </div>
-                </div>
-              </Reveal>
-
-              {/* Right column — process steps */}
-              <Reveal delay={0.15}>
-                <div className="h-full">
-                  <div className="flex items-center gap-2.5 mb-8">
-                    <div className="w-2.5 h-2.5 rounded-full bg-sage" />
-                    <span className="text-sm font-bold text-cream/50 uppercase tracking-wider">How this usually goes</span>
-                  </div>
-                  <div className="space-y-3">
-                    {[
-                      { n: '01', title: 'Strategy Session', desc: "20 min. You tell me what's holding your business back. I'll tell you if I can help.", accent: 'text-coral' },
-                      { n: '02', title: 'Growth Audit', desc: 'I dig into your lead flow, sales process, and operations. You get a clear action plan.', accent: 'text-sage' },
-                      { n: '03', title: 'Build & Launch', desc: 'I build the systems. Regular updates, no jargon. You see results fast.', accent: 'text-mustard' },
-                      { n: '04', title: 'Grow Together', desc: "I don't disappear after launch. Continuous optimization and a partner invested in your growth.", accent: 'text-lavender' },
-                    ].map((s, i) => (
-                      <Reveal key={s.n} delay={0.15 + i * 0.06}>
-                        <div className="bg-white/5 border border-white/10 rounded-xl p-5 hover:bg-white/[0.08] transition-colors duration-300">
-                          <div className="flex items-start gap-4">
-                            <span className={`text-2xl font-display font-black ${s.accent} opacity-40 leading-none mt-0.5`}>{s.n}</span>
-                            <div>
-                              <h3 className="font-bold text-cream mb-1">{s.title}</h3>
-                              <p className="text-cream/50 text-sm leading-relaxed">{s.desc}</p>
-                            </div>
-                          </div>
-                        </div>
-                      </Reveal>
-                    ))}
-                  </div>
-                  <p className="text-cream/25 text-sm mt-5 italic">(Refreshingly uncomplicated.)</p>
-                </div>
-              </Reveal>
+                </Reveal>
+              ))}
             </div>
           </div>
         </section>
@@ -624,7 +303,7 @@ export default function Home() {
         {/* ══════════════════════════════════════
            10. CTA + CONTACT + FAQ
            ══════════════════════════════════════ */}
-        <section id="contact" className="py-28 md:py-40 bg-charcoal relative overflow-hidden">
+        <section id="contact" className="py-28 md:py-40 bg-charcoal border-t border-white/5 relative overflow-hidden">
           <div className="absolute inset-0 pointer-events-none">
             <div className="absolute top-[20%] right-[15%] w-[500px] h-[500px] bg-coral/8 rounded-full blur-[150px]" />
             <div className="absolute bottom-[15%] left-[10%] w-[400px] h-[400px] bg-sage/5 rounded-full blur-[120px]" />
@@ -690,26 +369,6 @@ export default function Home() {
               </Reveal>
             </div>
 
-            <Reveal delay={0.3}>
-              <div className="mt-20 pt-16 border-t border-white/10">
-                <h3 className="text-2xl font-display font-bold text-cream mb-8 text-center">Before you decide&hellip;</h3>
-                <div className="max-w-3xl mx-auto">
-                  <FAQAccordion
-                    items={[
-                      MESSAGING.faqItems[5], // "How quickly can I expect to see results?"
-                      MESSAGING.faqItems[2], // "Can AI actually help my business grow?"
-                      MESSAGING.faqItems[3], // "What does 'Growth Partnership' actually mean?"
-                    ]}
-                    variant="dark"
-                  />
-                  <p className="text-center mt-6">
-                    <Link href="/faq" className="text-cream/40 text-sm hover:text-cream transition-colors underline underline-offset-4 decoration-cream/20 hover:decoration-cream/50">
-                      More questions &rarr;
-                    </Link>
-                  </p>
-                </div>
-              </div>
-            </Reveal>
           </div>
         </section>
 
