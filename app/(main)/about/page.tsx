@@ -7,10 +7,10 @@ import SectionLabel from '@/components/SectionLabel'
 
 export const metadata: Metadata = {
   title: 'About | Good Robot Co.',
-  description: 'Learn about Ben Poon and Good Robot Co. Your technology and growth partner. Honest assessment, practical solutions, and real business outcomes.',
+  description: 'Learn about Ben Poon and Good Robot Co. Smart automation for local service businesses — dentists, HVAC, salons, and more.',
   openGraph: {
     title: 'About | Good Robot Co.',
-    description: 'Learn about Ben Poon and Good Robot Co. Your technology and growth partner. Honest assessment, practical solutions, and real business outcomes.',
+    description: 'Learn about Ben Poon and Good Robot Co. Smart automation for local service businesses — dentists, HVAC, salons, and more.',
     url: 'https://goodrobotco.com/about',
     type: 'website',
     images: [
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'About | Good Robot Co.',
-    description: 'Learn about Ben Poon and Good Robot Co. Your technology and growth partner. Honest assessment, practical solutions, and real business outcomes.',
+    description: 'Learn about Ben Poon and Good Robot Co. Smart automation for local service businesses — dentists, HVAC, salons, and more.',
     images: ['/og-image.png'],
   },
 }
@@ -36,7 +36,7 @@ export default function About() {
       <HeroSimple
         label="About"
         title="About Good Robot Co."
-        subtitle="Your technology and growth partner. Honest assessment, practical solutions, and real business outcomes."
+        subtitle="Smart automation for local service businesses. Honest assessment, practical solutions, and real business outcomes."
       />
 
       {/* My Story */}
@@ -48,7 +48,7 @@ export default function About() {
           <div className="flex flex-col md:flex-row gap-12 items-start mb-12">
             <Reveal delay={0.1} className="md:w-1/3 flex-shrink-0">
               <Image
-                src="/ben-headshot.jpg"
+                src="/ben-headshot.png"
                 alt="Ben Poon"
                 width={400}
                 height={400}
@@ -63,19 +63,19 @@ export default function About() {
                   I saw how technology gets overcomplicated, oversold, and disconnected from what actually drives a business forward.
                 </p>
                 <p>
-                  So I started Good Robot Co. to be the technology and growth partner that small and mid-size businesses actually need.
-                  Not a vendor who drops off a deliverable and disappears, but a thought partner who understands your business goals
-                  and builds the systems to get you there.
+                  So I started Good Robot Co. to bring that same leverage to local service businesses — dentists, HVAC companies, salons,
+                  med spas, plumbers, chiropractors. Businesses that are great at what they do but are losing customers to slow follow-up,
+                  missed calls, and manual processes they haven't had time to fix.
                 </p>
                 <p>
-                  My focus: understanding where you want to grow, then using the right technology to unlock that growth. That might be AI
-                  that qualifies your leads while you sleep. It might be automation that eliminates 10 hours of manual work per week.
-                  It might be a custom platform that turns a bottleneck into a competitive advantage.
+                  My focus: understanding where you want to grow, then using the right automation to unlock that growth. That might be AI
+                  that responds to new leads within 60 seconds. It might be a system that books appointments while you're on a job.
+                  It might be reputation management that turns happy customers into five-star reviews automatically.
                 </p>
                 <p>
-                  Every recommendation I make ties back to one question: does this help the business grow? I don't oversell, I don't
-                  use jargon, and I stick around to make sure the results actually land. You work directly with me. No account
-                  managers, no runaround, no surprises.
+                  Every recommendation I make ties back to one question: does this get you more customers or save your team real time?
+                  I don't oversell, I don't use jargon, and I stick around to make sure the results actually land. You work directly
+                  with me. No account managers, no runaround, no surprises.
                 </p>
               </div>
             </Reveal>
@@ -257,15 +257,15 @@ export default function About() {
 
           <Reveal delay={0.1}>
             <div className="bg-white rounded-2xl p-8 shadow-sm mb-8">
-              <h3 className="text-xl font-display font-bold mb-4">Small and mid-size businesses who want to grow smarter...</h3>
+              <h3 className="text-xl font-display font-bold mb-4">Local service businesses ready to stop losing customers to slow follow-up...</h3>
               <div className="space-y-3 text-charcoal-light">
                 <div className="flex gap-3 items-start">
                   <span className="text-sage text-xl">✓</span>
-                  <p>Know there's a better way to operate but need a partner to figure out the "how"</p>
+                  <p>Are getting leads but losing them because nobody follows up fast enough</p>
                 </div>
                 <div className="flex gap-3 items-start">
                   <span className="text-sage text-xl">✓</span>
-                  <p>Want to use technology to grow revenue, not just "modernize" for its own sake</p>
+                  <p>Want to book more appointments without adding more staff to answer phones</p>
                 </div>
                 <div className="flex gap-3 items-start">
                   <span className="text-sage text-xl">✓</span>
@@ -273,7 +273,7 @@ export default function About() {
                 </div>
                 <div className="flex gap-3 items-start">
                   <span className="text-sage text-xl">✓</span>
-                  <p>Need a long-term thought partner, not a one-off project vendor</p>
+                  <p>Know happy customers aren't leaving reviews — and want a system that fixes that automatically</p>
                 </div>
                 <div className="flex gap-3 items-start">
                   <span className="text-sage text-xl">✓</span>
@@ -285,8 +285,8 @@ export default function About() {
 
           <Reveal delay={0.2}>
             <p className="text-center text-charcoal-light">
-              <strong>Industries I've worked with:</strong> Professional services, local businesses,
-              non-profits, agencies, education, healthcare, and e-commerce.
+              <strong>Service businesses I work with:</strong> Dental practices, HVAC companies, salons and spas,
+              med spas, plumbers, chiropractors, physical therapists, and other local service providers.
             </p>
           </Reveal>
         </div>
@@ -336,8 +336,8 @@ export default function About() {
 
       {/* CTA */}
       <CTA
-        headline="Ready to grow smarter?"
-        subheadline="Book a free 20-minute call and let's talk about where your business is headed and how the right technology can get you there faster. No pitch, no pressure, just an honest conversation."
+        headline="Ready to get more customers?"
+        subheadline="Book a free 20-minute call and let's talk about where your local service business is losing leads today and what automation can do about it. No pitch, no pressure, just an honest conversation."
       />
     </>
   )

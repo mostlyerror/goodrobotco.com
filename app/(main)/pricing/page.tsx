@@ -7,10 +7,10 @@ import FAQAccordion from '@/components/FAQAccordion'
 
 export const metadata: Metadata = {
   title: 'Pricing | Good Robot Co.',
-  description: 'Transparent pricing for tech consulting, AI integration, and growth partnership. Solutions sized for small and mid-size businesses ready to scale.',
+  description: 'Transparent pricing for tech consulting, AI integration, and growth partnership. Solutions sized for local service businesses ready to grow.',
   openGraph: {
     title: 'Pricing | Good Robot Co.',
-    description: 'Transparent pricing for tech consulting, AI integration, and growth partnership. Solutions sized for small and mid-size businesses ready to scale.',
+    description: 'Transparent pricing for tech consulting, AI integration, and growth partnership. Solutions sized for local service businesses ready to grow.',
     url: 'https://goodrobotco.com/pricing',
     type: 'website',
     images: [
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Pricing | Good Robot Co.',
-    description: 'Transparent pricing for tech consulting, AI integration, and growth partnership. Solutions sized for small and mid-size businesses ready to scale.',
+    description: 'Transparent pricing for tech consulting, AI integration, and growth partnership. Solutions sized for local service businesses ready to grow.',
     images: ['/og-image.png'],
   },
 }
@@ -36,7 +36,7 @@ export default function Pricing() {
       <HeroSimple
         label="Pricing"
         title="Transparent Pricing"
-        subtitle="No hidden fees, no surprise invoices. Investment tiers designed around the growth outcomes that matter most to your business."
+        subtitle="No hidden fees, no surprise invoices. Investment tiers designed for local service businesses ready to get more customers."
       />
 
       {/* Pricing Philosophy */}
@@ -47,7 +47,7 @@ export default function Pricing() {
               <SectionLabel>Our philosophy</SectionLabel>
               <h2 className="text-2xl font-display font-bold mb-4">Simple, growth-focused pricing</h2>
               <div className="space-y-4 text-charcoal-light mb-6">
-                <p>I keep pricing simple and accessible for small businesses. Every tier is built around a specific growth outcome, so you know exactly what you&apos;re investing in and the results you can expect.</p>
+                <p>I keep pricing simple and accessible for local service businesses. Every tier is built around a specific growth outcome, so you know exactly what you&apos;re investing in and the results you can expect.</p>
                 <p>Every project includes planning, regular updates, and support after launch. If something&apos;s not clear, I&apos;ll explain it in plain English.</p>
               </div>
               <div>
@@ -245,8 +245,8 @@ export default function Pricing() {
 
       {/* CTA */}
       <CTA
-        headline="Ready to find the right growth plan for your business?"
-        subheadline="Book a free 20-minute call and I'll give you an honest assessment of which tier fits your goals, what it would cost, and how fast you'll see results."
+        headline="Ready to get more customers?"
+        subheadline="Book a free 20-minute call and find out exactly which tier fits your business, what it costs, and when you'll see results."
       />
     </>
   )

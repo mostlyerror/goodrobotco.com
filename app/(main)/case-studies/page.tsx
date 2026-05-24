@@ -80,7 +80,7 @@ export default function CaseStudiesPage() {
     <>
       <HeroSimple
         title="Case Studies"
-        subtitle="Real projects, real growth. See how the right technology drives measurable business outcomes."
+        subtitle="Real projects, real growth. See how local service businesses use technology to get more customers and scale."
         label="Case Studies"
       />
 
@@ -163,8 +163,8 @@ export default function CaseStudiesPage() {
 
       {/* CTA - Full width section outside constrained container */}
       <CTA
-        headline="Ready to see results like these?"
-        subheadline="Let's discuss how we can drive growth for your business."
+        headline="Ready to get more customers?"
+        subheadline="Local service businesses use Good Robot to generate leads, automate operations, and grow without adding headcount."
       />
     </>
   );

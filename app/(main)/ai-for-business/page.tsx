@@ -36,7 +36,7 @@ export default function AIForBusiness() {
       <HeroSimple
         label="AI Guide"
         title="Can AI actually grow my business?"
-        subtitle="Everyone's talking about AI. But for most small business owners, the real question isn't whether AI works - it's whether it can help you get more leads, close more sales, and keep more customers. This guide will help you figure that out."
+        subtitle="Everyone's talking about AI. But for most local service businesses, the real question isn't whether AI works - it's whether it can help you get more leads, close more sales, and keep more customers. This guide will help you figure that out."
       />
 
       {/* Prominent CTA */}
@@ -45,8 +45,8 @@ export default function AIForBusiness() {
           <Reveal>
             <SectionLabel>Start here</SectionLabel>
             <div className="bg-gradient-to-br from-sage/10 to-sky/10 p-8 rounded-2xl border-2 border-sage/20">
-              <h3 className="text-2xl font-display font-bold mb-3">Want to know how AI can drive growth for your business?</h3>
-              <p className="text-charcoal-light mb-6">Book a free 20-minute growth audit. I&apos;ll assess your lead generation, speed-to-lead, and customer retention and tell you where AI can drive real revenue, with no obligation to hire me.</p>
+              <h3 className="text-2xl font-display font-bold mb-3">Want to know how AI can drive growth for your local service business?</h3>
+              <p className="text-charcoal-light mb-6">Whether you run an HVAC company, dental practice, salon, or any other local service business, book a free 20-minute growth audit. I&apos;ll assess your lead generation, speed-to-lead, and customer retention and tell you where AI can drive real revenue, with no obligation to hire me.</p>
               <Link href="/#contact" className="inline-block px-8 py-4 bg-coral text-white font-bold text-lg rounded-full shadow-xl shadow-coral/40 hover:bg-coral-hover hover:-translate-y-1 transition-all duration-300">
                 Book Your Free Growth Assessment →
               </Link>
@@ -305,8 +305,8 @@ export default function AIForBusiness() {
 
       {/* CTA */}
       <CTA
-        headline="Want to know how AI can grow your business?"
-        subheadline="Book a free 20-minute growth assessment. I'll look at your specific situation and tell you honestly where AI can drive revenue."
+        headline="Want to know how AI can grow your local service business?"
+        subheadline="Whether you run a dental practice, HVAC company, salon, or other local service business, book a free 20-minute growth assessment. I'll look at your specific situation and tell you honestly where AI can drive more leads, more sales, and more repeat customers."
       />
     </>
   )

@@ -61,8 +61,8 @@ export default function FAQPage() {
       </section>
 
       <CTA
-        headline="Still have questions?"
-        subheadline="Book a free 20-minute call. I'll give you straight answers — no pitch, no pressure."
+        headline="Ready to get more customers?"
+        subheadline="Local service businesses use Good Robot to generate leads and grow. Book a free 20-minute call — no pitch, no pressure."
       />
     </>
   )
