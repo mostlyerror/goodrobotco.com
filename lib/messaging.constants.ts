@@ -1,17 +1,17 @@
 export const MESSAGING = {
   // Ben's title
-  founderTitle: 'Technology & Growth Partner',
+  founderTitle: 'Smart Automation for Service Businesses',
 
   // Tagline / one-liner
-  tagline: 'Technology and growth consulting for small and mid-size businesses. Strategy, execution, and honest guidance to grow your revenue.',
+  tagline: 'Smart automation for local service businesses. I build the systems that respond to leads in minutes, follow up automatically, and get you more reviews.',
 
   // Hero defaults
   hero: {
-    badge: 'Growth + Technology Partner',
-    headline: 'Grow your business with the right tech.',
-    subheadline: 'From lead generation to AI automation to custom tools. I help small businesses grow revenue, save time, and stop leaving money on the table.',
+    badge: 'Smart Automation for Service Businesses',
+    headline: 'More customers. Less busywork.',
+    subheadline: 'Smart automation for local service businesses. I build the systems that respond to leads in minutes, follow up automatically, and get you more reviews — so you can focus on the work you\'re actually good at.',
     cta: "Let's Talk Growth",
-    secondaryCta: 'View Case Studies',
+    secondaryCta: 'See the results first',
   },
 
   // Growth Services (Tier 1)

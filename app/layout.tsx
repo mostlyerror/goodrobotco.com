@@ -25,11 +25,11 @@ const fraunces = Fraunces({
 })
 
 export const metadata: Metadata = {
-  title: 'Technology & Growth Partner for Small Businesses | Good Robot Co.',
+  title: 'Smart Automation for Local Service Businesses | Good Robot Co.',
   description: SEO.organization.description,
   metadataBase: new URL(SEO.baseUrl),
   openGraph: {
-    title: 'Technology & Growth Partner for Small Businesses | Good Robot Co.',
+    title: 'Smart Automation for Local Service Businesses | Good Robot Co.',
     description: SEO.organization.description,
     url: SEO.baseUrl,
     siteName: SEO.siteName,
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Technology & Growth Partner for Small Businesses | Good Robot Co.',
+    title: 'Smart Automation for Local Service Businesses | Good Robot Co.',
     description: SEO.organization.description,
     images: [SEO.images.og.url],
   },

@@ -148,17 +148,17 @@ export default function Home() {
 
             <Reveal delay={0.1}>
               <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-black text-charcoal leading-[0.92] tracking-tight mb-6">
-                Your tech is{' '}
-                <em className="text-coral italic">holding your growth back.</em>
+                More customers.{' '}
+                <em className="text-coral italic">Less busywork.</em>
               </h1>
             </Reveal>
 
             <Reveal delay={0.2}>
               <div className="max-w-xl">
                 <p className="text-xl text-charcoal-light leading-relaxed mb-2">
-                  I help small businesses grow through lead generation, sales automation, and smarter technology so you can fill your pipeline, close more deals, and stop leaving money on the table.
+                  Smart automation for local service businesses. I build the systems that respond to leads in minutes, follow up automatically, and get you more reviews — so you can focus on the work you&apos;re actually good at.
                 </p>
-                <p className="text-charcoal-light/50 text-sm mb-10">(No 47-slide deck required.)</p>
+                <p className="text-charcoal-light/50 text-sm mb-10">(No magic required.)</p>
               </div>
             </Reveal>
 
@@ -177,11 +177,12 @@ export default function Home() {
             </Reveal>
 
             <Reveal delay={0.4}>
-              <div className="flex flex-wrap gap-3 mt-16">
+              <p className="text-charcoal/30 text-xs uppercase tracking-wider font-bold mt-16 mb-3">Results from past projects</p>
+              <div className="flex flex-wrap gap-3">
                 {[
-                  { label: '20h saved/week', color: 'bg-sage/15 text-sage' },
-                  { label: '80% faster intake', color: 'bg-coral/10 text-coral' },
-                  { label: '$2M+ revenue impacted', color: 'bg-sky/15 text-sky' },
+                  { label: '20h/wk saved on prospecting', color: 'bg-sage/15 text-sage' },
+                  { label: '80% faster client intake', color: 'bg-coral/10 text-coral' },
+                  { label: '10+ yrs building tech', color: 'bg-sky/15 text-sky' },
                   { label: '2-3 projects/month', color: 'bg-mustard/15 text-mustard' },
                 ].map(pill => (
                   <span key={pill.label} className={`${pill.color} px-4 py-2 rounded-full text-sm font-bold`}>
